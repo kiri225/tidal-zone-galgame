@@ -1,17 +1,16 @@
 # 《潮间带》剧情大纲
 
-**完整设计稿（待审阅）→ [`docs/STORY-DESIGN.md`](docs/STORY-DESIGN.md)**
+**设计稿 → [`docs/STORY-DESIGN.md`](docs/STORY-DESIGN.md)**  
+**晚棠 50 章目录 → [`src/data/story/wantang/CHAPTERS.md`](src/data/story/wantang/CHAPTERS.md)**
 
-确认设计稿前，以该文档为准；本文件仅作索引。
+## 结构
 
-## 快捷摘要
+- 序章共通 → 角色选择
+- **林晚棠线：50 章**（约 272 节点，好感 / CG / 三结局）
+- 其余三人线：预留（同样按 ≥50 章规划）
 
-- 主题：靠近与退潮
-- 首发线：林晚棠（好感驱动 CG + 三结局）
-- 预留：苏晴岚 / 顾清禾 / 叶知夏
-- 立绘：透明 RGBA PNG · 背景：全幅场景图
-- 资源 skill：`.cursor/skills/gal-character-sprite` · `.cursor/skills/gal-background-scene`
+## 规则
 
-## 视觉基调
-
-深蓝夜海 · 琥珀灯 · 湿玻璃 · 旧纸张 · 细雨噪点。
+- 每条可攻略线 **最少 50 章**
+- 立绘：透明 RGBA PNG · 背景：全幅场景
+- Skills：`.cursor/skills/gal-character-sprite` · `gal-background-scene`

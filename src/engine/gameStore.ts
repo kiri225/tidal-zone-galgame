@@ -50,6 +50,8 @@ export const useGameStore = defineStore('game', () => {
   const cg = ref<string | null>(null)
   const speaker = ref('')
   const text = ref('')
+  const chapter = ref(0)
+  const chapterTitle = ref('')
 
   const scriptMap = computed(() => {
     const list = ALL_SCRIPTS[routeId.value] ?? []
@@ -97,6 +99,10 @@ export const useGameStore = defineStore('game', () => {
     if (node.sprite !== undefined) sprite.value = node.sprite
     if (node.expression) expression.value = node.expression
     if (node.mood) mood.value = node.mood
+    if (node.chapter !== undefined) {
+      chapter.value = node.chapter
+      chapterTitle.value = node.chapterTitle ?? ''
+    }
     if (node.cg !== undefined) {
       cg.value = node.cg
       if (node.cg) {
@@ -134,6 +140,8 @@ export const useGameStore = defineStore('game', () => {
     nodeId.value = 'route-start'
     history.value = []
     cg.value = null
+    chapter.value = 0
+    chapterTitle.value = ''
     pendingCgUnlock.value = null
     screen.value = 'game'
     goTo('route-start')
@@ -247,10 +255,11 @@ export const useGameStore = defineStore('game', () => {
 
   function resolveEnding() {
     checkAffectionCgs()
-    if (affection.value >= 8 && hasFlag('stay') && hasFlag('confess')) {
+    // True: aff≥12 + 留下 + 坦白
+    if (affection.value >= 12 && hasFlag('stay') && hasFlag('confess')) {
       unlockCg('intertidal')
       goTo('ending-true')
-    } else if (affection.value >= 5 && (hasFlag('stay') || hasFlag('confess'))) {
+    } else if (affection.value >= 7 && (hasFlag('stay') || hasFlag('confess'))) {
       goTo('ending-good')
     } else {
       goTo('ending-bitter')
@@ -288,6 +297,8 @@ export const useGameStore = defineStore('game', () => {
     cg,
     speaker,
     text,
+    chapter,
+    chapterTitle,
     currentNode,
     endingData,
     hasFlag,

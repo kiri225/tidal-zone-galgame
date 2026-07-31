@@ -24,6 +24,10 @@ export interface DialogueNode {
   mood?: 'normal' | 'warm' | 'cold' | 'rain' | 'intimate' | 'dark'
   /** 全屏 CG（展示时隐藏立绘） */
   cg?: string | null
+  /** 章节号（进入该节点时刷新 HUD） */
+  chapter?: number
+  /** 章节标题 */
+  chapterTitle?: string
   /** 自动跳转 */
   next?: string
   choices?: Choice[]

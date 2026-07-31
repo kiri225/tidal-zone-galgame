@@ -37,6 +37,7 @@ export const bgLabels: Record<string, string> = {
   'shop-interior': '拾潮 · 店内',
   'bookstore': '潮声 · 店内',
   'bookstore-close': '潮声 · 关店后',
+  'bookstore-loft': '潮声 · 二楼书库',
   'wantang-room': '晚棠的住处',
   'seaside-dawn': '海边 · 黎明',
   'black': '黑暗',

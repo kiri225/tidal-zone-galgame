@@ -1,6 +1,6 @@
 import type { DialogueNode } from '../../engine/types'
 
-/** 序章 · 共通（加厚：回忆、选择、好感铺垫） */
+/** 序章 · 共通（设计稿 §6，约 22 节点） */
 export const commonScript: DialogueNode[] = [
   {
     id: 'start',
@@ -35,20 +35,54 @@ export const commonScript: DialogueNode[] = [
   },
   {
     id: 'c4b',
+    text: '玻璃门内侧，我取出早已写好的纸条：「本店转让洽谈中」。\n胶布撕开的声音，在空店里格外响。',
+    next: 'c4c',
+  },
+  {
+    id: 'c4c',
     speaker: '沈屿',
-    text: '三周。处理完就走。\n……这次别再拖泥带水。',
+    text: '贴上去就走。别拖。',
+    choices: [
+      {
+        text: '干脆贴上——月底前必须脱身',
+        next: 'c5a',
+        affection: 0,
+        setFlag: 'posted_sign',
+      },
+      {
+        text: '手指顿了一下……先贴一半，边缘卷着',
+        next: 'c5b',
+        affection: 1,
+        setFlag: 'hesitate_sell_early',
+      },
+    ],
+  },
+  {
+    id: 'c5a',
+    text: '纸条贴正。透过玻璃，潮屿的街灯把「转让」两个字照得很清楚。\n像把自己的退路，钉死在了门上。',
+    next: 'c5',
+  },
+  {
+    id: 'c5b',
+    text: '纸条歪了一点。下缘卷着，像还没下定决心。\n我没再去抚平它。',
     next: 'c5',
   },
   {
     id: 'c5',
-    text: '傍晚，我把「转让洽谈中」的纸条贴在玻璃上。\n指尖停了一秒——像是贴在自己的退路上。',
+    text: '后仓纸箱里翻出一只铁皮铅笔盒。里面没有铅笔，只有一枚光滑的海玻璃，和一张折叠的纸条——父亲字迹：「屿回来时给。」\n没有下文。',
+    next: 'c5c',
+  },
+  {
+    id: 'c5c',
+    speaker: '沈屿',
+    text: '三周。处理完就走。\n……这次别再拖泥带水。',
     next: 'c6',
   },
   {
     id: 'c6',
     bg: 'street-rain',
     mood: 'rain',
-    text: '夜里下起细雨。我沿着记忆里的路走，想找点吃的——却在转角撞见一扇亮着暖灯的玻璃门。\n门楣上写着两个字：潮声。',
+    text: '夜里下起细雨。店里没有能入口的东西，我沿着记忆里的路走，想找点吃的。\n转角处，一扇玻璃门亮着暖灯。门楣上写着两个字：潮声。',
     next: 'c6b',
   },
   {
@@ -87,7 +121,7 @@ export const commonScript: DialogueNode[] = [
   },
   {
     id: 'c11',
-    text: '林晚棠。中学时坐我后排的人。成绩好，话少，雨天会把伞默默放到我桌上。\n我离开潮屿的那年，她来送行，什么都没说。我也什么都没问。',
+    text: '林晚棠。中学时坐我后排的人。成绩好，话少——雨天会把伞默默放到我桌上，自己淋着走。\n我离开潮屿的那年，她来送行，什么都没说。我也什么都没问。',
     next: 'c11b',
   },
   {
@@ -136,7 +170,7 @@ export const commonScript: DialogueNode[] = [
   },
   {
     id: 'c13c2',
-    text: '她给我倒了酒。杯壁上凝着水珠，像这十年里没说出口的那些句子。',
+    text: '她给我倒了酒。杯壁上凝着水珠，像这十年里没说出口的那些句子。\n第一口下去，咸与热同时撞上舌尖。',
     next: 'c14',
   },
   {
@@ -181,7 +215,7 @@ export const commonScript: DialogueNode[] = [
     sprite: null,
     mood: 'normal',
     bg: 'port-night',
-    text: '【序章结束】\n亲密度会随你的选择累积。达到一定程度时，将解锁专属 CG。\n请选择要深入的故事线。',
+    text: '【序章结束】\n亲密度会随选择累积。达到一定程度将解锁专属 CG。\n请选择要深入的故事线。',
     next: 'story-select',
   },
 ]

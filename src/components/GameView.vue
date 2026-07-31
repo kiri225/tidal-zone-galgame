@@ -52,7 +52,10 @@ watch(
     <CgOverlay />
 
     <div class="hud">
-      <span class="place">{{ place }}</span>
+      <div class="hud-left">
+        <span v-if="game.chapter" class="chapter">第 {{ game.chapter }} 章 · {{ game.chapterTitle }}</span>
+        <span class="place">{{ place }}</span>
+      </div>
       <div class="aff-wrap">
         <span class="aff" title="晚棠好感">亲密度 {{ game.affection }}</span>
         <span v-if="game.affectionDelta" class="aff-delta" :class="{ down: game.affectionDelta < 0 }">
@@ -107,6 +110,23 @@ watch(
   letter-spacing: 0.15em;
   color: rgba(232, 221, 208, 0.45);
   pointer-events: none;
+}
+
+.hud-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 60%;
+}
+
+.chapter {
+  color: rgba(196, 164, 132, 0.85);
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+.place {
+  color: rgba(232, 221, 208, 0.4);
 }
 
 .aff-wrap {
