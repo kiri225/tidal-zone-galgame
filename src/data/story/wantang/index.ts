@@ -2,6 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 import { wantangScript as generated } from './script'
 import { chapter01 } from './ch01'
 import { chapter02 } from './ch02'
+import { chapter03 } from './ch03'
 
 const routeStart = generated.find((n) => n.id === 'route-start')
 if (!routeStart) throw new Error('missing route-start')
@@ -13,8 +14,9 @@ export const wantangScript: DialogueNode[] = [
   },
   ...chapter01,
   ...chapter02,
+  ...chapter03,
   // 未替换章节暂用生成稿
-  ...generated.slice(generated.findIndex((x) => x.id === 'ch03')),
+  ...generated.slice(generated.findIndex((x) => x.id === 'ch04')),
 ]
 
 export const WANTANG_CHAPTER_COUNT = 50
