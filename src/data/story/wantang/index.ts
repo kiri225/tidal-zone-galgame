@@ -43,6 +43,7 @@ import { chapter40 } from './ch40'
 import { chapter41 } from './ch41'
 import { chapter42 } from './ch42'
 import { chapter43 } from './ch43'
+import { chapter44 } from './ch44'
 
 const routeStart = generated.find((n) => n.id === 'route-start')
 if (!routeStart) throw new Error('missing route-start')
@@ -95,8 +96,9 @@ export const wantangScript: DialogueNode[] = [
   ...chapter41,
   ...chapter42,
   ...chapter43,
+  ...chapter44,
   // 未替换章节暂用生成稿
-  ...generated.slice(generated.findIndex((x) => x.id === 'ch44')),
+  ...generated.slice(generated.findIndex((x) => x.id === 'ch45')),
 ]
 
 export const WANTANG_CHAPTER_COUNT = 50
