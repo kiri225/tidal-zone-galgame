@@ -20,7 +20,7 @@ description: >-
 2. 建议尺寸：**1536×1024** 或 **1920×1080**，横向
 3. 保存：`public/images/bg/bg-{key}.png`
 4. 在 `src/data/assets.ts` 的 `bgImages` 与 `characters.ts` 的 `bgLabels` 注册
-5. 风格：深蓝夜海 · 琥珀灯 · 湿玻璃 · 细雨 · 旧纸感；统一色温，避免霓虹赛博/紫粉渐变网红风
+5. 风格：**日漫/赛璐璐动画场景**（非写实、非 3D 写实渲染），深蓝夜海 · 琥珀灯 · 湿玻璃 · 细雨；统一色温，避免霓虹赛博/紫粉渐变网红风
 
 ## Scene catalog（潮间带）
 
@@ -43,10 +43,10 @@ description: >-
 ## Prompt recipe
 
 ```
-Cinematic visual novel background, {location description}, no main character
-portrait, wide establishing shot, moist coastal atmosphere, deep blue and amber
-palette, subtle film grain, rainy glass reflections where appropriate, empty of
-dialogue UI, high detail environment, 16:9 or 3:2
+Japanese anime manga style cinematic visual novel background, {location description},
+no main character portrait, wide establishing shot, cel-shaded anime environment,
+moist coastal atmosphere, deep blue and amber palette, NOT photorealistic, NOT 3D render,
+empty of dialogue UI, 16:9 or 3:2
 ```
 
 负面：`character sprite, anime girl portrait, UI, text, watermark, purple neon city, cyberpunk`

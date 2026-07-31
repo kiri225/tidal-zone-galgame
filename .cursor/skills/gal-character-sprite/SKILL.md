@@ -19,7 +19,7 @@ description: >-
 1. **输出必须是透明底 RGBA PNG**（不要实景背景、不要纯色底板、不要阴影落地成不透明块）
 2. 构图：全身或膝上立绘，人物居中偏下，脚/裙摆贴底边附近，左右留白
 3. 建议尺寸：**1024×1536**（或同比例）
-4. 风格统一：半写实插画 · 湿润海滨夜色氛围 · 细腻皮肤与布料 · 避免二次元大眼睛萌系
+4. 风格统一：**日漫/赛璐璐动画风**（非写实），湿润海滨夜色 · 琥珀与深蓝；避免真人照片感、避免过度写实皮肤纹理
 5. 保存路径：`public/images/char/{id}-{expression}.png`
 6. 生成后用工具检查四角 alpha≈0；透明像素占比通常应 >20%
 
@@ -51,10 +51,11 @@ description: >-
 ## Prompt recipe（生成时遵守）
 
 ```
-Anime-influenced semi-realistic visual novel character sprite of {name}, {age},
-{clothing and hair}, {expression}, full body standing, facing slightly toward camera,
-clean cutout, transparent background, no scenery, no floor shadow blob, soft coastal
-night color grade, amber and deep blue accents, high detail fabric, PNG with alpha
+Japanese anime manga style visual novel character standing sprite of {name}, {age},
+{clothing and hair}, {expression}, cel-shaded, clean lineart, NOT photorealistic,
+full body standing, facing slightly toward camera, clean cutout, transparent background,
+no scenery, no floor shadow blob, soft coastal night color grade, amber and deep blue accents,
+PNG with alpha
 ```
 
 负面提示强调：`background, scenery, room, beach photo background, solid color backdrop, watermark, text, extra limbs`
