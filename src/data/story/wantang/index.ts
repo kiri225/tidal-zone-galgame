@@ -1,6 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 import { wantangScript as generated } from './script'
 import { chapter01 } from './ch01'
+import { chapter02 } from './ch02'
 
 const routeStart = generated.find((n) => n.id === 'route-start')
 if (!routeStart) throw new Error('missing route-start')
@@ -11,8 +12,9 @@ export const wantangScript: DialogueNode[] = [
     text: '【林晚棠线】五十章。亲密度影响 CG、雨夜与结局。\n从第1章起，对话与场景将按小说密度展开。',
   },
   ...chapter01,
+  ...chapter02,
   // 未替换章节暂用生成稿
-  ...generated.slice(generated.findIndex((x) => x.id === 'ch02')),
+  ...generated.slice(generated.findIndex((x) => x.id === 'ch03')),
 ]
 
 export const WANTANG_CHAPTER_COUNT = 50
