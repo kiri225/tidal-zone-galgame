@@ -28,7 +28,7 @@ export const chapter23: DialogueNode[] = [
   {
     id: 'c23-02',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '来了正好。别笑，书店也要吃饭——旧书摊比店里赚得实在。\n你负责找钱，我负责不让人把书摸出油光。',
     next: 'c23-03',
   },
@@ -46,7 +46,7 @@ export const chapter23: DialogueNode[] = [
   {
     id: 'c23-05',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '不信任。所以旁边留了一本账，算错了，晚上对不上，就得你请客。',
     next: 'c23-06',
   },
@@ -140,7 +140,7 @@ export const chapter23: DialogueNode[] = [
   {
     id: 'c23-16b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '……行吧，半价卖给她。\n有些书，本来就该到爱看它的人手里，账我认。',
     next: 'c23-17',
   },
@@ -200,7 +200,7 @@ export const chapter23: DialogueNode[] = [
   {
     id: 'c23-26',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '……还行。\n比我想象中不像个只会敲键盘的外行——今天算你转正了。',
     next: 'ch24',
   },

@@ -13,7 +13,7 @@ export const chapter39: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第39章】假装平常\n台风过后第三天，潮声恢复营业。一切都装作若无其事：擦杯、理书、点头示意。',
     next: 'c39-01',
@@ -122,7 +122,7 @@ export const chapter39: DialogueNode[] = [
   {
     id: 'c39-10',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '每天都要演一遍「什么都没发生」，比昨晚那阵台风还累人。',
     next: 'c39-11',
   },

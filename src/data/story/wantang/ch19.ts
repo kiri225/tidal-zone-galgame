@@ -21,7 +21,7 @@ export const chapter19: DialogueNode[] = [
   {
     id: 'c19-01',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '算了，别再扯高二了——扯太久，回不来。\n有件事，我想问清楚，趁着今晚还有点酒壮胆。',
     next: 'c19-02',
   },
@@ -38,7 +38,7 @@ export const chapter19: DialogueNode[] = [
   {
     id: 'c19-04',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '拾潮那边，中介是不是天天打给你？\n潮屿小，什么消息都跑得比船还快。',
     next: 'c19-05',
   },
@@ -56,7 +56,7 @@ export const chapter19: DialogueNode[] = [
   {
     id: 'c19-07',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '好价格意味着好机会。你该高兴才对。\n……可你脸上不像高兴。',
     next: 'c19-08',
   },
@@ -104,7 +104,7 @@ export const chapter19: DialogueNode[] = [
   {
     id: 'c19-13',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '因为说完的人，往往会走。\n十年前你走的时候，也说得很清楚——「我会回来看看」。\n……你看，「回来」用了十年。',
     next: 'c19-14',
   },
@@ -116,7 +116,7 @@ export const chapter19: DialogueNode[] = [
   {
     id: 'c19-15',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '沈屿，我问最后一次，问完就不再问了。\n你还是要卖铺子吗？',
     choices: [
       {
@@ -185,7 +185,7 @@ export const chapter19: DialogueNode[] = [
   {
     id: 'c19-20b',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '气话也是话。\n你以为「气话」这个词，能把说出口的伤收回去？\n……算了，喝酒的时候说的话，不作数。今晚就到这里吧。',
     next: 'c19-20c',
   },

@@ -134,7 +134,7 @@ export const chapter30: DialogueNode[] = [
   {
     id: 'c30-19',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '没事，飞来的树枝砸的，我躲得及时。\n就是……一个人在这儿，忽然觉得挺害怕的，才给你发了那条短信。',
     next: 'c30-20',
   },

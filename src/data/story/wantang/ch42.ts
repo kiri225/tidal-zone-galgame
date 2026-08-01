@@ -13,7 +13,7 @@ export const chapter42: DialogueNode[] = [
     bg: 'shop-interior',
     mood: 'cold',
     sprite: null,
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第42章】买家皮鞋\n中介提前一天打来电话，说买家终于有空，明天上午准时到访，态度客气得不容拒绝。',
     next: 'c42-01',

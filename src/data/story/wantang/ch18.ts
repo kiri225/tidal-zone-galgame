@@ -39,7 +39,7 @@ export const chapter18: DialogueNode[] = [
   {
     id: 'c18-04',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '你还记得高二运动会吗？我们班输了接力，你却在终点线外喊得最凶。',
     next: 'c18-05',
   },
@@ -136,7 +136,7 @@ export const chapter18: DialogueNode[] = [
   {
     id: 'c18-17',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '你走那天，我站在码头后面。\n不是不想靠近——是靠近了，我怕自己走不了，也怕你走不了。',
     next: 'c18-18',
   },
@@ -164,7 +164,7 @@ export const chapter18: DialogueNode[] = [
   {
     id: 'c18-20a',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '对不起很轻。\n轻到潮汐一冲就没，轻到我这十年，连怨都怨不出个具体的形状。',
     next: 'c18-21',
   },
@@ -195,7 +195,7 @@ export const chapter18: DialogueNode[] = [
   {
     id: 'c18-24',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '毕业前收的合影，一直忘了寄给谁。\n要不要看看，当年谁的发型最惨？',
     next: 'c18-25',
   },

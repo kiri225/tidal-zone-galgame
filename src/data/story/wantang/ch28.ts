@@ -26,7 +26,7 @@ export const chapter28: DialogueNode[] = [
   {
     id: 'c28-02',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '这茶，你父亲每次来，都要我特地泡这一种。\n他说——喝惯了海腥味，得有点东西压一压。',
     next: 'c28-03',
   },
@@ -84,7 +84,7 @@ export const chapter28: DialogueNode[] = [
   {
     id: 'c28-10a',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '……道歉不用总挂在嘴边，说多了也不值钱。\n你人在这儿，比十句对不起都管用。',
     next: 'c28-11',
   },
@@ -103,7 +103,7 @@ export const chapter28: DialogueNode[] = [
   {
     id: 'c28-12',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '气象台说，这周末有台风要正面登陆潮屿。\n你父亲以前每次台风前，都要来店里把窗户帮我加固一遍——现在轮到我自己动手了。',
     next: 'c28-13',
   },
@@ -116,7 +116,7 @@ export const chapter28: DialogueNode[] = [
   {
     id: 'c28-14',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '……谢了。\n其实，我一直挺怕台风夜的——不是怕风雨，是怕一个人守着这么大一间店，越夜越觉得空。',
     next: 'c28-15',
   },
@@ -156,7 +156,7 @@ export const chapter28: DialogueNode[] = [
   {
     id: 'c28-21',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '你可以睡店里——沙发那张，虽然旧，但够宽。\n别多想，是台风前奏，回去的路不安全，不是别的意思。',
     next: 'c28-22',
   },

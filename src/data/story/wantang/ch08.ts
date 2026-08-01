@@ -50,7 +50,7 @@ export const chapter08: DialogueNode[] = [
   {
     id: 'c08-06',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '你听。\n涨潮了。这个点的潮声，跟白天完全不一样——白天是喧闹的，夜里是……讲心事的。',
     next: 'c08-07',
   },
@@ -81,7 +81,7 @@ export const chapter08: DialogueNode[] = [
     id: 'c08-skip',
     cg: null,
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     text: '她的目光只停留了一瞬，便很快垂下，重新落回杯子里晃动的茶水。\n有些画面，需要更近的潮位才会露出——此刻的我们，还差着一截。',
     next: 'c08-10',
   },
@@ -224,7 +224,7 @@ export const chapter08: DialogueNode[] = [
   {
     id: 'c08-26',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '就送到这儿吧。\n剩下的路，我自己走得惯——这十年，走习惯了。',
     next: 'c08-27',
   },

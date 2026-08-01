@@ -73,7 +73,7 @@ export const chapter29: DialogueNode[] = [
   {
     id: 'c29-08',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '一个人守店，台风年年来，不学会这手艺，早被吹跑了。\n你倒好，城市里估计连锤子长什么样都快忘了。',
     next: 'c29-09',
   },
@@ -90,7 +90,7 @@ export const chapter29: DialogueNode[] = [
   {
     id: 'c29-11',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '气象台说，今晚十点前后登陆，中心风力十二级。\n你那边窗户加固得怎么样，别硬撑，不够结实就直接来潮声。',
     next: 'c29-12',
   },
@@ -120,7 +120,7 @@ export const chapter29: DialogueNode[] = [
   {
     id: 'c29-13b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……好。那我在店里等着，灯给你留着。\n上次也是这么说的，这次可别又手机没电。',
     next: 'c29-14',
   },

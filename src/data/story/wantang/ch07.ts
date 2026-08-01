@@ -26,7 +26,7 @@ export const chapter07: DialogueNode[] = [
   {
     id: 'c07-02',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '谢了，今天搬得比预期快。\n工资晚上结——或者，用一顿晚饭抵，你选。',
     next: 'c07-03',
   },
@@ -119,7 +119,7 @@ export const chapter07: DialogueNode[] = [
   {
     id: 'c07-12',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '……写过。没寄。\n地址换了三次，我总跟不上你搬家的速度，后来就懒得追了。',
     next: 'c07-13',
   },
@@ -172,7 +172,7 @@ export const chapter07: DialogueNode[] = [
   {
     id: 'c07-17',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '每天这个点，我最喜欢。\n忙完一天，灯一亮，好像什么都可以重新开始。',
     next: 'c07-18',
   },

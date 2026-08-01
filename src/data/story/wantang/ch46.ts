@@ -110,7 +110,7 @@ export const chapter46: DialogueNode[] = [
   {
     id: 'c46-10a',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '那就这么定了。\n招牌我来做——你负责别再让人把它拆下来。',
     next: 'c46-11a',
   },

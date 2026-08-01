@@ -44,7 +44,7 @@ export const chapter11: DialogueNode[] = [
   {
     id: 'c11-05',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '路过？\n进来擦擦吧，地板滑，别摔了。',
     next: 'c11-06',
   },

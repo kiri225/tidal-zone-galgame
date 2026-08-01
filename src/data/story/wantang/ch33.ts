@@ -13,7 +13,7 @@ export const chapter33: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'intimate',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第33章】有没有回头\n雷声渐渐往镇外挪，雨却没有要停的意思，像是打定主意要把这一夜拖得很长。',
     next: 'c33-01',
@@ -130,7 +130,7 @@ export const chapter33: DialogueNode[] = [
   {
     id: 'c33-11',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '……歪理。\n不过——姑且信一次。',
     next: 'c33-12',
   },
@@ -170,7 +170,7 @@ export const chapter33: DialogueNode[] = [
   {
     id: 'c33-16a',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '道歉不能让我少发那三天烧。\n……但也不是没用。至少现在听着，没那么疼了。',
     next: 'c33-17',
   },
@@ -189,7 +189,7 @@ export const chapter33: DialogueNode[] = [
   {
     id: 'c33-18',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '沈屿。\n我问了你，也该轮到我说——这十年，我没有一天真的把你放下过。\n哪怕我一直告诉自己，放下了。',
     next: 'c33-19',
   },

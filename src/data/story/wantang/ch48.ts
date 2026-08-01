@@ -13,7 +13,7 @@ export const chapter48: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第48章】潮声的门',
     next: 'c48-gate',
@@ -35,7 +35,7 @@ export const chapter48: DialogueNode[] = [
   {
     id: 'c48-stay-03',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '以后不管你怎么选——反正现在已经选了——我都会在潮声。\n门开着。灯也开着。这两句话，我以前只对我爸说过。',
     next: 'c48-stay-04',
   },

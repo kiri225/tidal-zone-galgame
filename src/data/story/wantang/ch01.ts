@@ -44,7 +44,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-05',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '所以我才说「正好」。\n求人会欠人情。雇佣只欠工资。',
     next: 'c01-06',
   },
@@ -98,7 +98,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-14',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '你要是觉得亏，可以拒绝。',
     choices: [
       {
@@ -137,14 +137,14 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-15b',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '油嘴。加班费用大麦茶结——冰的。\n三点，别迟到。潮屿的钟比城市慢，但我的钟不准假。',
     next: 'c01-16',
   },
   {
     id: 'c01-15c',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '一次也行。\n潮屿的「一次」，有时会变成很多回——这不是威胁，是气候。',
     next: 'c01-16',
   },
@@ -169,7 +169,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-18',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '诗更沉。\n沉在你以为它轻的时候。',
     next: 'c01-19',
   },
@@ -181,7 +181,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-20',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '你住拾潮？\n夜里潮声大。若睡不着——别来砸我的门。短信就行。',
     next: 'c01-21',
   },
@@ -209,7 +209,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-23a',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '那就好。\n……沈屿。',
     next: 'c01-24',
   },
@@ -241,7 +241,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-27',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '……明天见。\n门开着。灯也是。',
     next: 'c01-28',
   },

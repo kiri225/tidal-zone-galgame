@@ -71,7 +71,7 @@ export const chapter27: DialogueNode[] = [
   {
     id: 'c27-10',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '我昨天也说得太重。\n只是……每次听到「机会不等人」这种话，我就会想起十年前，你说完「我先去看看外面」之后，那扇门是怎么关上的。',
     next: 'c27-11',
   },
@@ -123,7 +123,7 @@ export const chapter27: DialogueNode[] = [
   {
     id: 'c27-16',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '其实……昨天关上后仓门之后，我在里面待了很久，翻出你父亲那张明信片又看了一遍。\n「心不坏」这三个字，昨天倒成了我说服自己别太生气的理由。',
     next: 'c27-17',
   },

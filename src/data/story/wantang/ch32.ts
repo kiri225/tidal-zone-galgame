@@ -116,7 +116,7 @@ export const chapter32: DialogueNode[] = [
   {
     id: 'c32-12a',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '……傻子。你自己也会冷。\n算了，谢了。',
     next: 'c32-13',
   },

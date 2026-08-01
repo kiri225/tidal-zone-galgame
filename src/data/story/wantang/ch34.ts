@@ -155,7 +155,7 @@ export const chapter34: DialogueNode[] = [
   {
     id: 'c34-14b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '我不会后悔——这点我很确定。但……谢谢你还愿意替我想清楚，而不是替我做决定。\n那就再等等。等到雨停，或者等到我想清楚，该怎么把你留下。',
     next: 'c34-15b',
   },

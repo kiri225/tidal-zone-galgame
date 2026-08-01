@@ -116,7 +116,7 @@ export const chapter02: DialogueNode[] = [
   {
     id: 'c02-12',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '我没有立场着急。铺子是你的，人……也是你的。\n她把这句话说得又快又轻，像怕自己收不住。',
     next: 'c02-13',
   },
@@ -203,7 +203,7 @@ export const chapter02: DialogueNode[] = [
   {
     id: 'c02-20a',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……嗯。谢谢你还记得，这店也算半个我的地盘。',
     next: 'c02-21',
   },
@@ -234,7 +234,7 @@ export const chapter02: DialogueNode[] = [
   {
     id: 'c02-24',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '如果真的来了……我大概会假装没看见你们签字的样子。\n她说得很轻，像自嘲，又像是提前给自己打的预防针。',
     next: 'c02-25',
   },

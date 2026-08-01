@@ -43,7 +43,7 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-04',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '给你。潮声的备用钥匙。\n不是什么承诺——只是，台风那种夜里，别再让我听见你砸玻璃的声音。',
     next: 'c41-05',
   },
@@ -109,7 +109,7 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-07c',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '……挂那么随便？\n多少给点仪式感，这是我这辈子第二把给出去的钥匙。',
     next: 'c41-08c',
   },
@@ -170,7 +170,7 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-17',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '……那就一次够了。\n锁好门，早点睡——明天还要还我一个更像样的道歉，用行动。',
     next: 'c41-18',
   },

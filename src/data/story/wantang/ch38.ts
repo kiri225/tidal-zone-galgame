@@ -31,7 +31,7 @@ export const chapter38: DialogueNode[] = [
   {
     id: 'c38-02',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '这里叫潮间带。\n涨潮时被淹没，退潮时才露出真模样——有点像人。',
     next: 'c38-03',
   },
@@ -113,7 +113,7 @@ export const chapter38: DialogueNode[] = [
   {
     id: 'c38-10c',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '……怕退潮时的你。\n涨潮时的靠近谁都会，退潮时还愿意留下来看真相的人，太少了。',
     next: 'c38-11',
   },
@@ -151,7 +151,7 @@ export const chapter38: DialogueNode[] = [
   {
     id: 'c38-14c',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……行。那我天天考你。',
     next: 'c38-15',
   },

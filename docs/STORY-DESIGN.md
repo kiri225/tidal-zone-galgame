@@ -54,7 +54,7 @@
 | 与屿 | 中学后排；送行未开口；十年未离开潮屿 |
 | 怕什么 | 说完就会被留下的人再次抛弃 |
 | 想要 | 被选择，而不是被「顺便记得」 |
-| 立绘表情 | default / soft / tense / blush / avert / smile / hurt |
+| 立绘表情 | default / soft / tense / blush / avert / smile / hurt / laugh / surprised / teary / cold / tired；姿态 book / crossed |
 | 服装 | 亚麻衬衫、围裙、随意束发；夜戏换宽松家居 |
 
 ### 3.3 苏晴岚（29）· 二期

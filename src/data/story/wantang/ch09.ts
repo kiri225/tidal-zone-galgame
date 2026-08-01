@@ -44,7 +44,7 @@ export const chapter09: DialogueNode[] = [
   {
     id: 'c09-05',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '……第三种，是我煮。\n但丑话说前头，我手艺一般，别抱太大期望。',
     next: 'c09-06',
   },
@@ -79,7 +79,7 @@ export const chapter09: DialogueNode[] = [
     id: 'c09-07a',
     bg: 'port-night',
     mood: 'warm',
-    expression: 'smile',
+    expression: 'laugh',
     text: '码头的海鲜粥摊支在几盏昏黄的灯下，热气腾腾。粥很烫，晚棠吹了又吹，眼角被热气逼出一点湿意。',
     next: 'c09-08a',
   },
@@ -166,7 +166,7 @@ export const chapter09: DialogueNode[] = [
   {
     id: 'c09-13b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '嗯。今天……确实好好吃了一顿。\n她低头喝了一口汤，掩去嘴角那一点藏不住的笑意。',
     next: 'c09-14',
   },
@@ -195,7 +195,7 @@ export const chapter09: DialogueNode[] = [
   {
     id: 'c09-18',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '算是吧。\n至少，比敲玻璃砸门要体面得多。',
     next: 'c09-19',
   },

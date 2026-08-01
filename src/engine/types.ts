@@ -1,4 +1,18 @@
-export type Expression = 'default' | 'soft' | 'tense' | 'blush' | 'avert' | 'smile' | 'hurt'
+export type Expression =
+  | 'default'
+  | 'soft'
+  | 'tense'
+  | 'blush'
+  | 'avert'
+  | 'smile'
+  | 'hurt'
+  | 'laugh'
+  | 'surprised'
+  | 'teary'
+  | 'cold'
+  | 'tired'
+  | 'book'
+  | 'crossed'
 
 export interface Choice {
   text: string

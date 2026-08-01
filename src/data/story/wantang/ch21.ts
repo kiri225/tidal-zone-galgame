@@ -14,7 +14,7 @@ export const chapter21: DialogueNode[] = [
     bg: 'bookstore-close',
     mood: 'intimate',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第21章】关店夜话\n接下来的几天，潮屿的雨断断续续，像谁在天上试着讲一句讲不完整的话。',
     next: 'c21-01',
@@ -85,7 +85,7 @@ export const chapter21: DialogueNode[] = [
   {
     id: 'c21-09',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '今天人少，早点关了。\n留下来吧——不是雇佣，也不是喝酒，就是……想说说话。',
     next: 'c21-10',
   },
@@ -162,7 +162,7 @@ export const chapter21: DialogueNode[] = [
   {
     id: 'c21-21',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……今晚，想多说一点，也想多听一点。\n可以吗？',
     next: 'c21-branch',
   },

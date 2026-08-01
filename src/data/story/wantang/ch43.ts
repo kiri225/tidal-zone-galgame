@@ -38,7 +38,7 @@ export const chapter43: DialogueNode[] = [
   {
     id: 'c43-03',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '签了吗？',
     next: 'c43-04',
   },
@@ -77,7 +77,7 @@ export const chapter43: DialogueNode[] = [
   {
     id: 'c43-07a',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '……嗯。\n那还有一周的潮——够我们把话说清楚了。',
     next: 'c43-08',
   },

@@ -51,7 +51,7 @@ export const chapter24: DialogueNode[] = [
   {
     id: 'c24-06',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '小时候我常来这儿，坐在塔基上看船进港。\n那时候想，等我长大，也要成为一盏灯——给谁指路都行。',
     next: 'c24-07',
   },
@@ -76,7 +76,7 @@ export const chapter24: DialogueNode[] = [
   {
     id: 'c24-10',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '以前总觉得，停下就会沉——像船，只有一直开着，才不容易被浪打翻。\n今天……沉一下，好像也没那么可怕。',
     next: 'c24-11',
   },
@@ -187,7 +187,7 @@ export const chapter24: DialogueNode[] = [
   {
     id: 'c24-23',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '……今天没有。\n至少，坐在这儿的这一个下午，没有。',
     next: 'c24-24',
   },

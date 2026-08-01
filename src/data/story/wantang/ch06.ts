@@ -13,7 +13,7 @@ export const chapter06: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第6章】未寄出的诗\n下楼整理吧台旁的旧书脊时，一本毫不起眼的笔记本从缝隙里滑了出来，摔在我脚边。',
     next: 'c06-01',
@@ -73,7 +73,7 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-05b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……谢了。\n有些东西，等你准备好看的时候，我再给你。',
     next: 'c06-05b2',
   },
@@ -85,7 +85,7 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-05c',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '晚不晚，不是你说了算。\n……看吧。既然它自己都跳出来了。',
     next: 'c06-06',
   },
@@ -113,7 +113,7 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-10',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '后面——你上了船。\n字就写不下去了。',
     next: 'c06-11',
   },

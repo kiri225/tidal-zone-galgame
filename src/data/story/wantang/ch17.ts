@@ -34,7 +34,7 @@ export const chapter17: DialogueNode[] = [
   {
     id: 'c17-03',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '……那是我聪明。\n把话说全，风险太大——你听全了，是要负责的。',
     next: 'c17-04',
   },
@@ -62,7 +62,7 @@ export const chapter17: DialogueNode[] = [
   {
     id: 'c17-06a',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……你倒是听话。\n有时候，听话比聪明更难得——至少不会逼我把风险摊在桌上。',
     next: 'c17-07',
   },
@@ -132,7 +132,7 @@ export const chapter17: DialogueNode[] = [
   {
     id: 'c17-14',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '想起高二那年，你也总找借口。\n借口交作业迟到，借口不敢直视我，借口——走的那天，连告别都省了。',
     next: 'c17-15',
   },
@@ -162,7 +162,7 @@ export const chapter17: DialogueNode[] = [
   {
     id: 'c17-19',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '好了，喝完了。\n原则问题解决——你该满意了吧。',
     next: 'c17-20',
   },

@@ -13,7 +13,7 @@ export const chapter10: DialogueNode[] = [
     bg: 'shop-interior',
     mood: 'cold',
     sprite: null,
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第10章】答录机\n回到拾潮，屋里比往常更静。父亲留下的老式答录机，红灯正一闪一闪地亮着。',
     next: 'c10-01',

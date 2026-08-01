@@ -40,7 +40,7 @@ export const chapter37: DialogueNode[] = [
   {
     id: 'c37-04',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '你看，潮水一夜之间，把整片岸都重新洗了一遍。\n昨晚那么闹，今早却什么都不剩——除了我们。',
     next: 'c37-05',
   },
@@ -96,7 +96,7 @@ export const chapter37: DialogueNode[] = [
   {
     id: 'c37-10a',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '你问这个，才让我有点后悔。\n——开玩笑的。不后悔。一点都不。',
     next: 'c37-11',
   },
@@ -110,7 +110,7 @@ export const chapter37: DialogueNode[] = [
   {
     id: 'c37-10c',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '话说太满，小心兑现不了。\n……但姑且，先记你这个账。',
     next: 'c37-11',
   },
@@ -122,7 +122,7 @@ export const chapter37: DialogueNode[] = [
   {
     id: 'c37-12',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '你父亲以前总来捡这种东西。\n他说，玻璃碎片被海磨够了年头，就不再割手了——会变成别的东西。',
     next: 'c37-13',
   },
@@ -151,7 +151,7 @@ export const chapter37: DialogueNode[] = [
   {
     id: 'c37-15c',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '说的是海，还是我？',
     next: 'c37-15d',
   },

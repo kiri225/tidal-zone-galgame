@@ -105,7 +105,7 @@ export const chapter05: DialogueNode[] = [
   {
     id: 'c05-10',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '那时候靠近的人，多半图新鲜。\n现在店里都是灰，图新鲜的人，走不到这一步。',
     next: 'c05-11',
   },

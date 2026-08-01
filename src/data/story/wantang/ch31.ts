@@ -13,7 +13,7 @@ export const chapter31: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'dark',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第31章】蜡烛与初版\n潮声的门没锁。风把它撞开一道缝，又被我用肩膀顶回去。',
     next: 'c31-01',
@@ -44,7 +44,7 @@ export const chapter31: DialogueNode[] = [
   {
     id: 'c31-05',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '漏。窗缝那道老伤，一到台风天就犯病。\n住处更糟——屋顶像被人掀了一角。',
     next: 'c31-06',
   },
@@ -61,7 +61,7 @@ export const chapter31: DialogueNode[] = [
   {
     id: 'c31-08',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '轻点。那本民国的，脊线已经松了。\n——谢谢。',
     next: 'c31-09',
   },
@@ -100,7 +100,7 @@ export const chapter31: DialogueNode[] = [
   {
     id: 'c31-11b',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '书不会在我脆弱的时候，装作没看见。\n——这话是不是很难听？我知道。',
     next: 'c31-12',
   },
@@ -170,14 +170,14 @@ export const chapter31: DialogueNode[] = [
   {
     id: 'c31-18b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……你手比蜡烛烫。\n别撤开。就一会儿。',
     next: 'c31-19',
   },
   {
     id: 'c31-18c',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '第三天。人瘦了一圈，什么都没说，只把渔网重新补了一遍。\n那之后我就懂了——有些人报平安的方式，是继续干活。',
     next: 'c31-19',
   },

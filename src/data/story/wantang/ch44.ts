@@ -101,7 +101,7 @@ export const chapter44: DialogueNode[] = [
   {
     id: 'c44-08b',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '保持联系。\n这两个字听起来，像退潮后留在沙滩上的空壳——看着完整，里面早就空了。',
     next: 'c44-09b',
   },
@@ -118,7 +118,7 @@ export const chapter44: DialogueNode[] = [
   {
     id: 'c44-11b',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '不用解释。\n每个人都有权利选择更安全的路。我只是没想到，这次的答案，会是这个。',
     next: 'c44-12b',
   },
@@ -130,7 +130,7 @@ export const chapter44: DialogueNode[] = [
   {
     id: 'c44-13b',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '祝你在城市里，也能听见潮声。\n……路上小心。',
     next: 'ch48',
   },

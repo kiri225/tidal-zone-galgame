@@ -121,7 +121,7 @@ export const chapter45: DialogueNode[] = [
   {
     id: 'c45-10',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……好。这次算你过关。\n但下次，别让我等你补一句才算数。',
     next: 'c45-11',
   },

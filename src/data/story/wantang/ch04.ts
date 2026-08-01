@@ -44,7 +44,7 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-05',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '书不会离开我。\n人会。所以我对书，更负责一点。',
     next: 'c04-06',
   },
@@ -99,7 +99,7 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-09c',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '是啊。专门用来考验不老实的人。\n她难得顺着我的玩笑接了一句，尾音却软了。',
     next: 'c04-10',
   },
@@ -111,7 +111,7 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-11',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '那几箱是老货，进店前就有的。\n我爸——你店里那位老爷子——以前常来这翻。',
     next: 'c04-12',
   },
@@ -124,7 +124,7 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-13',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '每周三下午，雷打不动。\n他说，拾潮太吵，书店安静，适合发呆。',
     next: 'c04-14',
   },
@@ -238,7 +238,7 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-23',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '二楼今天算清干净了。\n剩下那排最里面的，我自己慢慢弄——你不用都陪着。',
     next: 'c04-24',
   },

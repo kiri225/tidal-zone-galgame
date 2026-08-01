@@ -31,7 +31,7 @@ export const chapter49: DialogueNode[] = [
   {
     id: 'c49-02',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……只是，别让我等第二次十年。\n第一次是意外，第二次，我大概真的等不起了。',
     next: 'c49-03',
   },
@@ -115,7 +115,7 @@ export const chapter49: DialogueNode[] = [
   {
     id: 'c49-11c',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '明天，还有后天，还有很多个明天。\n……别急，我们有的是时间。',
     next: 'c49-12',
   },

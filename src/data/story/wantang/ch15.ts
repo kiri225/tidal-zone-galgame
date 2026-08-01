@@ -28,7 +28,7 @@ export const chapter15: DialogueNode[] = [
   {
     id: 'c15-02',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '两天而已，没什么大不了的。\n邻镇有家老供货商，价格公道，每年都得亲自去谈一次。',
     next: 'c15-03',
   },
@@ -97,7 +97,7 @@ export const chapter15: DialogueNode[] = [
   {
     id: 'c15-10',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '不用送到这儿的，回去吧，别在这儿吹海风。',
     next: 'c15-11',
   },

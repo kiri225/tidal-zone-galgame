@@ -16,15 +16,22 @@ export const bgImages: Record<string, string> = {
   black: '',
 }
 
-/** 林晚棠表情 → 透明立绘 PNG（RGBA） */
+/** 林晚棠表情/姿态 → 透明立绘 PNG（RGBA） */
 export const wantangSprites: Record<string, string> = {
   default: '/images/char/wantang-default.png',
   soft: '/images/char/wantang-soft.png',
   tense: '/images/char/wantang-tense.png',
   blush: '/images/char/wantang-blush.png',
-  avert: '/images/char/wantang-blush.png',
+  avert: '/images/char/wantang-avert.png',
   smile: '/images/char/wantang-smile.png',
   hurt: '/images/char/wantang-hurt.png',
+  laugh: '/images/char/wantang-laugh.png',
+  surprised: '/images/char/wantang-surprised.png',
+  teary: '/images/char/wantang-teary.png',
+  cold: '/images/char/wantang-cold.png',
+  tired: '/images/char/wantang-tired.png',
+  book: '/images/char/wantang-book.png',
+  crossed: '/images/char/wantang-crossed.png',
 }
 
 export function getCharSprite(character: string, expression: string): string {

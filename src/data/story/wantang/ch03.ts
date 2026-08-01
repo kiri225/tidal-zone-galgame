@@ -92,7 +92,7 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-07c',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '明天下午三点，别迟到。\n她把没说完的话，重新码进了书架的缝隙里。',
     next: 'c03-08',
   },
@@ -110,7 +110,7 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-10',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '记得。你说——「等我」。\n她的声音忽然低了下去，像被什么东西压住。',
     next: 'c03-11',
   },
@@ -128,7 +128,7 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-13',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '久不久，看等的人怎么算法。\n她抬眼看我，目光第一次没有躲闪。「我算得很仔细。」',
     next: 'c03-14',
   },
@@ -152,14 +152,14 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-14a',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '道歉不能让账本平。\n但……谢谢你还记得欠着。',
     next: 'c03-15',
   },
   {
     id: 'c03-14b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '回来了，就先别急着走。\n这句话，我暂且当利息收下。',
     next: 'c03-15',
   },
@@ -194,7 +194,7 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-20',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'book',
     text: '这串钥匙里有一把，是你父亲以前来店里，忘在吧台上的。\n一直没舍得扔。',
     next: 'c03-21',
   },

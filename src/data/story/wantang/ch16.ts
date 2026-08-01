@@ -44,7 +44,7 @@ export const chapter16: DialogueNode[] = [
   {
     id: 'c16-05',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '……这个点了。\n谁教你「短信就行」是用来无视的？',
     next: 'c16-06',
   },
@@ -109,7 +109,7 @@ export const chapter16: DialogueNode[] = [
   {
     id: 'c16-14a',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '雨季都这样，客人少，书却照样吃灰要除潮。\n别操这个心——你又不是股东。',
     next: 'c16-15',
   },
@@ -203,7 +203,7 @@ export const chapter16: DialogueNode[] = [
   {
     id: 'c16-23b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '路过。\n潮屿的雨夜，路过的人倒是不少——真正推门的没几个。',
     next: 'c16-24',
   },

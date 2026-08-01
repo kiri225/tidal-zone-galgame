@@ -31,7 +31,7 @@ export const chapter50: DialogueNode[] = [
   {
     id: 'c50-03',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '你看，潮水退去后，岸就露出了两条路。\n三个月前你回来的时候，大概也没想到，自己会站在这样一个分岔口上。',
     next: 'c50-04',
   },

@@ -26,7 +26,7 @@ export const chapter20: DialogueNode[] = [
   {
     id: 'c20-02',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '放着就好，我明天再洗。\n你手上还有雨的凉气，别碰玻璃杯，容易滑。',
     next: 'c20-03',
   },
@@ -128,7 +128,7 @@ export const chapter20: DialogueNode[] = [
   {
     id: 'c20-14b',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '……油嘴。\n但——记下了。潮屿的账，我一笔一笔都算得很清楚，这句话，也算进去了。',
     next: 'c20-15',
   },
@@ -165,7 +165,7 @@ export const chapter20: DialogueNode[] = [
   {
     id: 'c20-19',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '……沈屿。\n谢谢你今晚，没有把「几乎」变成「已经」。',
     next: 'c20-20',
   },

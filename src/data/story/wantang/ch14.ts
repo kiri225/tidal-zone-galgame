@@ -139,7 +139,7 @@ export const chapter14: DialogueNode[] = [
     bg: 'bookstore',
     sprite: 'wantang',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '……他没告诉我，你会看到这些。\n也好。当时如果说了，你也未必会回来——那时候的你，还没准备好听这些。',
     next: 'c14-16',
   },
@@ -151,7 +151,7 @@ export const chapter14: DialogueNode[] = [
   {
     id: 'c14-17',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '你爸这个人，一辈子话都说不满，连留给你的交代，都要拐这么大一个弯。',
     next: 'c14-18',
   },

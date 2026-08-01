@@ -32,7 +32,7 @@ export const chapter12: DialogueNode[] = [
   {
     id: 'c12-03',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '你记得伞吗？高二那年，连下了三天雨。',
     next: 'c12-04',
   },
@@ -57,7 +57,7 @@ export const chapter12: DialogueNode[] = [
   {
     id: 'c12-07',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '骗子。你作文明明写得很好，老师还当范文念过。\n只是不敢写给我看。',
     next: 'c12-08',
   },
@@ -97,7 +97,7 @@ export const chapter12: DialogueNode[] = [
   {
     id: 'c12-09b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '怕就对了。\n不怕的人，走得更干脆——你没那么快走干脆，这点我倒是没看走眼。',
     next: 'c12-10',
   },

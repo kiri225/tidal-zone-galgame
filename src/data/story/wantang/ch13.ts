@@ -13,7 +13,7 @@ export const chapter13: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'book',
     cg: null,
     text: '【第13章】常客\n夜里，店里来了个熟面孔的男人，径直坐到吧台最靠里的位置，像是熟门熟路的老客。',
     next: 'c13-01',
@@ -37,7 +37,7 @@ export const chapter13: DialogueNode[] = [
   {
     id: 'c13-04',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '沈屿是帮忙的。\n不是——你想的那种。',
     next: 'c13-05',
   },
@@ -111,7 +111,7 @@ export const chapter13: DialogueNode[] = [
   {
     id: 'c13-11',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'cold',
     text: '不用了，谢谢关心。\n你的酒还有半杯，喝完早点回家，你太太该担心了。',
     next: 'c13-12',
   },
@@ -177,7 +177,7 @@ export const chapter13: DialogueNode[] = [
   {
     id: 'c13-19',
     speaker: '林晚棠',
-    expression: 'tense',
+    expression: 'crossed',
     text: '习惯了。\n刚开始也会生气，后来发现生气没用——他们说他们的，我过我的，互不耽误。',
     next: 'c13-20',
   },
@@ -212,7 +212,7 @@ export const chapter13: DialogueNode[] = [
   {
     id: 'c13-21b',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '辛苦谈不上。\n开店本来就得学会和形形色色的人打交道，这也算是……一种本事。',
     next: 'c13-22',
   },

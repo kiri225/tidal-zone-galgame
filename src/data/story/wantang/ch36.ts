@@ -96,7 +96,7 @@ export const chapter36: DialogueNode[] = [
   {
     id: 'c36-14',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '可以。\n……继续。别停。',
     next: 'c36-15',
   },
@@ -229,7 +229,7 @@ export const chapter36: DialogueNode[] = [
   {
     id: 'c36-37',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'tired',
     text: '别在天亮之前跟我说「我该走了」。\n至少今晚，让我做一次，会被留下的人。',
     next: 'c36-38',
   },

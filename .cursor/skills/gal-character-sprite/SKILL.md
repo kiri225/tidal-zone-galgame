@@ -32,21 +32,28 @@ description: >-
 | qinghe | 顾清禾 | 31 | 实验服或户外科考服、知性、青绿 |
 | zhixia | 叶知夏 | 23 | 明亮夏装、画室感、珊瑚粉点缀 |
 
-## Expression set
+## Expression / pose set
 
-每个角色尽量出齐：
+每个角色尽量出齐（表情 + 姿态差分，避免全是同姿势只换脸）：
 
 | expression | 文件后缀 | 神态 |
 |------------|----------|------|
-| default | `-default` | 平静、日常 |
-| soft | `-soft` 或复用 smile | 柔和 |
-| tense | `-tense` | 紧绷、防备 |
+| default | `-default` | 平静、日常（身份锚点） |
+| soft | `-soft` | 柔和 |
+| tense | `-tense` | 紧绷、防备（脸） |
 | blush | `-blush` | 害羞、耳红 |
-| avert | 可复用 blush | 眼神回避 |
+| avert | `-avert` | 侧目回避（头/视线转向） |
 | smile | `-smile` | 浅笑 |
 | hurt | `-hurt` | 受伤、失落 |
+| laugh | `-laugh` | 真心笑、眼弯 |
+| surprised | `-surprised` | 惊讶 |
+| teary | `-teary` | 含泪、脆弱 |
+| cold | `-cold` | 冷淡疏离 |
+| tired | `-tired` | 打烊疲态 |
+| book | `-book` | 抱书姿态 |
+| crossed | `-crossed` | 抱臂防备姿态 |
 
-映射写入 `src/data/assets.ts` 的 `{id}Sprites`。
+映射写入 `src/data/assets.ts` 的 `{id}Sprites`。姿态差分仍必须用 default 作 reference。
 
 ## Prompt recipe（生成时遵守）
 
@@ -63,15 +70,17 @@ PNG with alpha
 ## Workflow
 
 1. 读 `docs/STORY-DESIGN.md` 人物卡确认服装/气质
-2. 生成主表情 default → 再出差分（保持同一脸与服装，只改表情）
-3. 保存到 `public/images/char/`
-4. 更新 `src/data/assets.ts` + 必要时 `characters.ts` 颜色
-5. 在游戏里叠背景目检：透明区应直接透出背景层
-6. **不要**在 `CharacterSprite.vue` 上再加遮罩抠图；素材本身必须透明
+2. **先生成并锁定一张 `default` 立绘**，之后所有表情差分必须用 `reference_image_paths` 指向该 default
+3. 差分提示词必须写清：`SAME character as reference exactly` + `ONLY change expression` + 禁止改发型/服装/性别
+4. 保存到 `public/images/char/`，抠透明底（白底与纯黑棚拍底都要去）
+5. 更新 `src/data/assets.ts`
+6. 目检：六张立绘并排，脸型发型服装应一眼可辨为同一人
+7. **不要**在 `CharacterSprite.vue` 上用 CSS mask 假装抠图
 
 ## Anti-patterns
 
+- 每个表情单独无参考生成（会导致脸/发型/性别漂移）
 - 把带背景的整图当立绘
-- 用 CSS mask「假装」抠图
-- 各表情脸型不一致
+- 各表情服装不一致（围裙文字、发髻位置漂移）
 - 生成正方形头像当立绘
+- 写实照片风与日漫风混用

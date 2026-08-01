@@ -52,12 +52,26 @@ const src = computed(() => getCharSprite(props.character, props.expression))
   background: transparent;
 }
 
-.hurt {
+.hurt,
+.teary {
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55)) brightness(0.92) saturate(0.9);
 }
 
 .blush {
   filter: drop-shadow(0 24px 48px rgba(80, 30, 20, 0.35)) saturate(1.08);
+}
+
+.cold,
+.crossed {
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55)) brightness(0.94) saturate(0.85);
+}
+
+.tired {
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.55)) brightness(0.96) saturate(0.92);
+}
+
+.laugh {
+  filter: drop-shadow(0 24px 48px rgba(60, 40, 20, 0.4)) saturate(1.06);
 }
 
 @keyframes enter {

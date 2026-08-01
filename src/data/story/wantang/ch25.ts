@@ -131,7 +131,7 @@ export const chapter25: DialogueNode[] = [
   {
     id: 'c25-15',
     speaker: '林晚棠',
-    expression: 'hurt',
+    expression: 'teary',
     text: '……「这孩子嘴笨，但心不坏」。\n你父亲，比你会说话多了。',
     next: 'c25-17',
   },
@@ -149,7 +149,7 @@ export const chapter25: DialogueNode[] = [
   {
     id: 'c25-18',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'surprised',
     text: '他后来还来过几次店里，坐在角落喝茶，一坐就是一下午，也不多话。\n我一直以为他只是无聊——现在想，他大概是在替你，替一个说不出口的道歉，慢慢还债。',
     next: 'c25-19',
   },
@@ -196,7 +196,7 @@ export const chapter25: DialogueNode[] = [
   {
     id: 'c25-23b',
     speaker: '林晚棠',
-    expression: 'smile',
+    expression: 'laugh',
     text: '……你这话，倒是留了个挺大的伏笔。\n行，我等着看伏笔怎么收。',
     next: 'c25-24',
   },
