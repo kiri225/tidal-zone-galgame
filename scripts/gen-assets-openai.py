@@ -26,16 +26,26 @@ ROOT = Path(__file__).resolve().parents[1]
 CHAR_DIR = ROOT / "public" / "images" / "char"
 BG_DIR = ROOT / "public" / "images" / "bg"
 CG_DIR = ROOT / "public" / "images" / "cg"
+DEFAULT_SHEET = ROOT / "docs" / "refs" / "wantang-design-sheet-a.png"
 
 WANTANG_BASE = (
-    "Japanese anime manga style visual novel character standing sprite of Lin Wantang, "
-    "27-year-old Chinese woman, cool reserved bookstore clerk, cel-shaded, clean lineart, "
-    "NOT photorealistic. Dark hair in a loose messy low bun with soft face-framing strands, "
-    "warm amber-brown eyes, fair skin. Cream linen button shirt with sleeves rolled to elbows, "
-    "long navy apron with small gold Chinese bookstore logo on chest, wooden tag at waist, "
-    "dark brown long skirt, brown leather loafers with gold bit. Full body standing, "
+    "Japanese anime manga style visual novel character standing sprite of Lin Wantang "
+    "(林晚棠), mature bookstore clerk matching the provided character design sheet, "
+    "cel-shaded, clean lineart, NOT photorealistic. Dark brown hair in a loose messy low bun "
+    "with soft face-framing strands, warm brown eyes, elegant calm face. Cream / off-white "
+    "button blouse with sleeves rolled to elbows, long navy apron with gold text 月影書店 on "
+    "chest, wooden waist tag, dark brown long skirt, brown leather loafers. Full body standing, "
     "centered, feet near bottom, plain pure white background for cutout, no scenery, "
-    "no floor shadow blob, no watermark, no UI."
+    "no floor shadow blob, no watermark, no UI, no design sheet panels."
+)
+
+SHEET_TO_DEFAULT_PROMPT = (
+    "Using this character design sheet as the ONLY identity reference, create a single clean "
+    "full-body visual novel standing sprite of the bookstore clerk woman. Match the front "
+    "turnaround / main design exactly: face, dark messy bun, cream blouse, navy apron with "
+    "gold 月影書店 logo, wooden tag, brown long skirt, brown loafers. Calm neutral expression, "
+    "one hand lightly in apron pocket. Output ONLY the one full-body sprite on pure white "
+    "background. No text, no color palette bars, no multiple views, no other panels."
 )
 
 EXPRESSIONS: list[tuple[str, str]] = [
@@ -331,11 +341,23 @@ def main() -> None:
     parser.add_argument("--only", help="single stem, e.g. wantang-default or bg-bookstore")
     parser.add_argument("--group", choices=["char", "bg", "cg", "all"], default="all")
     parser.add_argument("--no-cutout", action="store_true")
+    parser.add_argument(
+        "--from-sheet",
+        nargs="?",
+        const=str(DEFAULT_SHEET),
+        default=None,
+        help="use character design sheet as reference for wantang-default (then diffs)",
+    )
     args = parser.parse_args()
 
     load_env()
     key, base, model = api_config()
+    sheet = Path(args.from_sheet) if args.from_sheet else None
+    if sheet and not sheet.exists():
+        raise SystemExit(f"Design sheet not found: {sheet}")
     print(f"model={model} base={base}")
+    if sheet:
+        print(f"sheet={sheet}")
 
     jobs: list[tuple[str, str, Path]] = []
 
@@ -368,18 +390,32 @@ def main() -> None:
         try:
             if kind == "char":
                 expr_prompt = dict(EXPRESSIONS)[key_name]
-                if key_name == "default" or not (CHAR_DIR / "wantang-default.png").exists():
-                    prompt = f"{WANTANG_BASE} Expression/pose: {expr_prompt}."
-                    generate(key, base, model, prompt, "1024x1536", out)
+                if key_name == "default":
+                    if sheet:
+                        edit(
+                            key,
+                            base,
+                            model,
+                            SHEET_TO_DEFAULT_PROMPT,
+                            "1024x1536",
+                            sheet,
+                            out,
+                        )
+                    else:
+                        prompt = f"{WANTANG_BASE} Expression/pose: {expr_prompt}."
+                        generate(key, base, model, prompt, "1024x1536", out)
                 else:
                     ref = CHAR_DIR / "wantang-default.png"
+                    if not ref.exists():
+                        raise RuntimeError("wantang-default.png missing; generate default first")
                     prompt = (
                         "Edit the reference visual novel standing sprite. "
-                        "Keep EXACTLY the same woman: same face, hair bun, cream shirt, "
-                        "navy apron, wooden tag, brown skirt, loafers, body proportions. "
+                        "Keep EXACTLY the same woman as the reference: same face, hair bun, "
+                        "cream blouse, navy apron with 月影書店, wooden tag, brown skirt, "
+                        "loafers, body proportions. "
                         f"ONLY change to: {expr_prompt}. "
                         "Keep plain pure white background, full body, cel-shaded anime, "
-                        "NOT photorealistic, no scenery."
+                        "NOT photorealistic, no scenery, no design sheet."
                     )
                     edit(key, base, model, prompt, "1024x1536", ref, out)
                 if not args.no_cutout:
