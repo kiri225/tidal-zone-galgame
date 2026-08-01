@@ -1,6 +1,7 @@
 # 潮间带 / Intertidal Zone
 
-成人向 galgame（Vue 3 + TypeScript + Pinia）。
+文学向视觉小说（Vue 3 + TypeScript + Pinia）。  
+父亲去世后，沈屿回潮屿卖铺；三个月潮汛里，学会「靠近」与「留下」。
 
 ## 运行
 
@@ -9,26 +10,28 @@ npm install
 npm run dev
 ```
 
+构建静态站：`npm run build`，产物在 `dist/`。
+
 ## 当前内容
 
 - 序章（共通）
-- **林晚棠线：50 章**（约 270+ 节点，好感驱动 CG / 雨夜分流 / 三结局）
+- **林晚棠线：50 章**（好感驱动 CG、雨夜分流、三结局）
 - CG 鉴赏（本地持久解锁）
-- 苏晴岚 / 顾清禾 / 叶知夏：角色卡预留（每条线亦按 ≥50 章规划）
+- 苏晴岚 / 顾清禾 / 叶知夏：角色卡预留（每条线规划 ≥50 章）
 
-章节目录见 `src/data/story/wantang/CHAPTERS.md`。重新生成剧本：`node scripts/gen-wantang.mjs`。
+章节目录见 `src/data/story/wantang/CHAPTERS.md`。
 
 ## 资源约定
 
 | 类型 | 路径 | 要求 |
 |------|------|------|
 | 背景 | `public/images/bg/` | 完整场景图 |
-| 立绘 | `public/images/char/` | **透明底 PNG（RGBA）**，不要带实景背景 |
+| 立绘 | `public/images/char/` | **透明底 PNG（RGBA）** |
 | CG | `public/images/cg/` | 全屏插画 |
 
 ## 剧本说明
 
-见 `STORY.md`。
+见 `STORY.md`。设计细节见 `docs/STORY-DESIGN.md`。
 
 ## 好感 → CG
 
