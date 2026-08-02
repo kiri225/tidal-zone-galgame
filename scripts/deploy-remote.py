@@ -63,9 +63,21 @@ def main() -> None:
     remote_tar = f"{REMOTE_DIR}/dist-upload.tgz"
     run(client, f"mkdir -p {REMOTE_DIR}")
     print(f"upload -> {remote_tar}")
+    # putfo 比单次 write 更稳，避免大包尾部损坏
     with sftp.file(remote_tar, "wb") as rf:
-        rf.write(payload)
+        rf.set_pipelined(True)
+        bio = io.BytesIO(payload)
+        while True:
+            chunk = bio.read(1024 * 1024)
+            if not chunk:
+                break
+            rf.write(chunk)
+        rf.flush()
+    remote_size = sftp.stat(remote_tar).st_size
     sftp.close()
+    if remote_size != len(payload):
+        raise RuntimeError(f"upload size mismatch: local={len(payload)} remote={remote_size}")
+    print(f"upload ok: {remote_size} bytes")
 
     # backup + replace dist
     stamp = time.strftime("%Y%m%d-%H%M%S")
@@ -74,6 +86,7 @@ def main() -> None:
         f"set -e; "
         f"cd {REMOTE_DIR}; "
         f"if [ -d dist ]; then mv dist dist.bak-{stamp}; fi; "
+        f"gzip -t dist-upload.tgz; "
         f"tar -xzf dist-upload.tgz; "
         f"rm -f dist-upload.tgz; "
         f"test -f dist/index.html; "
