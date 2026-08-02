@@ -195,6 +195,14 @@ export const chapter37: DialogueNode[] = [
   {
     id: 'c37-21',
     text: '她怔了一下，随即别过脸去看海，睫毛却抖得比海风更急。良久，她才低低地「嗯」了一声，像是把这句话，稳稳地收进了心里。',
+    next: 'c37-end-cg',
+  },
+  {
+    id: 'c37-end-cg',
+    cg: 'ch37-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n黎明潮间带的赤足。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch38',
   },
 ]

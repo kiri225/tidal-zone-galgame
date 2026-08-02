@@ -166,7 +166,7 @@ export const chapter14: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'blush',
     text: '别说得那么郑重，我耳朵受不了。\n……不过，这句谢谢，我收下了。',
-    next: 'ch15',
+    next: 'c14-end-cg',
   },
   {
     id: 'c14-14b',
@@ -205,13 +205,21 @@ export const chapter14: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'soft',
     text: '想他，是应该的。\n有什么想不通的，随时可以来店里坐坐——这儿的灯，一直亮着。',
-    next: 'ch15',
+    next: 'c14-end-cg',
   },
   {
     id: 'c14-22b',
     speaker: '林晚棠',
     expression: 'default',
     text: '……行。我等着。\n不过别憋太久，账本上的字，又不会咬人。',
+    next: 'c14-end-cg',
+  },
+  {
+    id: 'c14-end-cg',
+    cg: 'ch14-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n后仓灯下的停顿。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch15',
   },
 ]

@@ -186,6 +186,14 @@ export const chapter27: DialogueNode[] = [
   {
     id: 'c27-24',
     text: '她把杯子里最后一点酒喝完，轻轻叹了口气，那口气里没有委屈，只有一种劫后余生般的、卸下重担的松弛。',
+    next: 'c27-end-cg',
+  },
+  {
+    id: 'c27-end-cg',
+    cg: 'ch27-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n夜港灯火下的和解。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch28',
   },
 ]

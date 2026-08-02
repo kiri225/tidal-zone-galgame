@@ -214,6 +214,14 @@ export const chapter15: DialogueNode[] = [
   {
     id: 'c15-27',
     text: '电话挂断前，我听见她那边传来一声很轻的、几乎压不住的笑。这场小别，像一次短暂的退潮，退去时留下的，是比来时更清晰的痕迹——原来这间店，这座镇，早已因为一个人的存在，悄悄改变了分量。',
+    next: 'c15-end-cg',
+  },
+  {
+    id: 'c15-end-cg',
+    cg: 'ch15-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n夜港风里的并肩。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch16',
   },
 ]

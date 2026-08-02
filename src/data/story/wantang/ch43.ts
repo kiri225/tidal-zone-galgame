@@ -154,6 +154,14 @@ export const chapter43: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'soft',
     text: '走吧。站在这儿，衣服都要湿透了。\n……回去，我给你煮碗热汤。这次不收工钱。',
+    next: 'c43-end-cg',
+  },
+  {
+    id: 'c43-end-cg',
+    cg: 'ch43-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n雨夜里紧握的手。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch44',
   },
 ]

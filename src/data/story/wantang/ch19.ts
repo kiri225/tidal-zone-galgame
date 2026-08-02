@@ -217,6 +217,14 @@ export const chapter19: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'default',
     text: '……很晚了。\n你该回去了，不然明早又该找借口迟到。',
+    next: 'c19-end-cg',
+  },
+  {
+    id: 'c19-end-cg',
+    cg: 'ch19-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n冷意底下的热。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch20',
   },
 ]

@@ -181,6 +181,14 @@ export const chapter39: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'soft',
     text: '……今天，辛苦你陪我演了一整天。\n明天开始，可以不用演得那么用力了。',
+    next: 'c39-end-cg',
+  },
+  {
+    id: 'c39-end-cg',
+    cg: 'ch39-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n假装平常时多停的半秒。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch40',
   },
 ]

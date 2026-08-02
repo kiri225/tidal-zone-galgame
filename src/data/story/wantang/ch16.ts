@@ -246,6 +246,14 @@ export const chapter16: DialogueNode[] = [
   {
     id: 'c16-30',
     text: '她举杯，我们碰了一下，声音很轻，像怕惊动这间店里所有沉睡的旧书。\n酒液滑过喉间，带着黑莓与一点烟熏，后味微苦——像今晚所有还没说完的话。',
+    next: 'c16-end-cg',
+  },
+  {
+    id: 'c16-end-cg',
+    cg: 'ch16-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n卸围裙后的领口松扣。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch17',
   },
 ]

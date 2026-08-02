@@ -128,6 +128,14 @@ export const chapter45: DialogueNode[] = [
   {
     id: 'c45-11',
     text: '窗外的风铃又响了一下，这次听起来格外轻快，像是替这场迟到的坦白，敲下了一个小小的、暂时的休止符。',
+    next: 'c45-end-cg',
+  },
+  {
+    id: 'c45-end-cg',
+    cg: 'ch45-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n并肩清扫后的并肩。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch46',
   },
 ]

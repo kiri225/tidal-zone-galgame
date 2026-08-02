@@ -97,7 +97,7 @@ export const chapter35: DialogueNode[] = [
     bg: 'bookstore-close',
     sprite: null,
     text: '【CG · 雨困一夜】\n烛火早已燃尽，唯有应急灯把她的轮廓镶成一圈暖色。雨声隔绝了整个世界，只剩两个人的呼吸。\n她看着我，像看着一场终于愿意靠岸的潮水——不再试探，不再逃。',
-    next: 'ch36',
+    next: 'c35-end-cg-1',
   },
   {
     id: 'c35-lite',
@@ -122,6 +122,22 @@ export const chapter35: DialogueNode[] = [
   {
     id: 'c35-lite4',
     text: '她把脑袋埋进我颈窝，呼吸渐渐平稳下来。窗外的雨还没停，可怀里的重量，是真实而滚烫的。',
+    next: 'c35-end-cg-2',
+  },
+  {
+    id: 'c35-end-cg-1',
+    cg: 'ch35-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n雨困夜里的靠岸。这一章的潮位退下去时，她还留在岸上。',
+    next: 'ch36',
+  },
+  {
+    id: 'c35-end-cg-2',
+    cg: 'ch35-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n雨困夜里的靠岸。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch37',
   },
 ]

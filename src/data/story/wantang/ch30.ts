@@ -174,6 +174,14 @@ export const chapter30: DialogueNode[] = [
   {
     id: 'c30-26',
     text: '窗外，台风正一步步逼近它的最强时刻。而在这间被风雨围困的书店里，有什么东西，也正一点点地，被推向不可回避的靠近。',
+    next: 'c30-end-cg',
+  },
+  {
+    id: 'c30-end-cg',
+    cg: 'ch30-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n湿衣下的体温。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch31',
   },
 ]

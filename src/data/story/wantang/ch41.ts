@@ -179,6 +179,14 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-18',
     text: '我关店门时，指尖触到口袋里那把钥匙的凉意，忽然觉得，这凉意比任何一句情话都更让人安心——它是真实的、可以随身带走的重量。',
+    next: 'c41-end-cg',
+  },
+  {
+    id: 'c41-end-cg',
+    cg: 'ch41-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n钥匙递出时的耳根红。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch42',
   },
 ]

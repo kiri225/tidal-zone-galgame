@@ -91,7 +91,7 @@ export const chapter44: DialogueNode[] = [
   {
     id: 'c44-10a',
     text: '她的声音在发抖，问出这句话的瞬间，几乎把所有的伪装都撕开了一角——这大概是她这辈子问过最没有退路的一句话。',
-    next: 'ch45',
+    next: 'c44-end-cg-1',
   },
   {
     id: 'c44-07b',
@@ -132,6 +132,22 @@ export const chapter44: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'book',
     text: '祝你在城市里，也能听见潮声。\n……路上小心。',
+    next: 'c44-end-cg-2',
+  },
+  {
+    id: 'c44-end-cg-1',
+    cg: 'ch44-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n热汤上的答案。这一章的潮位退下去时，她还留在岸上。',
+    next: 'ch45',
+  },
+  {
+    id: 'c44-end-cg-2',
+    cg: 'ch44-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n热汤上的答案。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch48',
   },
 ]

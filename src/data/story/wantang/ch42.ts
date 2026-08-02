@@ -132,6 +132,14 @@ export const chapter42: DialogueNode[] = [
   {
     id: 'c42-17',
     text: '我走到门口，抬头望向街对面——晚棠已经不在原地了。她大概猜到，接下来这场对话，该由我自己去找她，把答案亲口说完。',
+    next: 'c42-end-cg',
+  },
+  {
+    id: 'c42-end-cg',
+    cg: 'ch42-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n铺子灯光里的去留。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch43',
   },
 ]

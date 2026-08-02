@@ -56,7 +56,7 @@ export const chapter46: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'default',
     text: '留下也好，先把日子过明白，别急着想那么远。\n招牌的事，不急——急的话，倒显得不真诚了。',
-    next: 'ch47',
+    next: 'c46-end-cg',
   },
   {
     id: 'c46-05',
@@ -117,13 +117,21 @@ export const chapter46: DialogueNode[] = [
   {
     id: 'c46-11a',
     text: '她把那张草图小心折好，收进围裙口袋，动作郑重得像在收好一份即将生效的契约。',
-    next: 'ch47',
+    next: 'c46-end-cg',
   },
   {
     id: 'c46-09b',
     speaker: '林晚棠',
     expression: 'blush',
     text: '……学会抓重点了。\n行，那名字先欠着，反正你也跑不掉了。',
+    next: 'c46-end-cg',
+  },
+  {
+    id: 'c46-end-cg',
+    cg: 'ch46-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n笑意藏不住的侧脸。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch47',
   },
 ]

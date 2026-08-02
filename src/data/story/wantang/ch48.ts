@@ -133,6 +133,14 @@ export const chapter48: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'blush',
     text: '……那就别让我，又白白等了一次。',
+    next: 'c48-end-cg',
+  },
+  {
+    id: 'c48-end-cg',
+    cg: 'ch48-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n账本合上后的靠近。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch49',
   },
 ]

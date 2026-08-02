@@ -190,6 +190,14 @@ export const chapter32: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'avert',
     text: '……嘴真甜，什么时候学的。\n别数。\n被你数着，更乱。',
+    next: 'c32-end-cg',
+  },
+  {
+    id: 'c32-end-cg',
+    cg: 'ch32-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n外套垫着的那侧地板。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch33',
   },
 ]

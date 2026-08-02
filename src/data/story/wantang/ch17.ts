@@ -227,6 +227,14 @@ export const chapter17: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'avert',
     text: '对了……你还记得高二那年，教学楼后面那棵榕树吗？',
+    next: 'c17-end-cg',
+  },
+  {
+    id: 'c17-end-cg',
+    cg: 'ch17-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n旧回忆贴上现下的体温。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch18',
   },
 ]

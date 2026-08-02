@@ -171,6 +171,14 @@ export const chapter26: DialogueNode[] = [
   {
     id: 'c26-25',
     text: '我在灯塔基座上坐了很久，直到夜色彻底吞没海面。手机始终没有震动，可我知道，有些和解，急不得，得等潮水自己转向。',
+    next: 'c26-end-cg',
+  },
+  {
+    id: 'c26-end-cg',
+    cg: 'ch26-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n书架后未说完的气。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch27',
   },
 ]

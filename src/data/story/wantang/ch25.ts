@@ -208,6 +208,14 @@ export const chapter25: DialogueNode[] = [
   {
     id: 'c25-25',
     text: '临走前，她把手里那杯早就化了冰的饮料一饮而尽，笑着说了句「清仓也算是一种收拾心情」，便转身消失在渐暗的旧街尽头。',
+    next: 'c25-end-cg',
+  },
+  {
+    id: 'c25-end-cg',
+    cg: 'ch25-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n明信片边角的指尖。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch26',
   },
 ]

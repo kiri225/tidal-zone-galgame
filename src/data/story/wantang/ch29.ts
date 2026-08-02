@@ -164,6 +164,14 @@ export const chapter29: DialogueNode[] = [
   {
     id: 'c29-20',
     text: '手机屏幕忽然亮起，震动声在空旷的店里显得格外突兀。我几乎是立刻抓起手机——是晚棠。',
+    next: 'c29-end-cg',
+  },
+  {
+    id: 'c29-end-cg',
+    cg: 'ch29-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n雨巷尽头的回头。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch30',
   },
 ]

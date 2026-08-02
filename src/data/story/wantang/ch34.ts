@@ -127,7 +127,7 @@ export const chapter34: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'blush',
     text: '……那今晚，别再让我一个人数雷声了。',
-    next: 'ch35',
+    next: 'c34-end-cg-1',
   },
   {
     id: 'c34-11b',
@@ -172,6 +172,22 @@ export const chapter34: DialogueNode[] = [
   {
     id: 'c34-17b',
     text: '窗外雨声渐渐软下来，两人的呼吸在黑暗里同频。天亮之后，还有很多话，可以慢慢说。',
+    next: 'c34-end-cg-2',
+  },
+  {
+    id: 'c34-end-cg-1',
+    cg: 'ch34-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n吻住之前的停顿。这一章的潮位退下去时，她还留在岸上。',
+    next: 'ch35',
+  },
+  {
+    id: 'c34-end-cg-2',
+    cg: 'ch34-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n吻住之前的停顿。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch37',
   },
 ]

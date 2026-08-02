@@ -197,6 +197,14 @@ export const chapter20: DialogueNode[] = [
   {
     id: 'c20-22',
     text: '路灯把我的影子拉得很长，一路铺到拾潮的门口。我站在门前回头望了一眼——潮声那扇窗还亮着，像一枚固执的、不肯熄灭的坐标。',
+    next: 'c20-end-cg',
+  },
+  {
+    id: 'c20-end-cg',
+    cg: 'ch20-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n几乎吻上的那一秒余温。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch21',
   },
 ]

@@ -181,6 +181,14 @@ export const chapter38: DialogueNode[] = [
   {
     id: 'c38-18',
     text: '我们并肩往回走，脚印一路留在退潮后的湿沙上，很快又会被下一次涨潮抹去——可这一次，我不再害怕这种消失。',
+    next: 'c38-end-cg',
+  },
+  {
+    id: 'c38-end-cg',
+    cg: 'ch38-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n礁石上并肩的影子。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch39',
   },
 ]

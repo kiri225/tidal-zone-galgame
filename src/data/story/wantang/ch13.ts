@@ -225,6 +225,14 @@ export const chapter13: DialogueNode[] = [
     id: 'c13-23',
     speaker: '林晚棠',
     text: '好了，今天就到这儿。你也早点回去——明天还得帮我盘账本呢。',
+    next: 'c13-end-cg',
+  },
+  {
+    id: 'c13-end-cg',
+    cg: 'ch13-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n酒香里未拆穿的护短。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch14',
   },
 ]

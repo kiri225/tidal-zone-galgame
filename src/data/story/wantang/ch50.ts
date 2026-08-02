@@ -86,6 +86,14 @@ export const chapter50: DialogueNode[] = [
   {
     id: 'c50-08',
     text: '潮水还会再涨，也还会再退——可有些东西，已经不会再随着潮汐，被冲刷得毫无痕迹。',
+    next: 'c50-end-cg',
+  },
+  {
+    id: 'c50-end-cg',
+    cg: 'ch50-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n潮间带上十指相扣。这一章的潮位退下去时，她还留在岸上。',
     next: '__ending__',
   },
 ]

@@ -158,6 +158,14 @@ export const chapter40: DialogueNode[] = [
   {
     id: 'c40-14',
     text: '她没有说话，只是把手悄悄伸过来，勾住我的小指——一个很小的、几乎不会被路人注意到的动作，却比任何情话都更像一句承诺。',
+    next: 'c40-end-cg',
+  },
+  {
+    id: 'c40-end-cg',
+    cg: 'ch40-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n擦杯指节泛白的紧张。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch41',
   },
 ]

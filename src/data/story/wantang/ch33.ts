@@ -201,6 +201,14 @@ export const chapter33: DialogueNode[] = [
   {
     id: 'c33-20',
     text: '应急灯的光很白，却把她此刻的样子照得格外真实——不是吧台后那个滴水不漏的老板娘，是一个终于卸下十年重量的、会脆弱的人。',
+    next: 'c33-end-cg',
+  },
+  {
+    id: 'c33-end-cg',
+    cg: 'ch33-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n诗集脊背上的指腹。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch34',
   },
 ]

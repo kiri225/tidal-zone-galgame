@@ -230,6 +230,14 @@ export const chapter18: DialogueNode[] = [
   {
     id: 'c18-27',
     text: '最后一页夹着一张空白的信纸，边缘已经泛黄，却始终没有落笔——像一句准备了十年、终究没找到开头的话。',
+    next: 'c18-end-cg',
+  },
+  {
+    id: 'c18-end-cg',
+    cg: 'ch18-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n图书馆闭馆铃后的近。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch19',
   },
 ]

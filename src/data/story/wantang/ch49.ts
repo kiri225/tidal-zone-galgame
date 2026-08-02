@@ -122,6 +122,14 @@ export const chapter49: DialogueNode[] = [
   {
     id: 'c49-12',
     text: '这句话落地后，整个夏天的潮汐仿佛都为此停了一拍——接下来要发生的，是由无数个选择结成的、真正属于两个人的岸。',
+    next: 'c49-end-cg',
+  },
+  {
+    id: 'c49-end-cg',
+    cg: 'ch49-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n真笑落下的那一下。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch50',
   },
 ]

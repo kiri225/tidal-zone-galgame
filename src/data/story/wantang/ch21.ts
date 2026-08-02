@@ -177,7 +177,7 @@ export const chapter21: DialogueNode[] = [
     bg: 'bookstore-close',
     sprite: null,
     text: '【CG · 关店夜话】\n吧台灯只照亮半张脸，红酒早换成了大麦茶，可空气里的暧昧丝毫未减。她的目光第一次没有躲开——这一次，潮水选择停在岸边，不再试探，只是停留。\n她说起父亲走后的第一个冬天，说起自己曾经绝望到想把「潮声」的招牌拆下来。声音很轻，像怕惊动这来之不易的坦诚。我伸手，轻轻覆上她放在吧台上的手，她没有躲。',
-    next: 'ch22',
+    next: 'c21-end-cg',
   },
   {
     id: 'c21-skip',
@@ -185,6 +185,14 @@ export const chapter21: DialogueNode[] = [
     sprite: 'wantang',
     expression: 'avert',
     text: '她张了张嘴，最终却只是笑了笑，把没说完的话重新咽回去，转身去关了那盏顶灯。\n「灯灭前该说的话——留到下次潮位更满的时候吧。」\n有些夜话，需要更深的信任才能开口。',
+    next: 'c21-end-cg',
+  },
+  {
+    id: 'c21-end-cg',
+    cg: 'ch21-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n关店夜话的红酒气。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch22',
   },
 ]

@@ -168,6 +168,14 @@ export const chapter22: DialogueNode[] = [
     bg: 'black',
     mood: 'dark',
     text: '手机屏幕再次亮起，是她凌晨发来的一条消息，很短：「市集缺人手，有空来。」\n没有寒暄，没有多余的话——却比任何情话都更像一句「明天，我还在」。',
+    next: 'c22-end-cg',
+  },
+  {
+    id: 'c22-end-cg',
+    cg: 'ch22-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n梦里追上去的雨。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch23',
   },
 ]

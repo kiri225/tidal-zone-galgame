@@ -217,6 +217,14 @@ export const chapter23: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'laugh',
     text: '……还行。\n比我想象中不像个只会敲键盘的外行——今天算你转正了。',
+    next: 'c23-end-cg',
+  },
+  {
+    id: 'c23-end-cg',
+    cg: 'ch23-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n市集晨光里的并肩。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch24',
   },
 ]

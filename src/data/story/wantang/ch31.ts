@@ -232,6 +232,14 @@ export const chapter31: DialogueNode[] = [
     speaker: '林晚棠',
     expression: 'soft',
     text: '……嘴硬。\n二楼漏雨，住处更糟。今晚，只能挤一挤了。',
+    next: 'c31-end-cg',
+  },
+  {
+    id: 'c31-end-cg',
+    cg: 'ch31-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n地毯上膝碰膝的距离。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch32',
   },
 ]

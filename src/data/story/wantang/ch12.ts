@@ -224,6 +224,14 @@ export const chapter12: DialogueNode[] = [
   {
     id: 'c12-23',
     text: '「只要你人还在潮屿」这句话，被她说得很轻，轻得像是怕自己听见，又忍不住想说出口。',
+    next: 'c12-end-cg',
+  },
+  {
+    id: 'c12-end-cg',
+    cg: 'ch12-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n伞骨下交叠的影子。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch13',
   },
 ]

@@ -75,7 +75,7 @@ export const chapter11: DialogueNode[] = [
     id: 'c11-06b',
     expression: 'avert',
     text: '她点点头，重新低下头擦杯子，没有再劝。灯光在雨里缩成一小团，像随时会被风雨掐灭的一点星火。',
-    next: 'ch12',
+    next: 'c11-end-cg',
   },
   {
     id: 'c11-07',
@@ -219,6 +219,14 @@ export const chapter11: DialogueNode[] = [
   {
     id: 'c11-23',
     text: '她把相册合上，重新收进吧台底下的抽屉，动作轻柔，像是收好了一段刚刚被翻出来、又重新封存的时光。',
+    next: 'c11-end-cg',
+  },
+  {
+    id: 'c11-end-cg',
+    cg: 'ch11-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n雨灯下的湿意靠近。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch12',
   },
 ]

@@ -84,7 +84,7 @@ export const chapter47: DialogueNode[] = [
   {
     id: 'c47-08a',
     text: '我给晚棠发了一条短信，只有四个字：「不卖了。」\n发送键按下的瞬间，感觉比签下任何合同都更像一场郑重的仪式。',
-    next: 'ch48',
+    next: 'c47-end-cg',
   },
   {
     id: 'c47-05b',
@@ -105,6 +105,14 @@ export const chapter47: DialogueNode[] = [
     id: 'c47-08b',
     speaker: '沈屿',
     text: '刚才那句「知道了」，改一下——铺子不卖了。这是最终答复。',
+    next: 'c47-end-cg',
+  },
+  {
+    id: 'c47-end-cg',
+    cg: 'ch47-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n店内重逢的暖。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch48',
   },
 ]

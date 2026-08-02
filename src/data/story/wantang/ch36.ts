@@ -247,6 +247,14 @@ export const chapter36: DialogueNode[] = [
   {
     id: 'c36-40',
     text: '窗外的雨渐渐软了下来，暴雨的中心已经压过了小镇。两人相拥而眠，呼吸同频，像两片终于一起靠岸的潮水，不再需要退回各自的海。',
+    next: 'c36-end-cg',
+  },
+  {
+    id: 'c36-end-cg',
+    cg: 'ch36-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n潮汐贴上皮肤的岸。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch37',
   },
 ]

@@ -200,6 +200,14 @@ export const chapter24: DialogueNode[] = [
   {
     id: 'c24-25',
     text: '我们没再多说什么，只是并肩坐着，看远处的渔船一艘接一艘归港，像看一场缓慢却确定会结束的仪式。',
+    next: 'c24-end-cg',
+  },
+  {
+    id: 'c24-end-cg',
+    cg: 'ch24-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n防波堤上放慢的脚步。这一章的潮位退下去时，她还留在岸上。',
     next: 'ch25',
   },
 ]
