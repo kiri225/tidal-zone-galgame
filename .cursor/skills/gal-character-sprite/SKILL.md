@@ -72,7 +72,17 @@ description: >-
 | blouseblush | `-blouseblush` | 卸围裙 · 害羞 |
 
 场景建议：店内日常用 apron/动作差分；外出/市集/海边用 cardigan*；房间用 casual*；打烊亲密用 blouse*。  
-映射写入 `src/data/assets.ts`。绿幕原稿可放 `public/images/char/green/`，扣好后覆盖 `char/`。参考稿：`docs/refs/wantang-design-sheet-b.png`。
+映射写入 `src/data/assets.ts`。参考稿：`docs/refs/wantang-design-sheet-b.png`。
+
+绿幕原稿分批目录（勿直接给游戏读；扣好后覆盖 `public/images/char/`）：
+
+| 目录 | 批次 |
+|------|------|
+| `public/images/char/green/batch-01-expressions/` | 表情 + book/crossed |
+| `public/images/char/green/batch-02-actions/` | 动作姿态 |
+| `public/images/char/green/batch-03-outfits/` | 换装 |
+
+详见 `public/images/char/green/README.md`。新绿幕请开 `batch-04-…`，不要堆回扁平 `green/`。
 
 ## Prompt recipe（生成时遵守）
 
