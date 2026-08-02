@@ -284,7 +284,7 @@ def gen_one(ch: int, key: str, base: str, model: str, force: bool) -> Path:
         {
             "model": model,
             "prompt": prompt,
-            "size": "1024x1024",
+            "size": "1536x1024",
             "n": 1,
         }
     ).encode()
