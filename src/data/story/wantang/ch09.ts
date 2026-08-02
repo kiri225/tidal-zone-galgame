@@ -59,13 +59,13 @@ export const chapter09: DialogueNode[] = [
       {
         text: '「一起去码头吃粥。」',
         next: 'c09-07a',
-        affection: 2,
+        affection: 10,
         setFlag: 'dinner',
       },
       {
         text: '「想吃你煮的。」',
         next: 'c09-07b',
-        affection: 3,
+        affection: 15,
         setFlag: 'dinner',
       },
       {
@@ -77,7 +77,7 @@ export const chapter09: DialogueNode[] = [
   },
   {
     id: 'c09-07a',
-    bg: 'port-night',
+    bg: 'port-dusk',
     mood: 'warm',
     expression: 'laugh',
     text: '码头的海鲜粥摊支在几盏昏黄的灯下，热气腾腾。粥很烫，晚棠吹了又吹，眼角被热气逼出一点湿意。',
@@ -146,13 +146,13 @@ export const chapter09: DialogueNode[] = [
       {
         text: '「以后我看着。」',
         next: 'c09-13a',
-        affection: 3,
+        affection: 15,
         setFlag: 'promise_company',
       },
       {
         text: '「那今天，好好吃一顿。」',
         next: 'c09-13b',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

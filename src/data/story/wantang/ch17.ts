@@ -49,12 +49,12 @@ export const chapter17: DialogueNode[] = [
       {
         text: '安静陪她喝完这一杯',
         next: 'c17-06a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '「那今晚，想说完哪一句？」——直接问',
         next: 'c17-06b',
-        affection: 3,
+        affection: 15,
         setFlag: 'ask_finish',
       },
     ],
@@ -102,13 +102,13 @@ export const chapter17: DialogueNode[] = [
       {
         text: '「那我们能不能，今晚少收回一点？」——轻轻推一把',
         next: 'c17-12a',
-        affection: 2,
+        affection: 10,
         setFlag: 'push_honesty',
       },
       {
         text: '不追问，只是把她的杯子续满',
         next: 'c17-12b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -195,13 +195,13 @@ export const chapter17: DialogueNode[] = [
       {
         text: '把外套脱下搭在她肩上',
         next: 'c17-23b',
-        affection: 2,
+        affection: 10,
         setFlag: 'coat_on_shoulder',
       },
       {
         text: '只是安静地看着她放松下来',
         next: 'c17-23c',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

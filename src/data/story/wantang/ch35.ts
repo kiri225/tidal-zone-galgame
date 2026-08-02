@@ -3,7 +3,7 @@ import type { DialogueNode } from '../../../engine/types'
 /**
  * 第35章 · 雨困一夜（小说级密度）
  * 入口：ch34（intimate_night）→ ch35…
- * 分支：!intimate_night → 直接 ch37；intimate_night 且 affectionBranch>=10 → CG rainnight → ch36；否则 lite → ch37
+ * 分支：!intimate_night → 直接 ch37；intimate_night 且 affectionBranch≥50% → CG rainnight → ch36；否则 lite → ch37
  */
 export const chapter35: DialogueNode[] = [
   {
@@ -88,7 +88,7 @@ export const chapter35: DialogueNode[] = [
   },
   {
     id: 'c35-branch',
-    affectionBranch: { threshold: 10, whenMet: 'c35-cg', whenNot: 'c35-lite' },
+    affectionBranch: { threshold: 50, whenMet: 'c35-cg', whenNot: 'c35-lite' },
   },
   {
     id: 'c35-cg',

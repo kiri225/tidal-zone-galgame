@@ -1,4 +1,5 @@
 /** CG 图鉴：好感达到阈值解锁，剧情中可全屏展示 */
+import { AffThreshold } from './affection'
 import { ASSET_VER } from './assets'
 
 function cgAsset(path: string): string {
@@ -9,7 +10,7 @@ export interface CgDef {
   id: string
   title: string
   subtitle: string
-  /** 解锁所需晚棠好感 */
+  /** 解锁所需晚棠好感（0–100） */
   affectionRequired: number
   image: string
   /** 剧情节点 id（可选，用于跳转回忆） */
@@ -21,7 +22,7 @@ export const cgCatalog: CgDef[] = [
     id: 'reunion',
     title: '潮声重逢',
     subtitle: '十年后的第一盏灯',
-    affectionRequired: 3,
+    affectionRequired: AffThreshold.reunion,
     image: cgAsset('/images/cg/cg-reunion.png'),
     storyHint: '搬书的黄昏',
   },
@@ -29,7 +30,7 @@ export const cgCatalog: CgDef[] = [
     id: 'poem',
     title: '未寄出的诗',
     subtitle: '退潮时，岸会记得谁曾停留',
-    affectionRequired: 4,
+    affectionRequired: AffThreshold.poem,
     image: cgAsset('/images/cg/cg-poem.png'),
     storyHint: '未寄出的诗',
   },
@@ -37,7 +38,7 @@ export const cgCatalog: CgDef[] = [
     id: 'umbrella',
     title: '旧伞',
     subtitle: '雨停之后，它还认得回家的路',
-    affectionRequired: 5,
+    affectionRequired: AffThreshold.umbrella,
     image: cgAsset('/images/cg/cg-umbrella.png'),
     storyHint: '旧伞',
   },
@@ -45,7 +46,7 @@ export const cgCatalog: CgDef[] = [
     id: 'nighttalk',
     title: '关店夜话',
     subtitle: '红酒与未说完的话',
-    affectionRequired: 6,
+    affectionRequired: AffThreshold.nighttalk,
     image: cgAsset('/images/cg/cg-nighttalk.png'),
     storyHint: '打烊后的吧台',
   },
@@ -53,7 +54,7 @@ export const cgCatalog: CgDef[] = [
     id: 'market',
     title: '市集早晨',
     subtitle: '人来人往里，并肩的片刻',
-    affectionRequired: 7,
+    affectionRequired: AffThreshold.market,
     image: cgAsset('/images/cg/cg-market.png'),
     storyHint: '市集早晨',
   },
@@ -61,7 +62,7 @@ export const cgCatalog: CgDef[] = [
     id: 'almostkiss',
     title: '几乎吻上',
     subtitle: '停在「几乎」的那一秒',
-    affectionRequired: 8,
+    affectionRequired: AffThreshold.almostkiss,
     image: cgAsset('/images/cg/cg-almostkiss.png'),
     storyHint: '几乎吻上',
   },
@@ -69,7 +70,7 @@ export const cgCatalog: CgDef[] = [
     id: 'reconcile',
     title: '和解的盐',
     subtitle: '薄冰底下，水一直是热的',
-    affectionRequired: 9,
+    affectionRequired: AffThreshold.reconcile,
     image: cgAsset('/images/cg/cg-reconcile.png'),
     storyHint: '和解的盐',
   },
@@ -77,7 +78,7 @@ export const cgCatalog: CgDef[] = [
     id: 'rainnight',
     title: '雨困一夜',
     subtitle: '潮汐终于靠岸',
-    affectionRequired: 10,
+    affectionRequired: AffThreshold.rainnight,
     image: cgAsset('/images/cg/cg-rainnight.png'),
     storyHint: '台风夜里',
   },
@@ -85,7 +86,7 @@ export const cgCatalog: CgDef[] = [
     id: 'intertidal',
     title: '潮间带',
     subtitle: '涨潮时相爱，退潮时也不走开',
-    affectionRequired: 14,
+    affectionRequired: AffThreshold.intertidal,
     image: cgAsset('/images/cg/cg-intertidal.png'),
     storyHint: 'True End',
   },

@@ -51,12 +51,12 @@ export const chapter49: DialogueNode[] = [
       {
         text: '先握住她转着杯子的手，让她安心，再开口回答',
         next: 'c49-05',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '直视着她的眼睛，郑重地一字一句说出承诺',
         next: 'c49-05',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

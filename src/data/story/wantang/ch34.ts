@@ -83,13 +83,13 @@ export const chapter34: DialogueNode[] = [
       {
         text: '回吻，把她整个人拥进怀里——不再犹豫',
         next: 'c34-11a',
-        affection: 2,
+        affection: 10,
         setFlag: 'intimate_night',
       },
       {
         text: '「怕你后悔。」——先停住，把决定权留给明天的她',
         next: 'c34-11b',
-        affection: 1,
+        affection: 5,
         setFlag: 'intimate_delay',
       },
     ],

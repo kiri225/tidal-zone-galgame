@@ -4,7 +4,7 @@ import type { DialogueNode } from '../../../engine/types'
  * 第8章 · 潮声重逢（小说级密度）
  * 入口：← ch07
  * 出口：→ ch09
- * CG 门槛：affection >= 3 → 解锁 CG「潮声重逢」
+ * CG 门槛：affection >= 15% → 解锁 CG「潮声重逢」
  */
 export const chapter08: DialogueNode[] = [
   {
@@ -66,7 +66,7 @@ export const chapter08: DialogueNode[] = [
   },
   {
     id: 'c08-09',
-    affectionBranch: { threshold: 3, whenMet: 'c08-cg', whenNot: 'c08-skip' },
+    affectionBranch: { threshold: 15, whenMet: 'c08-cg', whenNot: 'c08-skip' },
   },
   {
     id: 'c08-cg',
@@ -120,7 +120,7 @@ export const chapter08: DialogueNode[] = [
       {
         text: '「以后锁店，我陪你走一段。」',
         next: 'c08-15a',
-        affection: 2,
+        affection: 10,
         setFlag: 'offer_walk_home',
       },
       {
@@ -195,12 +195,12 @@ export const chapter08: DialogueNode[] = [
       {
         text: '「原来你是个念旧的人。」',
         next: 'c08-24a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '不说破，只是安静走在她身边',
         next: 'c08-24b',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

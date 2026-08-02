@@ -71,12 +71,12 @@ export const chapter28: DialogueNode[] = [
       {
         text: '「对不起，让你算了这么久的账。」——认真致歉',
         next: 'c28-10a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '「那这一栏，现在可以划掉『未知数』了。」——温柔而坚定地回应',
         next: 'c28-10b',
-        affection: 3,
+        affection: 15,
         setFlag: 'clear_unknown',
       },
     ],
@@ -166,13 +166,13 @@ export const chapter28: DialogueNode[] = [
       {
         text: '留下，睡沙发',
         next: 'c28-23a',
-        affection: 2,
+        affection: 10,
         setFlag: 'sleepover_sofa',
       },
       {
         text: '坚持回去，但答应到家后发短信报平安',
         next: 'c28-23b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

@@ -59,17 +59,17 @@ export const chapter39: DialogueNode[] = [
       {
         text: '「误会什么？」——故意装傻，逼她把话说完',
         next: 'c39-05a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '收敛表情，专心帮她把书架理齐',
         next: 'c39-05b',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '凑近一点，压低声音：「那要不要让他们误会对？」',
         next: 'c39-05c',
-        affection: 3,
+        affection: 15,
       },
     ],
   },

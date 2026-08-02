@@ -52,12 +52,12 @@ export const chapter50: DialogueNode[] = [
       {
         text: '「潮屿，就是我要留下的岸。」——说出最终的心意',
         next: 'c50-06',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '什么都不说，只是把她的手握得更紧',
         next: 'c50-06',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

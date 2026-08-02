@@ -50,7 +50,7 @@ export const chapter45: DialogueNode[] = [
       {
         text: '「为你。也顺便为铺子。」——坦白心意，把她放在第一位',
         next: 'c45-05a',
-        affection: 2,
+        affection: 10,
         setFlag: 'confess',
       },
       {

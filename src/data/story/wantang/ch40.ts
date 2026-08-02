@@ -61,7 +61,7 @@ export const chapter40: DialogueNode[] = [
       {
         text: '替她挡下这个话题：「还没定，急什么。」',
         next: 'c40-08a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '沉默，让她自己应付——尊重她掌控节奏的方式',
@@ -71,7 +71,7 @@ export const chapter40: DialogueNode[] = [
       {
         text: '直接坦白：「我留下了，铺子不卖了。」——当众说清楚',
         next: 'c40-08c',
-        affection: 3,
+        affection: 15,
       },
     ],
   },

@@ -92,13 +92,13 @@ export const chapter27: DialogueNode[] = [
       {
         text: '「那就重新涨潮吧。」——顺着她的比喻回应',
         next: 'c27-14a',
-        affection: 3,
+        affection: 15,
         setFlag: 'reconcile',
       },
       {
         text: '「我只是……不想让你一个人冷着。」——更直白的心疼',
         next: 'c27-14b',
-        affection: 2,
+        affection: 10,
         setFlag: 'reconcile',
       },
     ],
@@ -122,7 +122,7 @@ export const chapter27: DialogueNode[] = [
   },
   {
     id: 'c27-15b',
-    affectionBranch: { threshold: 9, whenMet: 'c27-cg', whenNot: 'c27-16' },
+    affectionBranch: { threshold: 45, whenMet: 'c27-cg', whenNot: 'c27-16' },
   },
   {
     id: 'c27-cg',

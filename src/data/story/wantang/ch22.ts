@@ -62,7 +62,7 @@ export const chapter22: DialogueNode[] = [
       {
         text: '发一条「到家了」——朴素的报平安',
         next: 'c22-07a',
-        affection: 1,
+        affection: 5,
         setFlag: 'sms_safe',
       },
       {

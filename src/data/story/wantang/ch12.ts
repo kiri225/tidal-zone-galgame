@@ -72,13 +72,13 @@ export const chapter12: DialogueNode[] = [
       {
         text: '「现在……想补上。」',
         next: 'c12-09a',
-        affection: 3,
+        affection: 15,
         setFlag: 'want_write',
       },
       {
         text: '「那时候什么都怕。」——坦白当年的懦弱',
         next: 'c12-09b',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '笑着岔开话题',
@@ -139,7 +139,7 @@ export const chapter12: DialogueNode[] = [
   },
   {
     id: 'c12-14b',
-    affectionBranch: { threshold: 5, whenMet: 'c12-cg', whenNot: 'c12-15' },
+    affectionBranch: { threshold: 25, whenMet: 'c12-cg', whenNot: 'c12-15' },
   },
   {
     id: 'c12-cg',
@@ -159,13 +159,13 @@ export const chapter12: DialogueNode[] = [
       {
         text: '「有些东西，认路是因为有人一直等它回来。」',
         next: 'c12-15a',
-        affection: 3,
+        affection: 15,
         setFlag: 'metaphor_understood',
       },
       {
         text: '只是笑笑，不接这个话茬',
         next: 'c12-15b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

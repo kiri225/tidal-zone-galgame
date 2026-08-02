@@ -53,18 +53,18 @@ export const chapter43: DialogueNode[] = [
       {
         text: '「还没。我让他们下周再来——先给自己留个缓冲。」——如实说明',
         next: 'c43-06a',
-        affection: 2,
+        affection: 10,
         setFlag: 'delay_sign',
       },
       {
         text: '「……几乎要签了。」——先吊着她，想看她的反应',
         next: 'c43-06b',
-        affection: -1,
+        affection: -5,
       },
       {
         text: '「没签。而且我已经知道，自己不会签了。」——直接给出确切态度',
         next: 'c43-06c',
-        affection: 3,
+        affection: 15,
         setFlag: 'delay_sign',
       },
     ],

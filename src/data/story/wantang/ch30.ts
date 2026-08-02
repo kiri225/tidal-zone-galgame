@@ -55,13 +55,13 @@ export const chapter30: DialogueNode[] = [
       {
         text: '立刻出门，冲进狂风暴雨里',
         next: 'c30-08a',
-        affection: 2,
+        affection: 10,
         setFlag: 'run_to_her',
       },
       {
         text: '先回一条「马上到」，再带上手电筒与干粮出发',
         next: 'c30-08b',
-        affection: 3,
+        affection: 15,
         setFlag: 'run_to_her',
       },
     ],

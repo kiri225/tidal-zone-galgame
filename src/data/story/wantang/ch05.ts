@@ -55,12 +55,12 @@ export const chapter05: DialogueNode[] = [
       {
         text: '「你变了，又好像没变。」',
         next: 'c05-06b',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '老实承认：「看你。」',
         next: 'c05-06c',
-        affection: 3,
+        affection: 15,
         setFlag: 'admit_gaze',
       },
     ],
@@ -120,13 +120,13 @@ export const chapter05: DialogueNode[] = [
       {
         text: '「那我走到这一步了，算不算数？」',
         next: 'c05-12a',
-        affection: 3,
+        affection: 15,
         setFlag: 'count_close',
       },
       {
         text: '不回答，只是继续帮她清点',
         next: 'c05-12b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -169,12 +169,12 @@ export const chapter05: DialogueNode[] = [
       {
         text: '若无其事地把书抽出来，继续核对',
         next: 'c05-17a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '手停在原处，抬头看她',
         next: 'c05-17b',
-        affection: 3,
+        affection: 15,
         setFlag: 'hold_gaze',
       },
     ],

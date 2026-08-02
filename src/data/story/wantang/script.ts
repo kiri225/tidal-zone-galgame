@@ -363,7 +363,7 @@ export const wantangScript: DialogueNode[] = [
   },
   {
     id: "c08a",
-    affectionBranch: {"threshold":3,"whenMet":"c08-cg","whenNot":"c08-skip"},
+    affectionBranch: {"threshold": 15,"whenMet":"c08-cg","whenNot":"c08-skip"},
   },
   {
     id: "c08-cg",
@@ -910,7 +910,7 @@ export const wantangScript: DialogueNode[] = [
   },
   {
     id: "c21a",
-    affectionBranch: {"threshold":6,"whenMet":"c21-cg","whenNot":"c21-skip"},
+    affectionBranch: {"threshold": 30,"whenMet":"c21-cg","whenNot":"c21-skip"},
   },
   {
     id: "c21-cg",
@@ -1413,7 +1413,7 @@ export const wantangScript: DialogueNode[] = [
   },
   {
     id: "c35b",
-    affectionBranch: {"threshold":10,"whenMet":"c35-cg","whenNot":"c35-lite"},
+    affectionBranch: {"threshold": 50,"whenMet":"c35-cg","whenNot":"c35-lite"},
   },
   {
     id: "c35-cg",
@@ -1850,7 +1850,7 @@ export const wantangScript: DialogueNode[] = [
   },
   {
     id: "c46a",
-    affectionBranch: {"threshold":12,"whenMet":"c46b","whenNot":"c46c"},
+    affectionBranch: {"threshold": 60,"whenMet":"c46b","whenNot":"c46c"},
   },
   {
     id: "c46b",

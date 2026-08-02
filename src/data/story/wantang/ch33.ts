@@ -58,19 +58,19 @@ export const chapter33: DialogueNode[] = [
       {
         text: '「看了。看了很久，直到码头缩成一个点。」——如实说出全部',
         next: 'c33-07a',
-        affection: 3,
+        affection: 15,
         setFlag: 'looked_back',
       },
       {
         text: '「……不敢看。怕一回头就下不了船。」——坦白当时的懦弱',
         next: 'c33-07b',
-        affection: 2,
+        affection: 10,
         setFlag: 'looked_back',
       },
       {
         text: '「看了。恨自己没有当场跑回去。」——说出这十年真正后悔的事',
         next: 'c33-07c',
-        affection: 3,
+        affection: 15,
         setFlag: 'looked_back',
       },
     ],
@@ -157,12 +157,12 @@ export const chapter33: DialogueNode[] = [
       {
         text: '「对不起，让你等了这么久。」——郑重道歉',
         next: 'c33-16a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '伸手，把她冰凉的手指握进掌心，什么都不说',
         next: 'c33-16b',
-        affection: 3,
+        affection: 15,
         setFlag: 'hold_hand_storm',
       },
     ],

@@ -52,7 +52,7 @@ export const chapter10: DialogueNode[] = [
       {
         text: '猜测是晚棠打来的',
         next: 'c10-06a',
-        affection: 1,
+        affection: 5,
         setFlag: 'guess_wantang_called',
       },
       {
@@ -104,7 +104,7 @@ export const chapter10: DialogueNode[] = [
       {
         text: '把海玻璃放进随身口袋',
         next: 'c10-12a',
-        affection: 1,
+        affection: 5,
         setFlag: 'keep_glass',
       },
       {
@@ -161,7 +161,7 @@ export const chapter10: DialogueNode[] = [
       {
         text: '明天把这件事告诉晚棠，当面谢她',
         next: 'c10-19a',
-        affection: 2,
+        affection: 10,
         setFlag: 'thank_wantang_care',
       },
       {

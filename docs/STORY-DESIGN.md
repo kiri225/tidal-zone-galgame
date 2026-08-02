@@ -79,33 +79,38 @@
 
 ## 4. 好感度系统设计（丰度）
 
-### 4.1 数值
+### 4.1 数值（百分制）
 
-- 每条线独立亲密度 `affection[charId]`，区间建议 **0–20**。
-- 选项增量：`-2 / -1 / 0 / +1 / +2 / +3`（关键坦白可 +3）。
-- HUD：当前线亲密度 + 下一 CG 门槛提示 + 增减飘字。
+- 每条线独立亲密度 `affection`，区间 **0–100**（界面显示为 `%`）。
+- 选项增量：`-10 / -5 / 0 / +5 / +10 / +15`（关键坦白可 +15）。
+- 引擎 `clampAffection` 防止越界；HUD：进度条 + 百分比 + 下一 CG 门槛 + 增减飘字。
+- 常量见 `src/data/affection.ts`（`AffThreshold`）。
 
-### 4.2 阈值（晚棠线示例，可调）
+### 4.2 阈值（晚棠线 · 百分制）
 
 | 阈值 | 效果 |
 |------|------|
-| 3 | 解锁小事件「未寄出的诗」可完整阅读；CG1 |
-| 6 | 解锁夜话深度回忆；CG2 |
-| 10 | 解锁成人向完整版 + CG3（低好感走相拥版） |
-| 14 | 解锁 True 向后日谈入口；CG4（或 True End 强制） |
+| 15% | CG 潮声重逢 |
+| 20% | CG 未寄出的诗 |
+| 25% | CG 旧伞 |
+| 30% | CG 关店夜话 |
+| 35% | CG 市集早晨；Good 结局门槛 |
+| 40% | CG 几乎吻上 |
+| 45% | CG 和解的盐 |
+| 50% | CG 雨困一夜 / 成人向完整版（低好感走相拥版） |
+| 60% | True 结局门槛（+ stay + confess） |
+| 70% | CG 潮间带 |
 | 关键 | `stay` / `confess` / `intimate_night` 等 |
 
 ### 4.3 结局公式（晚棠）
 
 ```
-True         = affection≥12 AND stay AND confess
-Good         = affection≥7  AND (stay OR confess)
-Soft Good    = affection≥7  AND intimate_night AND !stay   （可选第四结局）
+True         = affection≥60 AND stay AND confess
+Good         = affection≥35 AND (stay OR confess)
 Bittersweet  = else
 ```
 
-> 审阅点：是否要第四结局 Soft Good？默认 **先做三结局**，Soft Good 标为可选。  
-> **P0 实现中**：三结局；True≥12 / Good≥7。
+> **实现中**：三结局；百分制 0–100。
 
 ### 4.4 CG 图鉴
 
@@ -325,21 +330,21 @@ flowchart TD
 
 ### 9.2 背景（1536×1024 或 1920×1080）
 
-现有 6 张 + 建议补：`shop-back` `hotel-lobby` `hotel-bar` `research-station` `tide-pools` `gallery` `wantang-room` 专用。
+场景底图已齐：码头昼夜/黄昏、旧街雨夜昼、拾潮店内后仓、潮声营业/打烊/二楼、晚棠阁楼、海边黎明、潮间带岩滩、早市、酒店大堂/酒吧、画廊、海洋站。
 
 ### 9.3 CG（1280×720+）
 
 | id | 标题 | 门槛 |
 |----|------|------|
-| reunion | 潮声重逢 | 3 |
-| poem | 未寄出的诗 | 4 |
-| umbrella | 旧伞 | 5 |
-| nighttalk | 关店夜话 | 6 |
-| market | 市集早晨 | 7 |
-| almostkiss | 几乎吻上 | 8 |
-| reconcile | 和解的盐 | 9 |
-| rainnight | 雨困一夜 | 10 |
-| intertidal | 潮间带 | 14 / True |
+| reunion | 潮声重逢 | 15% |
+| poem | 未寄出的诗 | 20% |
+| umbrella | 旧伞 | 25% |
+| nighttalk | 关店夜话 | 30% |
+| market | 市集早晨 | 35% |
+| almostkiss | 几乎吻上 | 40% |
+| reconcile | 和解的盐 | 45% |
+| rainnight | 雨困一夜 | 50% |
+| intertidal | 潮间带 | 70% / True |
 
 ---
 

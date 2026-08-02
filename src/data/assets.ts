@@ -6,7 +6,7 @@
  *
  * ASSET_VER：换图后递增，强制浏览器绕过旧缓存
  */
-export const ASSET_VER = '20260802g'
+export const ASSET_VER = '20260802h'
 
 function asset(path: string): string {
   if (!path) return path
@@ -16,13 +16,23 @@ function asset(path: string): string {
 
 export const bgImages: Record<string, string> = {
   'port-night': asset('/images/bg/bg-port-night.png'),
+  'port-dusk': asset('/images/bg/bg-port-dusk.png'),
   'street-rain': asset('/images/bg/bg-street-rain.png'),
+  'street-night': asset('/images/bg/bg-street-night.png'),
+  'street-day': asset('/images/bg/bg-street-day.png'),
   'shop-interior': asset('/images/bg/bg-shop-interior.png'),
+  'shop-back': asset('/images/bg/bg-shop-back.png'),
   bookstore: asset('/images/bg/bg-bookstore.png'),
   'bookstore-close': asset('/images/bg/bg-bookstore-close.png'),
   'bookstore-loft': asset('/images/bg/bg-bookstore-loft.png'),
+  'wantang-room': asset('/images/bg/bg-wantang-room.png'),
   'seaside-dawn': asset('/images/bg/bg-seaside-dawn.png'),
-  'wantang-room': asset('/images/bg/bg-bookstore-close.png'),
+  'tide-pools': asset('/images/bg/bg-tide-pools.png'),
+  'market-morning': asset('/images/bg/bg-market-morning.png'),
+  'hotel-lobby': asset('/images/bg/bg-hotel-lobby.png'),
+  'hotel-bar': asset('/images/bg/bg-hotel-bar.png'),
+  gallery: asset('/images/bg/bg-gallery.png'),
+  'research-station': asset('/images/bg/bg-research-station.png'),
   black: '',
 }
 

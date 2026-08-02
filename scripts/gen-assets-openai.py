@@ -73,16 +73,37 @@ BACKGROUNDS: list[tuple[str, str]] = [
         "no main character portrait, wide establishing shot, cel-shaded, NOT photorealistic",
     ),
     (
+        "bg-port-dusk",
+        "Japanese anime cinematic visual novel background, coastal pier at golden hour dusk, "
+        "wet docks, lighthouse glow beginning, amber sunset into deep blue sea, "
+        "no character portrait, cel-shaded, NOT photorealistic",
+    ),
+    (
         "bg-street-rain",
         "Japanese anime cinematic visual novel background, narrow old street in light rain, "
         "puddle reflections, warm shop windows, wet cobblestones, coastal town night, "
         "no character portrait, cel-shaded, deep blue and amber palette, NOT photorealistic",
     ),
     (
+        "bg-street-night",
+        "Japanese anime cinematic visual novel background, old coastal street at night, "
+        "wet cobblestones, warm shop lamps, harbor view, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-street-day",
+        "Japanese anime cinematic visual novel background, old coastal street afternoon, "
+        "drying cobblestones, warm shop windows, sea at alley end, cel-shaded, NOT photorealistic",
+    ),
+    (
         "bg-shop-interior",
         "Japanese anime cinematic visual novel background, small antique / thrift shop interior "
         "named 拾潮, shelves of old objects, sea glass jars, warm dust light beams, cozy clutter, "
         "no character portrait, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-shop-back",
+        "Japanese anime cinematic visual novel background, thrift shop backroom storage, "
+        "cardboard boxes, ledgers, dim yellow bulb, dusty shelves, cel-shaded, NOT photorealistic",
     ),
     (
         "bg-bookstore",
@@ -103,10 +124,45 @@ BACKGROUNDS: list[tuple[str, str]] = [
         "no character portrait, cel-shaded, NOT photorealistic",
     ),
     (
+        "bg-wantang-room",
+        "Japanese anime cinematic visual novel background, narrow loft room with rainy window, "
+        "book stacks, futon, amber lamp, intimate quiet, cel-shaded, NOT photorealistic",
+    ),
+    (
         "bg-seaside-dawn",
         "Japanese anime cinematic visual novel background, seaside at dawn, wet sand, "
         "tide pools and rocks, pale gold and blue morning light, empty shore, "
         "cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-tide-pools",
+        "Japanese anime cinematic visual novel background, intertidal rocky shore daytime, "
+        "tide pools, seaweed, shells, bright morning light, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-market-morning",
+        "Japanese anime cinematic visual novel background, morning coastal fish market on pier, "
+        "stalls, baskets, steam, pale gold dawn, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-hotel-lobby",
+        "Japanese anime cinematic visual novel background, seaside hotel lobby at night, "
+        "cool blue light, empty reception, rainy windows, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-hotel-bar",
+        "Japanese anime cinematic visual novel background, lonely hotel bar at night, "
+        "empty stools, amber lamp, ice bucket, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-gallery",
+        "Japanese anime cinematic visual novel background, small seaside art gallery, "
+        "white walls, framed coastal paintings, afternoon sea light, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "bg-research-station",
+        "Japanese anime cinematic visual novel background, marine research lab at night, "
+        "specimen cabinets, cyan monitor glow, tide maps, cel-shaded, NOT photorealistic",
     ),
 ]
 

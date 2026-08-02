@@ -4,6 +4,7 @@ import type { DialogueNode, Expression, Screen } from './types'
 import { commonScript } from '../data/story/common'
 import { wantangScript } from '../data/story/wantang'
 import { endings } from '../data/story/endings'
+import { AffThreshold, clampAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
 
 const ALL_SCRIPTS: Record<string, DialogueNode[]> = {
@@ -242,11 +243,13 @@ export const useGameStore = defineStore('game', () => {
     if (!node?.choices?.[choiceIndex]) return
     const c = node.choices[choiceIndex]
     if (c.affection) {
-      affection.value += c.affection
-      affectionDelta.value = c.affection
+      const next = clampAffection(affection.value + c.affection)
+      const applied = next - affection.value
+      affection.value = next
+      affectionDelta.value = applied
       checkAffectionCgs()
       window.setTimeout(() => {
-        if (affectionDelta.value === c.affection) affectionDelta.value = 0
+        if (affectionDelta.value === applied) affectionDelta.value = 0
       }, 1600)
     }
     if (c.setFlag) flags.value.add(c.setFlag)
@@ -255,11 +258,18 @@ export const useGameStore = defineStore('game', () => {
 
   function resolveEnding() {
     checkAffectionCgs()
-    // True: aff≥12 + 留下 + 坦白
-    if (affection.value >= 12 && hasFlag('stay') && hasFlag('confess')) {
+    // True: aff≥60% + 留下 + 坦白
+    if (
+      affection.value >= AffThreshold.trueEnd &&
+      hasFlag('stay') &&
+      hasFlag('confess')
+    ) {
       unlockCg('intertidal')
       goTo('ending-true')
-    } else if (affection.value >= 7 && (hasFlag('stay') || hasFlag('confess'))) {
+    } else if (
+      affection.value >= AffThreshold.goodEnd &&
+      (hasFlag('stay') || hasFlag('confess'))
+    ) {
       goTo('ending-good')
     } else {
       goTo('ending-bitter')

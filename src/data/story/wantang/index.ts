@@ -58,7 +58,7 @@ if (!routeStart) throw new Error('missing route-start')
 export const wantangScript: DialogueNode[] = [
   {
     ...routeStart,
-    text: '【林晚棠线】五十章。亲密度影响 CG、雨夜与结局。\n从第1章起，对话与场景将按小说密度展开。',
+    text: '【林晚棠线】五十章。亲密度 0–100% 影响 CG、雨夜与结局。\n从第1章起，对话与场景将按小说密度展开。',
   },
   ...chapter01,
   ...chapter02,

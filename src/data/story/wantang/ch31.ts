@@ -76,17 +76,17 @@ export const chapter31: DialogueNode[] = [
       {
         text: '「比起书，你先顾好自己。」——把毯子往她那边拉了拉',
         next: 'c31-11a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '「这些书对你来说，是不是比人还重要？」——半开玩笑地问',
         next: 'c31-11b',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '什么也不说，先把最外层湿透的塑料布重新扎紧',
         next: 'c31-11c',
-        affection: 2,
+        affection: 10,
       },
     ],
   },
@@ -145,18 +145,18 @@ export const chapter31: DialogueNode[] = [
       {
         text: '「数到几，才算安全？」——认真接住这句话',
         next: 'c31-18a',
-        affection: 3,
+        affection: 15,
         setFlag: 'ask_thunder_count',
       },
       {
         text: '把手轻轻按在她数数的那只手背上，不说话',
         next: 'c31-18b',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '「他后来回来了？」——顺着往下问',
         next: 'c31-18c',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

@@ -96,13 +96,13 @@ export const chapter16: DialogueNode[] = [
       {
         text: '「账不好看？」——直接问',
         next: 'c16-14a',
-        affection: 1,
+        affection: 5,
         setFlag: 'noticed_ledger',
       },
       {
         text: '什么都没看见似地移开视线',
         next: 'c16-14b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -136,13 +136,13 @@ export const chapter16: DialogueNode[] = [
       {
         text: '「在等谁？」——挑眉，故意问',
         next: 'c16-18a',
-        affection: 1,
+        affection: 5,
         setFlag: 'ask_who_expected',
       },
       {
         text: '不问，只是安静地坐到吧台前',
         next: 'c16-18b',
-        affection: 2,
+        affection: 10,
         setFlag: 'notice_two_glasses',
       },
     ],
@@ -183,13 +183,13 @@ export const chapter16: DialogueNode[] = [
       {
         text: '「我想见你。」——说出真话',
         next: 'c16-23a',
-        affection: 3,
+        affection: 15,
         setFlag: 'admit_wanted_to_see',
       },
       {
         text: '「路过而已。」——留一点退路',
         next: 'c16-23b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

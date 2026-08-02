@@ -61,7 +61,7 @@ export const chapter44: DialogueNode[] = [
       {
         text: '「我不卖了。我想留在潮屿。」——给出明确的答案',
         next: 'c44-07a',
-        affection: 3,
+        affection: 15,
         setFlag: 'stay',
       },
       {

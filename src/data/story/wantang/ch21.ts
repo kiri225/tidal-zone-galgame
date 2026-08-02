@@ -168,7 +168,7 @@ export const chapter21: DialogueNode[] = [
   },
   {
     id: 'c21-branch',
-    affectionBranch: { threshold: 6, whenMet: 'c21-cg', whenNot: 'c21-skip' },
+    affectionBranch: { threshold: 30, whenMet: 'c21-cg', whenNot: 'c21-skip' },
   },
   {
     id: 'c21-cg',

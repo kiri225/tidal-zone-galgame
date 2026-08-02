@@ -42,7 +42,7 @@ export const chapter46: DialogueNode[] = [
   },
   {
     id: 'c46-branch',
-    affectionBranch: { threshold: 12, whenMet: 'c46-04a', whenNot: 'c46-04b' },
+    affectionBranch: { threshold: 60, whenMet: 'c46-04a', whenNot: 'c46-04b' },
   },
   {
     id: 'c46-04a',
@@ -92,13 +92,13 @@ export const chapter46: DialogueNode[] = [
       {
         text: '「潮间带。好，就叫这个。」——正式定下这个名字',
         next: 'c46-09a',
-        affection: 2,
+        affection: 10,
         setFlag: 'name_intertidal',
       },
       {
         text: '「名字以后再定，人先定下来最重要。」——先稳住关系本身',
         next: 'c46-09b',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

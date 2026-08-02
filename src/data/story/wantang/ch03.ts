@@ -59,13 +59,13 @@ export const chapter03: DialogueNode[] = [
       {
         text: '「那句话，到底是什么意思？」——追问',
         next: 'c03-07a',
-        affection: 2,
+        affection: 10,
         setFlag: 'ask_meaning',
       },
       {
         text: '「你现在……还想留吗？」——直球',
         next: 'c03-07b',
-        affection: 3,
+        affection: 15,
         setFlag: 'ask_meaning',
       },
       {
@@ -138,13 +138,13 @@ export const chapter03: DialogueNode[] = [
       {
         text: '「对不起，让你算了这么久。」',
         next: 'c03-14a',
-        affection: 3,
+        affection: 15,
         setFlag: 'apologize_wait',
       },
       {
         text: '「我没资格说抱歉，只能说——我回来了。」',
         next: 'c03-14b',
-        affection: 2,
+        affection: 10,
         setFlag: 'back_now',
       },
     ],
@@ -210,13 +210,13 @@ export const chapter03: DialogueNode[] = [
       {
         text: '「先放你这儿吧，好歹有个地方记得他。」',
         next: 'c03-22a',
-        affection: 2,
+        affection: 10,
         setFlag: 'leave_key_with_her',
       },
       {
         text: '「谢了，我拿回去留个念想。」',
         next: 'c03-22b',
-        affection: 1,
+        affection: 5,
         setFlag: 'take_key_back',
       },
     ],

@@ -104,13 +104,13 @@ export const chapter01: DialogueNode[] = [
       {
         text: '「亏什么。我来。」——答应，并把话说得干脆',
         next: 'c01-15a',
-        affection: 2,
+        affection: 10,
         setFlag: 'accept_hire',
       },
       {
         text: '「那我要加班费。」——用玩笑把距离拉近一寸',
         next: 'c01-15b',
-        affection: 1,
+        affection: 5,
         setFlag: 'accept_hire',
       },
       {
@@ -122,7 +122,7 @@ export const chapter01: DialogueNode[] = [
       {
         text: '「你为什么找我？镇上别人不行吗？」——追问动机',
         next: 'c01-15d',
-        affection: 2,
+        affection: 10,
         setFlag: 'accept_hire',
       },
     ],
@@ -196,12 +196,12 @@ export const chapter01: DialogueNode[] = [
       {
         text: '「明天三点。我会到。」——把约定说死',
         next: 'c01-23a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '「若下雨呢？」——试探她那句「灯还会亮」的前史',
         next: 'c01-23b',
-        affection: 2,
+        affection: 10,
         setFlag: 'ask_rain_lamp',
       },
     ],

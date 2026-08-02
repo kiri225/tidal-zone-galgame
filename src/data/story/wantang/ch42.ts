@@ -72,13 +72,13 @@ export const chapter42: DialogueNode[] = [
       {
         text: '翻开账本最后一页，重新看一眼父亲的字迹再做决定',
         next: 'c42-08c',
-        affection: 2,
+        affection: 10,
         setFlag: 'reread_ledger',
       },
       {
         text: '直接抬头看向窗外那道身影',
         next: 'c42-09',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

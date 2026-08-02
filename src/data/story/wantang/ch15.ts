@@ -72,13 +72,13 @@ export const chapter15: DialogueNode[] = [
       {
         text: '「一路小心。」——送她到车站',
         next: 'c15-09a',
-        affection: 2,
+        affection: 10,
         setFlag: 'see_off',
       },
       {
         text: '接过钥匙，郑重地点头',
         next: 'c15-09b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -142,12 +142,12 @@ export const chapter15: DialogueNode[] = [
       {
         text: '回复：「路上顺利就好，早点休息。」',
         next: 'c15-17a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '回复：「店里一切都好，别担心，早点想我。」——半开玩笑',
         next: 'c15-17b',
-        affection: 2,
+        affection: 10,
         setFlag: 'tease_miss_me',
       },
     ],

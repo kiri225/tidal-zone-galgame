@@ -51,7 +51,7 @@ export const chapter47: DialogueNode[] = [
       {
         text: '「不用了。铺子不卖。」——干脆挂断这段悬而未决的关系',
         next: 'c47-05a',
-        affection: 2,
+        affection: 10,
         setFlag: 'refuse_final',
       },
       {

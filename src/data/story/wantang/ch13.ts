@@ -63,12 +63,12 @@ export const chapter13: DialogueNode[] = [
       {
         text: '「他经常这样打趣你？」',
         next: 'c13-08a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '「你刚才护我。」——点破她的反应',
         next: 'c13-08b',
-        affection: 2,
+        affection: 10,
         setFlag: 'noticed_protect',
       },
       {
@@ -131,7 +131,7 @@ export const chapter13: DialogueNode[] = [
       {
         text: '主动接话，替她把话题继续引开',
         next: 'c13-14a',
-        affection: 2,
+        affection: 10,
         setFlag: 'help_deflect',
       },
       {
@@ -192,13 +192,13 @@ export const chapter13: DialogueNode[] = [
       {
         text: '「以后这种场合，我陪你一起面对。」',
         next: 'c13-21a',
-        affection: 3,
+        affection: 15,
         setFlag: 'face_together',
       },
       {
         text: '「辛苦你了。」——单纯的心疼',
         next: 'c13-21b',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

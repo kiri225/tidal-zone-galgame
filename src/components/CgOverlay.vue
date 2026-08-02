@@ -26,7 +26,7 @@ const sceneSrc = computed(() =>
     <div v-if="unlockDef" class="cg-toast" @click.stop="game.dismissCgUnlock()">
       <p class="label">CG 解锁</p>
       <p class="title">{{ unlockDef.title }}</p>
-      <p class="sub">{{ unlockDef.subtitle }} · 亲密度 {{ unlockDef.affectionRequired }}</p>
+      <p class="sub">{{ unlockDef.subtitle }} · 亲密度 {{ unlockDef.affectionRequired }}%</p>
       <p class="hint">点击关闭 · 可在标题页「CG 鉴赏」查看</p>
     </div>
   </Transition>

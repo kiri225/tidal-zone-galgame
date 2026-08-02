@@ -10,7 +10,7 @@ export const chapter38: DialogueNode[] = [
     id: 'ch38',
     chapter: 38,
     chapterTitle: '潮间带',
-    bg: 'seaside-dawn',
+    bg: 'tide-pools',
     mood: 'cold',
     sprite: 'wantang',
     expression: 'default',
@@ -20,6 +20,7 @@ export const chapter38: DialogueNode[] = [
   },
   {
     id: 'c38-01',
+    bg: 'tide-pools',
     text: '石缝里藏着藤壶、寄居蟹，和几汪困住了小鱼的浅水洼。涨潮时，这里会被彻底淹没；退潮时，才露出它真正的模样。',
     next: 'c38-01b',
   },
@@ -83,18 +84,18 @@ export const chapter38: DialogueNode[] = [
       {
         text: '「那我是哪一种潮？」——顺着她的比喻问下去',
         next: 'c38-10a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '握住她的手，不说话，只是一起看水线后退',
         next: 'c38-10b',
-        affection: 3,
+        affection: 15,
         setFlag: 'dawn_hold',
       },
       {
         text: '「你怕的，到底是我涨潮时的样子，还是退潮时的？」——追问核心',
         next: 'c38-10c',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

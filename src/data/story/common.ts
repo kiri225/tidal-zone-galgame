@@ -52,7 +52,7 @@ export const commonScript: DialogueNode[] = [
       {
         text: '手指顿了一下……先贴一半，边缘卷着',
         next: 'c5b',
-        affection: 1,
+        affection: 5,
         setFlag: 'hesitate_sell_early',
       },
     ],
@@ -138,13 +138,13 @@ export const commonScript: DialogueNode[] = [
       {
         text: '「那我就不客气了。」——坐下，接受这份靠近',
         next: 'c13a',
-        affection: 1,
+        affection: 5,
         setFlag: 'first_drink',
       },
       {
         text: '「你变了。」——先把话说出口',
         next: 'c13c',
-        affection: 2,
+        affection: 10,
         setFlag: 'first_drink',
       },
       {

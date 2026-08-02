@@ -10,7 +10,7 @@ export const chapter14: DialogueNode[] = [
     id: 'ch14',
     chapter: 14,
     chapterTitle: '账本背面',
-    bg: 'shop-interior',
+    bg: 'shop-back',
     mood: 'warm',
     sprite: null,
     expression: 'default',
@@ -20,7 +20,7 @@ export const chapter14: DialogueNode[] = [
   },
   {
     id: 'c14-01',
-    bg: 'shop-interior',
+    bg: 'shop-back',
     sprite: null,
     mood: 'warm',
     text: '账本是牛皮纸封面的那种老式本子，边角卷了毛边，父亲的字迹一笔一划，规矩得不像他平日沉默寡言的性子。',
@@ -57,7 +57,7 @@ export const chapter14: DialogueNode[] = [
       {
         text: '继续往后翻，想知道更多',
         next: 'c14-07a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '合上账本，让心情先平复一下',
@@ -118,7 +118,7 @@ export const chapter14: DialogueNode[] = [
       {
         text: '第二天把这页给晚棠看，坦白一切',
         next: 'c14-14a',
-        affection: 2,
+        affection: 10,
         setFlag: 'show_ledger',
       },
       {
@@ -190,12 +190,12 @@ export const chapter14: DialogueNode[] = [
       {
         text: '「没什么，就是想起了我爸。」——半真半假',
         next: 'c14-22a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '「等我理清楚了，第一个告诉你。」',
         next: 'c14-22b',
-        affection: 2,
+        affection: 10,
         setFlag: 'promise_tell_later',
       },
     ],

@@ -20,6 +20,7 @@ export const chapter41: DialogueNode[] = [
   },
   {
     id: 'c41-01',
+    bg: 'wantang-room',
     text: '她把那东西攥在手心里转了两圈，像是在犹豫要不要真的把它递出去——这份犹豫，比她平时任何一次沉默都更明显。',
     next: 'c41-01b',
   },
@@ -58,19 +59,19 @@ export const chapter41: DialogueNode[] = [
       {
         text: '郑重地双手接过，收进贴身口袋',
         next: 'c41-07a',
-        affection: 3,
+        affection: 15,
         setFlag: 'got_key',
       },
       {
         text: '「你确定？」——先确认她是不是想清楚了',
         next: 'c41-07b',
-        affection: 2,
+        affection: 10,
         setFlag: 'got_key',
       },
       {
         text: '接过钥匙，顺手挂到自己的钥匙串上，语气轻松地打趣',
         next: 'c41-07c',
-        affection: 2,
+        affection: 10,
         setFlag: 'got_key',
       },
     ],

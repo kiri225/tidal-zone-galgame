@@ -73,7 +73,7 @@ export const chapter20: DialogueNode[] = [
   },
   {
     id: 'c20-08b',
-    affectionBranch: { threshold: 8, whenMet: 'c20-cg', whenNot: 'c20-09' },
+    affectionBranch: { threshold: 40, whenMet: 'c20-cg', whenNot: 'c20-09' },
   },
   {
     id: 'c20-cg',
@@ -116,19 +116,19 @@ export const chapter20: DialogueNode[] = [
       {
         text: '收回手，尊重她的节奏',
         next: 'c20-14a',
-        affection: 2,
+        affection: 10,
         setFlag: 'respect_pace',
       },
       {
         text: '「那我就等——等到不是前夜的那一天。」——郑重承诺',
         next: 'c20-14b',
-        affection: 3,
+        affection: 15,
         setFlag: 'promise_wait',
       },
       {
         text: '「那就别把它当前夜。」——温柔坚持',
         next: 'c20-14c',
-        affection: 2,
+        affection: 10,
         setFlag: 'promise_wait',
       },
     ],

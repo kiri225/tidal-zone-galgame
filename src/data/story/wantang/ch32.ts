@@ -98,17 +98,17 @@ export const chapter32: DialogueNode[] = [
       {
         text: '把外套脱下来，垫在她坐的那侧地板上',
         next: 'c32-12a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '故意不说话，只是数着她的呼吸',
         next: 'c32-12b',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '「你心跳很快。」——如实说出来',
         next: 'c32-12c',
-        affection: 3,
+        affection: 15,
         setFlag: 'notice_heartbeat',
       },
     ],

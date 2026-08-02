@@ -74,12 +74,12 @@ export const chapter18: DialogueNode[] = [
       {
         text: '「我以为你早忘了。」——惊讶又心软',
         next: 'c18-10a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '坦白：「其实我也留着一样的东西。」',
         next: 'c18-10b',
-        affection: 3,
+        affection: 15,
         setFlag: 'kept_same_token',
       },
     ],
@@ -151,12 +151,12 @@ export const chapter18: DialogueNode[] = [
       {
         text: '「对不起。」——诚恳道歉',
         next: 'c18-20a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '「如果重来，我会回头。」——给出承诺',
         next: 'c18-20b',
-        affection: 3,
+        affection: 15,
         setFlag: 'regret_spoken',
       },
     ],
@@ -205,12 +205,12 @@ export const chapter18: DialogueNode[] = [
       {
         text: '凑近一起翻看，故意笑话她当年的刘海',
         next: 'c18-26a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '只是安静地看她认真翻页的侧脸',
         next: 'c18-26b',
-        affection: 2,
+        affection: 10,
         setFlag: 'watch_her_quietly',
       },
     ],

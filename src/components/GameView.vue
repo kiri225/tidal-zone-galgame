@@ -2,6 +2,7 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { useGameStore } from '../engine/gameStore'
 import { bgLabels, speakerColors } from '../data/characters'
+import { AFFECTION_MAX, formatAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
 import BackgroundLayer from './BackgroundLayer.vue'
 import CharacterSprite from './CharacterSprite.vue'
@@ -14,9 +15,15 @@ const showUI = ref(true)
 const hasChoices = computed(() => !!game.currentNode?.choices?.length)
 const place = computed(() => bgLabels[game.bg] ?? '')
 const nameColor = computed(() => speakerColors[game.speaker] ?? '#e8ddd0')
+const affLabel = computed(() => formatAffection(game.affection))
+const affFill = computed(() =>
+  Math.min(100, Math.round((game.affection / AFFECTION_MAX) * 100)),
+)
 const nextCgHint = computed(() => {
   const next = cgCatalog.find((c) => !game.unlockedCgs.has(c.id))
-  return next ? `下一 CG · 亲密度 ${next.affectionRequired}` : 'CG 已全部解锁'
+  return next
+    ? `下一 CG · ${formatAffection(next.affectionRequired)}`
+    : 'CG 已全部解锁'
 })
 
 function onKey(e: KeyboardEvent) {
@@ -57,9 +64,12 @@ watch(
         <span class="place">{{ place }}</span>
       </div>
       <div class="aff-wrap">
-        <span class="aff" title="晚棠好感">亲密度 {{ game.affection }}</span>
+        <span class="aff" title="晚棠好感">亲密度 {{ affLabel }}</span>
+        <div class="aff-bar" aria-hidden="true">
+          <div class="aff-fill" :style="{ width: affFill + '%' }" />
+        </div>
         <span v-if="game.affectionDelta" class="aff-delta" :class="{ down: game.affectionDelta < 0 }">
-          {{ game.affectionDelta > 0 ? '+' : '' }}{{ game.affectionDelta }}
+          {{ game.affectionDelta > 0 ? '+' : '' }}{{ game.affectionDelta }}%
         </span>
         <span class="aff-hint">{{ nextCgHint }}</span>
       </div>
@@ -139,6 +149,22 @@ watch(
 .aff {
   color: rgba(196, 164, 132, 0.85);
   font-variant-numeric: tabular-nums;
+}
+
+.aff-bar {
+  width: 7.5rem;
+  height: 3px;
+  margin-top: 0.15rem;
+  border-radius: 2px;
+  background: rgba(232, 221, 208, 0.12);
+  overflow: hidden;
+}
+
+.aff-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(196, 164, 132, 0.55), rgba(224, 196, 160, 0.95));
+  transition: width 0.45s ease;
 }
 
 .aff-delta {

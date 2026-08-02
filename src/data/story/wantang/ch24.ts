@@ -10,7 +10,7 @@ export const chapter24: DialogueNode[] = [
     id: 'ch24',
     chapter: 24,
     chapterTitle: '休息日',
-    bg: 'seaside-dawn',
+    bg: 'street-day',
     mood: 'warm',
     sprite: 'wantang',
     expression: 'default',
@@ -20,6 +20,7 @@ export const chapter24: DialogueNode[] = [
   },
   {
     id: 'c24-01',
+    bg: 'port-dusk',
     text: '两人沿着防波堤慢慢走，海风把她的衣角吹得鼓起又落下，像一面临时的旗。',
     next: 'c24-02',
   },
@@ -91,12 +92,12 @@ export const chapter24: DialogueNode[] = [
       {
         text: '并肩沉默地坐着，让潮声替彼此说话',
         next: 'c24-13a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '伸手，不勉强牵，只轻轻碰了碰她的手背',
         next: 'c24-13b',
-        affection: 3,
+        affection: 15,
         setFlag: 'hand_touch',
       },
     ],
@@ -131,13 +132,13 @@ export const chapter24: DialogueNode[] = [
       {
         text: '「会。至少现在，这个念头很清楚。」——认真回答',
         next: 'c24-17a',
-        affection: 3,
+        affection: 15,
         setFlag: 'imagine_future',
       },
       {
         text: '「还没想那么远，但今天，我很想留在这一刻。」——温柔搪塞',
         next: 'c24-17b',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

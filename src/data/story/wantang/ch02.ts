@@ -63,7 +63,7 @@ export const chapter02: DialogueNode[] = [
       {
         text: '跟中介说：「先推到下周。」——当着她的面留余地',
         next: 'c02-08a',
-        affection: 2,
+        affection: 10,
         setFlag: 'delay_buyer',
       },
       {
@@ -75,7 +75,7 @@ export const chapter02: DialogueNode[] = [
       {
         text: '「这两天忙，我再回你。」——含糊拖延',
         next: 'c02-08c',
-        affection: 1,
+        affection: 5,
         setFlag: 'delay_buyer',
       },
     ],
@@ -131,13 +131,13 @@ export const chapter02: DialogueNode[] = [
       {
         text: '「你希望我留下吗？」——直接问',
         next: 'c02-14a',
-        affection: 3,
+        affection: 15,
         setFlag: 'ask_stay_wish',
       },
       {
         text: '不追问，转开话题问搬书进度',
         next: 'c02-14b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -190,7 +190,7 @@ export const chapter02: DialogueNode[] = [
       {
         text: '「当然。你有权知道。」',
         next: 'c02-20a',
-        affection: 2,
+        affection: 10,
         setFlag: 'include_her',
       },
       {

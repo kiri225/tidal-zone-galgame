@@ -122,19 +122,19 @@ export const chapter19: DialogueNode[] = [
       {
         text: '「也许不卖了。只是……还没想好怎么留下。」——诚实的犹豫',
         next: 'c19-16a',
-        affection: 2,
+        affection: 10,
         setFlag: 'hesitate_sell',
       },
       {
         text: '「取决于这里，还有没有值得我留下的人。」——把话说给她听',
         next: 'c19-16b',
-        affection: 3,
+        affection: 15,
         setFlag: 'hesitate_sell',
       },
       {
         text: '「卖。这里没什么好留的。」——用冷漠护住自己',
         next: 'c19-16c',
-        affection: -1,
+        affection: -5,
       },
     ],
   },

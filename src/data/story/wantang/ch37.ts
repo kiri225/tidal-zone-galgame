@@ -20,7 +20,7 @@ export const chapter37: DialogueNode[] = [
   },
   {
     id: 'c37-01',
-    bg: 'seaside-dawn',
+    bg: 'tide-pools',
     mood: 'cold',
     sprite: 'wantang',
     expression: 'soft',
@@ -78,18 +78,18 @@ export const chapter37: DialogueNode[] = [
       {
         text: '「后悔吗？」——认真地问出这个问题',
         next: 'c37-10a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '什么都不问，只是把外套披在她肩上',
         next: 'c37-10b',
-        affection: 3,
+        affection: 15,
         setFlag: 'dawn_coat',
       },
       {
         text: '「以后……台风天我都陪你。」——先把话说死',
         next: 'c37-10c',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

@@ -54,7 +54,7 @@ export const chapter11: DialogueNode[] = [
       {
         text: '推门进去',
         next: 'c11-06a',
-        affection: 2,
+        affection: 10,
         setFlag: 'rain_visit',
       },
       {
@@ -112,13 +112,13 @@ export const chapter11: DialogueNode[] = [
       {
         text: '「这次不会再走那么久了。」',
         next: 'c11-12a',
-        affection: 2,
+        affection: 10,
         setFlag: 'promise_not_long',
       },
       {
         text: '认罚：「是我欠打。」——自嘲化解',
         next: 'c11-12b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -181,12 +181,12 @@ export const chapter11: DialogueNode[] = [
       {
         text: '「那时候你看起来很开心。」',
         next: 'c11-20a',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '「照片里你没笑，眼睛却在笑。」',
         next: 'c11-20b',
-        affection: 3,
+        affection: 15,
         setFlag: 'notice_eyes',
       },
     ],

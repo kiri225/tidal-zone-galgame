@@ -46,19 +46,19 @@ export const chapter06: DialogueNode[] = [
       {
         text: '「我想看。」',
         next: 'c06-05a',
-        affection: 2,
+        affection: 10,
         setFlag: 'read_poems',
       },
       {
         text: '轻轻合上，放回原处',
         next: 'c06-05b',
-        affection: 1,
+        affection: 5,
         setFlag: 'respect_notebook',
       },
       {
         text: '「现在给我，也不晚。」',
         next: 'c06-05c',
-        affection: 3,
+        affection: 15,
         setFlag: 'read_poems',
       },
     ],
@@ -106,7 +106,7 @@ export const chapter06: DialogueNode[] = [
   },
   {
     id: 'c06-08b',
-    affectionBranch: { threshold: 4, whenMet: 'c06-cg', whenNot: 'c06-09' },
+    affectionBranch: { threshold: 20, whenMet: 'c06-cg', whenNot: 'c06-09' },
   },
   {
     id: 'c06-cg',
@@ -144,13 +144,13 @@ export const chapter06: DialogueNode[] = [
       {
         text: '「我能帮你把它写完吗？」',
         next: 'c06-12a',
-        affection: 3,
+        affection: 15,
         setFlag: 'offer_finish_poem',
       },
       {
         text: '静静把本子还给她，不说话',
         next: 'c06-12b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },
@@ -195,13 +195,13 @@ export const chapter06: DialogueNode[] = [
       {
         text: '「那现在，你想通了什么？」',
         next: 'c06-17a',
-        affection: 2,
+        affection: 10,
         setFlag: 'ask_what_understood',
       },
       {
         text: '「我想，我大概一直是沙。」——自嘲',
         next: 'c06-17b',
-        affection: 2,
+        affection: 10,
       },
     ],
   },

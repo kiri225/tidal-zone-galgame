@@ -69,18 +69,18 @@ export const chapter04: DialogueNode[] = [
       {
         text: '若无其事地继续搬箱子',
         next: 'c04-09a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '「抱歉。」——主动说破那一下触碰',
         next: 'c04-09b',
-        affection: 2,
+        affection: 10,
         setFlag: 'acknowledge_touch',
       },
       {
         text: '开玩笑：「这迷宫是不是故意设计得这么窄？」',
         next: 'c04-09c',
-        affection: 2,
+        affection: 10,
       },
     ],
   },
@@ -139,13 +139,13 @@ export const chapter04: DialogueNode[] = [
       {
         text: '「他都看些什么？」——想多了解父亲一点',
         next: 'c04-15a',
-        affection: 2,
+        affection: 10,
         setFlag: 'ask_father_reads',
       },
       {
         text: '「谢谢你告诉我这些。」——静静感激',
         next: 'c04-15b',
-        affection: 2,
+        affection: 10,
       },
       {
         text: '沉默着继续搬箱子，没接话',
@@ -208,13 +208,13 @@ export const chapter04: DialogueNode[] = [
       {
         text: '走过去，站到软地板那侧，替她挡着',
         next: 'c04-21a',
-        affection: 3,
+        affection: 15,
         setFlag: 'protect_floor',
       },
       {
         text: '提醒她小心一点，各自留意',
         next: 'c04-21b',
-        affection: 1,
+        affection: 5,
       },
     ],
   },

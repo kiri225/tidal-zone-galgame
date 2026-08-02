@@ -50,7 +50,7 @@ function open(id: string, unlocked: boolean) {
           <p class="title">
             {{ game.unlockedCgs.has(cg.id) ? cg.title : '尚未解锁' }}
           </p>
-          <p class="req">亲密度 ≥ {{ cg.affectionRequired }}</p>
+          <p class="req">亲密度 ≥ {{ cg.affectionRequired }}%</p>
         </div>
       </li>
     </ul>

@@ -100,12 +100,12 @@ export const chapter29: DialogueNode[] = [
       {
         text: '「拾潮这边应该扛得住，你自己注意安全。」——报以宽慰',
         next: 'c29-13a',
-        affection: 1,
+        affection: 5,
       },
       {
         text: '「万一真扛不住，我肯定第一时间去潮声找你。」——提前给出承诺',
         next: 'c29-13b',
-        affection: 2,
+        affection: 10,
         setFlag: 'promise_come',
       },
     ],

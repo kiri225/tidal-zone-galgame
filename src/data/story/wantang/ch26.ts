@@ -98,13 +98,13 @@ export const chapter26: DialogueNode[] = [
       {
         text: '「我说错了。不是这个意思——我只是被账目和压力搅昏了头。」——放低姿态坦诚',
         next: 'c26-15a',
-        affection: 2,
+        affection: 10,
         setFlag: 'quarrel_soft',
       },
       {
         text: '「现实摆在这儿，不是谁都能只顾着浪漫。」——用现实反击',
         next: 'c26-15b',
-        affection: -2,
+        affection: -10,
         setFlag: 'quarrel_hard',
       },
     ],
