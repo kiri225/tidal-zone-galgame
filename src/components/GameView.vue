@@ -92,6 +92,7 @@ watch(
       v-if="game.sprite && !game.cg"
       :character="game.sprite"
       :expression="game.expression"
+      :bg="game.bg"
     />
     <CgOverlay />
 
@@ -158,6 +159,8 @@ watch(
   height: 100%;
   cursor: pointer;
   user-select: none;
+  /* 立绘用：预留对话框高度，避免脸被挡 */
+  --dialogue-reserve: 10.5rem;
 }
 
 .hud {
@@ -311,18 +314,23 @@ watch(
 .panel {
   position: absolute;
   left: 50%;
-  bottom: 1.5rem;
+  bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
-  width: min(920px, calc(100% - 2rem));
+  width: min(920px, calc(100% - 1.25rem));
+  max-height: min(38vh, 280px);
   /* 高于立绘(2)：不透明盖住下半身，上半身露在对话框上沿 */
   z-index: 10;
-  padding: 1.4rem 1.75rem 1.2rem;
+  padding: 1rem 1.35rem 0.85rem;
+  padding-bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
   background:
-    linear-gradient(180deg, rgba(10, 16, 24, 0.94), rgba(6, 12, 20, 0.98));
+    linear-gradient(180deg, rgba(10, 16, 24, 0.96), rgba(6, 12, 20, 0.99));
   border: 1px solid rgba(232, 221, 208, 0.14);
   backdrop-filter: blur(16px);
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.45);
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 /* 顶沿加一层实遮，避免腿从半透明透出来 */
@@ -332,7 +340,7 @@ watch(
   left: 0;
   right: 0;
   top: 0;
-  height: 2.75rem;
+  height: 1.75rem;
   background: linear-gradient(
     180deg,
     rgba(8, 14, 22, 0.98),
@@ -341,39 +349,54 @@ watch(
   );
   pointer-events: none;
   border-radius: inherit;
+  z-index: 1;
 }
 
 .name {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 0.98rem;
   letter-spacing: 0.2em;
-  margin-bottom: 0.65rem;
-  padding-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
+  padding-bottom: 0.3rem;
   border-bottom: 1px solid rgba(232, 221, 208, 0.1);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .body {
-  min-height: 4.2em;
-  line-height: 1.85;
-  font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+  min-height: 2.8em;
+  max-height: 9.5em;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 2.1vw, 1.05rem);
   white-space: pre-wrap;
   color: rgba(232, 221, 208, 0.92);
+  position: relative;
+  z-index: 2;
+  overscroll-behavior: contain;
 }
 
 .choices {
   list-style: none;
-  margin-top: 1.1rem;
+  margin-top: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.45rem;
+  overflow-y: auto;
+  max-height: min(28vh, 180px);
+  flex-shrink: 1;
+  position: relative;
+  z-index: 2;
 }
 
 .choices li {
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 0.9rem;
   border: 1px solid rgba(196, 164, 132, 0.28);
   background: rgba(196, 164, 132, 0.06);
-  font-size: 0.92rem;
-  line-height: 1.5;
+  font-size: 0.88rem;
+  line-height: 1.45;
   letter-spacing: 0.04em;
   transition: background 0.25s, border-color 0.25s, transform 0.25s;
   cursor: pointer;
@@ -386,13 +409,101 @@ watch(
 }
 
 .continue {
-  margin-top: 0.6rem;
+  margin-top: 0.45rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   justify-content: flex-end;
   color: rgba(232, 221, 208, 0.35);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .game {
+    --dialogue-reserve: 8.25rem;
+  }
+
+  .hud {
+    top: max(0.6rem, env(safe-area-inset-top, 0px));
+    left: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.65rem;
+  }
+
+  .panel {
+    width: calc(100% - 0.75rem);
+    max-height: min(34vh, 220px);
+    padding: 0.75rem 0.9rem 0.65rem;
+    padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    bottom: max(0.4rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .body {
+    min-height: 2.2em;
+    max-height: 7.2em;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .name {
+    font-size: 0.88rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+/* 横屏 / 矮屏手机：对话框再压矮，避免挡脸与前景道具 */
+@media (max-height: 500px), (orientation: landscape) and (max-height: 560px) {
+  .game {
+    --dialogue-reserve: 5.75rem;
+  }
+
+  .hud {
+    top: 0.35rem;
+    font-size: 0.6rem;
+  }
+
+  .hud-right .aff-hint,
+  .hud-right .aff-bar {
+    display: none;
+  }
+
+  .panel {
+    max-height: min(42vh, 160px);
+    padding: 0.45rem 0.75rem 0.4rem;
+    bottom: max(0.25rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .name {
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+    padding-bottom: 0.15rem;
+  }
+
+  .body {
+    min-height: 1.6em;
+    max-height: 4.8em;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .choices {
+    max-height: 28vh;
+    margin-top: 0.35rem;
+    gap: 0.3rem;
+  }
+
+  .choices li {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .continue {
+    margin-top: 0.2rem;
+    font-size: 0.65rem;
+  }
 }
 
 .tri {

@@ -2,17 +2,26 @@
 import type { Expression } from '../engine/types'
 import { computed } from 'vue'
 import { getCharSprite } from '../data/assets'
+import { resolveSpriteLayout } from '../data/spriteLayout'
 
 const props = defineProps<{
   character: string
   expression: Expression
+  bg?: string
 }>()
 
 const src = computed(() => getCharSprite(props.character, props.expression))
+const layout = computed(() => resolveSpriteLayout(props.bg ?? '', props.expression))
+
+const wrapStyle = computed(() => ({
+  '--sprite-scale': String(layout.value.scale),
+  '--sprite-x': `${layout.value.xPercent}%`,
+  '--sprite-bottom': `${layout.value.bottomVh}vh`,
+}))
 </script>
 
 <template>
-  <div class="sprite-wrap" :class="expression">
+  <div class="sprite-wrap" :class="expression" :style="wrapStyle">
     <Transition name="sprite-fade" mode="out-in">
       <img
         :key="src"
@@ -27,15 +36,19 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 
 <style scoped>
 .sprite-wrap {
+  --sprite-scale: 0.74;
+  --sprite-x: 50%;
+  --sprite-bottom: -7vh;
   position: absolute;
-  /* 居中贴底：头须留在画面内，下半身伸进对话框后方 */
-  left: 50%;
-  bottom: -2vh;
-  transform: translateX(-50%);
+  left: var(--sprite-x);
+  bottom: calc(var(--sprite-bottom) + var(--dialogue-reserve, 0px) * 0.15);
+  transform: translateX(-50%) scale(var(--sprite-scale));
+  transform-origin: bottom center;
   z-index: 2;
-  width: clamp(340px, 56vh, 640px);
-  /* 高度严格 < 视口，避免头顶被裁 */
-  height: min(86vh, 900px);
+  /* 基准尺寸：再由 --sprite-scale 按场景透视缩放 */
+  width: clamp(300px, 48vh, 560px);
+  height: min(78vh, 820px);
+  max-height: calc(100% - var(--dialogue-reserve, 7.5rem) - 2.5rem);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -78,11 +91,11 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 @keyframes enter {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%) scale(var(--sprite-scale)) translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) scale(var(--sprite-scale)) translateY(0);
   }
 }
 
@@ -97,26 +110,31 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 
 @media (max-width: 900px) {
   .sprite-wrap {
-    width: clamp(300px, 54vh, 560px);
-    height: min(84vh, 820px);
-    bottom: -1vh;
+    width: clamp(260px, 44vh, 480px);
+    height: min(72vh, 700px);
   }
 }
 
 @media (max-width: 640px) {
   .sprite-wrap {
-    width: clamp(260px, 70vw, 420px);
-    height: min(80vh, 720px);
-    bottom: 0;
+    width: clamp(220px, 58vw, 360px);
+    height: min(62vh, 560px);
   }
 }
 
-/* 宽屏略放大，仍保证头顶留白 */
-@media (min-aspect-ratio: 16/9) {
+/* 横屏手机：可视高度极短，进一步缩小立绘，保证脸在对话框上方 */
+@media (max-height: 500px), (orientation: landscape) and (max-height: 560px) {
   .sprite-wrap {
-    width: clamp(380px, 58vh, 700px);
-    height: min(88vh, 960px);
-    bottom: -3vh;
+    width: clamp(180px, 38vh, 360px);
+    height: min(58vh, 420px);
+    max-height: calc(100% - var(--dialogue-reserve, 5.5rem) - 1.25rem);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) and (min-height: 700px) {
+  .sprite-wrap {
+    width: clamp(320px, 46vh, 580px);
+    height: min(76vh, 860px);
   }
 }
 </style>
