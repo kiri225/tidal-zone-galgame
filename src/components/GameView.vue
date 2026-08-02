@@ -26,13 +26,24 @@ const nextCgHint = computed(() => {
     : 'CG 已全部解锁'
 })
 
+/** 解锁提示 / 全屏预览优先消费点击，避免一碰就跳过 CG */
+function consumeCgGate(): boolean {
+  if (game.pendingCgUnlock) {
+    game.dismissCgUnlock()
+    return true
+  }
+  return false
+}
+
+function onGameClick() {
+  if (consumeCgGate()) return
+  if (!hasChoices.value) game.advance()
+}
+
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') {
     e.preventDefault()
-    if (game.pendingCgUnlock) {
-      game.dismissCgUnlock()
-      return
-    }
+    if (consumeCgGate()) return
     if (!hasChoices.value) game.advance()
   }
 }
@@ -49,7 +60,11 @@ watch(
 </script>
 
 <template>
-  <section class="game" :class="[`mood-${game.mood}`, { 'has-cg': !!game.cg }]" @click="!hasChoices && game.advance()">
+  <section
+    class="game"
+    :class="[`mood-${game.mood}`, { 'has-cg': !!game.cg, 'cg-gated': !!game.pendingCgUnlock && !game.cg }]"
+    @click="onGameClick"
+  >
     <BackgroundLayer v-show="!game.cg" :bg="game.bg" :mood="game.mood" />
     <CharacterSprite
       v-if="game.sprite && !game.cg"
@@ -75,7 +90,7 @@ watch(
       </div>
     </div>
 
-    <div class="panel" @click.stop>
+    <div v-show="!(game.pendingCgUnlock && !game.cg)" class="panel" @click.stop>
       <div v-if="game.speaker" class="name" :style="{ color: nameColor }">
         {{ game.speaker }}
       </div>
@@ -93,7 +108,7 @@ watch(
 
       <div v-else class="continue">
         <span class="tri">▼</span>
-        <span class="tip">点击 / 空格 继续</span>
+        <span class="tip">{{ game.cg ? '欣赏 CG · 点击 / 空格 继续' : '点击 / 空格 继续' }}</span>
       </div>
     </div>
   </section>
@@ -198,7 +213,15 @@ watch(
 }
 
 .has-cg .panel {
-  border-color: rgba(196, 164, 132, 0.4);
+  border-color: rgba(196, 164, 132, 0.45);
+  /* CG 播放时不给立绘留右垫，并略透出画面 */
+  padding-right: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(12, 20, 30, 0.52), rgba(8, 14, 22, 0.88));
+}
+
+.cg-gated .hud {
+  opacity: 0.35;
 }
 
 .panel {
