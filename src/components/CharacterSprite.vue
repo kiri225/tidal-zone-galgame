@@ -28,14 +28,14 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 <style scoped>
 .sprite-wrap {
   position: absolute;
-  /* 居中；下半身伸进对话框后方，上半身卡在对话框上沿（panel z=10） */
+  /* 居中贴底：头须留在画面内，下半身伸进对话框后方 */
   left: 50%;
-  bottom: clamp(-12vh, -6vh, -2vh);
+  bottom: -2vh;
   transform: translateX(-50%);
   z-index: 2;
-  /* 以对话框顶为锚：立绘高度盖住「面板上方 + 面板厚度」 */
-  width: clamp(400px, 78vh, 960px);
-  height: min(118vh, 1320px);
+  width: clamp(340px, 56vh, 640px);
+  /* 高度严格 < 视口，避免头顶被裁 */
+  height: min(86vh, 900px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -51,9 +51,6 @@ const src = computed(() => getCharSprite(props.character, props.expression))
   object-position: bottom center;
   user-select: none;
   background: transparent;
-  /* 略放大裁掉脚底留白，让胸腰卡在对话框上沿 */
-  transform: scale(1.12);
-  transform-origin: bottom center;
 }
 
 .hurt,
@@ -100,32 +97,26 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 
 @media (max-width: 900px) {
   .sprite-wrap {
-    width: clamp(340px, 72vh, 720px);
-    height: min(112vh, 1100px);
-    bottom: -8vh;
-  }
-  .sprite {
-    transform: scale(1.1);
+    width: clamp(300px, 54vh, 560px);
+    height: min(84vh, 820px);
+    bottom: -1vh;
   }
 }
 
 @media (max-width: 640px) {
   .sprite-wrap {
-    width: clamp(280px, 78vw, 480px);
-    height: min(105vh, 920px);
-    bottom: -4vh;
+    width: clamp(260px, 70vw, 420px);
+    height: min(80vh, 720px);
+    bottom: 0;
   }
 }
 
-/* 超宽屏：更大立绘，腰线对准对话框顶 */
+/* 宽屏略放大，仍保证头顶留白 */
 @media (min-aspect-ratio: 16/9) {
   .sprite-wrap {
-    width: clamp(460px, 82vh, 1040px);
-    height: min(122vh, 1400px);
-    bottom: -14vh;
-  }
-  .sprite {
-    transform: scale(1.16);
+    width: clamp(380px, 58vh, 700px);
+    height: min(88vh, 960px);
+    bottom: -3vh;
   }
 }
 </style>
