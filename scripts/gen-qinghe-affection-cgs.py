@@ -95,7 +95,7 @@ def gen(name: str, stem: str, scene: str, key: str, base: str, model: str, force
         return
     prompt = f"{CHAR_LOCK} Scene: {scene}."
     url = base.rstrip("/") + "/v1/images/generations"
-    body = json.dumps({"model": model, "prompt": prompt, "size": "1024x1024", "n": 1}).encode()
+    body = json.dumps({"model": model, "prompt": prompt, "size": "1536x1024", "n": 1}).encode()
     req = urllib.request.Request(
         url,
         data=body,
