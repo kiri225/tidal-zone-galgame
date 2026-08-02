@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第46章 · 联名的想象
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter46: DialogueNode[] = [
   {
@@ -65,13 +65,21 @@ export const chapter46: DialogueNode[] = [
     id: 'c46-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「辞职开小馆。」她笑了一下，很快收住，「那是后话。先把这周的通牒熬过去。」',
     next: 'c46-end',
   },
   {
     id: 'c46-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '店里的灰尘与酒店的冷气在想象里握手。联名还不是合同——是两个人终于肯说出的如果。',
+    next: 'c46-end-cg',
+  },
+  {
+    id: 'c46-end-cg',
+    cg: 'ql-ch46-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n联名小黑板上未写完的如果。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch47',
   },
 ]

@@ -35,8 +35,12 @@ export function clampAffection(value: number): number {
   return Math.min(AFFECTION_MAX, Math.max(AFFECTION_MIN, value))
 }
 
+/**
+ * 亲密度本身已是 0–100 百分制点数（选项 +5/+10 即 +5%/+10%）。
+ * 勿再 /100×100，否则语义混淆。
+ */
 export function affectionPercent(value: number): number {
-  return Math.round((clampAffection(value) / AFFECTION_MAX) * 100)
+  return Math.round(clampAffection(value))
 }
 
 export function formatAffection(value: number): string {

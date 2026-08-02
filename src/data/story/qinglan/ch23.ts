@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第23章 · 休班早晨
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter23: DialogueNode[] = [
   {
@@ -80,13 +80,21 @@ export const chapter23: DialogueNode[] = [
     id: 'c23-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「凶一点，鱼才便宜。」她哼了一声，把找回的零钱塞进我口袋，「指挥权在我，提袋权在你。」',
     next: 'c23-end',
   },
   {
     id: 'c23-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '袋里冰袋渗出水。她的手背凉，碰触却热。休班早晨的潮屿，第一次像我们的。',
+    next: 'c23-end-cg',
+  },
+  {
+    id: 'c23-end-cg',
+    cg: 'ql-ch23-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n早市人潮里回头确认你还在。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch24',
   },
 ]

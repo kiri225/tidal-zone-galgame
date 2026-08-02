@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第22章 · 清醒的岸
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter22: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter22: DialogueNode[] = [
     id: 'c22-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '手心相触又松开。她掌心有皂角味，温度比酒醒得更快。「……够了。今晚这样够了。」',
     next: 'c22-end',
   },
   {
     id: 'c22-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '自动门开合。夜风进来，又被挡回去——像一种克制的亲吻，留在门禁记录之外。',
+    next: 'c22-end-cg',
+  },
+  {
+    id: 'c22-end-cg',
+    cg: 'ql-ch22-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n习惯比酒更醉的清醒岸。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch23',
   },
 ]

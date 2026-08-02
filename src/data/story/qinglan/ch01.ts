@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第1章 · 夜班名牌
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第1章 · 夜班名牌（小说级密度）
  */
 export const chapter01: DialogueNode[] = [
   {
@@ -20,7 +19,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-01',
     sprite: 'qinglan',
-    text: '名牌上写着「苏晴岚 · 夜班经理」。字很小，笑却很大——标准到让人怀疑那笑是否属于她本人。',
+    text: '大堂铺着深色地毯，脚步被吞得只剩闷响。落地窗外是雨后的港湾，灯牌倒映成一条冷蓝的河。\n名牌上写着「苏晴岚 · 夜班经理」。字很小，笑却很大——标准到让人怀疑那笑是否属于她本人。',
     next: 'c01-02',
   },
   {
@@ -40,7 +39,8 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-04',
     sprite: 'qinglan',
-    text: '她敲键盘的速度很快，指甲修剪得整齐，像一切失控都被预先裁掉。',
+    expression: 'think',
+    text: '她敲键盘的速度很快，指甲修剪得整齐，像一切失控都被预先裁掉。\n屏幕光映在镜片边缘——她戴着细框眼镜，把职业笑切得更锋利。',
     next: 'c01-05',
   },
   {
@@ -48,13 +48,33 @@ export const chapter01: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'smile',
     speaker: '苏晴岚',
-    text: '明白了。本地人卖铺，我们有员工价通道。\n请出示证件。',
+    text: '明白了。本地人卖铺，我们有员工价通道。\n请出示证件。两晚，海景还是内廊？内廊安静，海景贵一点——员工价里也能选。',
     next: 'c01-06',
   },
   {
     id: 'c01-06',
+    speaker: '沈屿',
+    text: '内廊。安静就好。',
+    next: 'c01-07',
+  },
+  {
+    id: 'c01-07',
     sprite: 'qinglan',
-    text: '房卡递过来时，她的指尖隔着塑料卡轻轻碰了我一下——职业距离刚好一厘米，多一分就像越界。',
+    text: '打印机轻轻吐出确认单。她撕下存根，动作干净得像切断某句多余的寒暄。\n制服领口别着名牌，金属边在灯下闪了一下——冷的，礼貌的，像随时可以摘下换人。',
+    next: 'c01-08',
+  },
+  {
+    id: 'c01-08',
+    sprite: 'qinglan',
+    expression: 'default',
+    speaker: '苏晴岚',
+    text: '房卡两张。早餐到九点。迷你吧按实价计。\n有事按零——零接的是夜班，也就是我。',
+    next: 'c01-09',
+  },
+  {
+    id: 'c01-09',
+    sprite: 'qinglan',
+    text: '房卡递过来时，她的指尖隔着塑料卡轻轻碰了我一下——职业距离刚好一厘米，多一分就像越界。\n那一厘米里，什么都没有发生；可什么都可能开始。',
     next: 'c01-choice',
   },
   {
@@ -82,27 +102,58 @@ export const chapter01: DialogueNode[] = [
     id: 'c01-r0',
     sprite: 'qinglan',
     expression: 'soft',
-    text: '她把房卡推到台沿：「电梯在左侧。有事按零。」职业笑纹丝不动，像潮水永远盖住礁石。',
+    speaker: '苏晴岚',
+    text: '……六点交班。\n问这个的客人不多。大多只问wifi密码。',
+    next: 'c01-r0b',
+  },
+  {
+    id: 'c01-r0b',
+    sprite: 'qinglan',
+    text: '职业笑纹丝微动了一下，像潮水退开半寸礁石。\n她把房卡推到台沿：「电梯在左侧。有事按零。」',
     next: 'c01-end',
   },
   {
     id: 'c01-r1',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'cold',
+    speaker: '苏晴岚',
+    text: '当然。交易最省事。\n电梯左侧。祝您休息愉快。',
+    next: 'c01-r1b',
+  },
+  {
+    id: 'c01-r1b',
+    sprite: 'qinglan',
+    text: '完美的结束语。她已经把目光移回屏幕，像把我归档进「过客」那一栏。\n可键帽敲击的节奏，比刚才慢了半拍。',
     next: 'c01-end',
   },
   {
     id: 'c01-r2',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'surprised',
+    speaker: '苏晴岚',
+    text: '……名牌是集团统一刻的。\n好听不好听，不在服务范围内。',
+    next: 'c01-r2b',
+  },
+  {
+    id: 'c01-r2b',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她把那一瞬间收进眼底，耳尖却微微红了一点——随即被冷蓝顶灯吞掉。\n「电梯在左侧。有事按零。」',
     next: 'c01-end',
   },
   {
     id: 'c01-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '房卡在掌心发烫。名牌上的三个字跟着电梯数字一层层往上——苏晴岚。\n夜班才刚开始。有些答案，要留到下一班。',
+    next: 'c01-end-cg',
+  },
+  {
+    id: 'c01-end-cg',
+    cg: 'ql-ch01-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n冷蓝前台灯下，她的职业笑仍完美——只有递出房卡时那一厘米的指尖距离，像潮汐故意留下的湿痕。',
     next: 'ch02',
   },
 ]

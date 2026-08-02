@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第39章 · 假装前台
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter39: DialogueNode[] = [
   {
@@ -64,13 +64,21 @@ export const chapter39: DialogueNode[] = [
     id: 'c39-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '互称前台与客人时，她眼底有笑。「装一会儿。装完，名牌还是我的——人不是。」',
     next: 'c39-end',
   },
   {
     id: 'c39-end',
     mood: 'normal',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '假装前台的游戏很短。短到白班推门前必须结束——却长到够你记住她卸妆后的声音。',
+    next: 'c39-end-cg',
+  },
+  {
+    id: 'c39-end-cg',
+    cg: 'ql-ch39-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n假装前台时只对你说的傻瓜。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch40',
   },
 ]

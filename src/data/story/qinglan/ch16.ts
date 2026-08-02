@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第16章 · 回到班表
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter16: DialogueNode[] = [
   {
@@ -72,13 +72,21 @@ export const chapter16: DialogueNode[] = [
     id: 'c16-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她只是点了下头，职业笑重新归位，却比两天前慢了半拍才说：「欢迎……续住。」',
     next: 'c16-end',
   },
   {
     id: 'c16-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '班表重新贴上墙。她的名字回到夜班那一栏；我的房间号，也被她用铅笔轻轻描过一次。',
+    next: 'c16-end-cg',
+  },
+  {
+    id: 'c16-end-cg',
+    cg: 'ql-ch16-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n归岗时停住半秒的眼神。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch17',
   },
 ]

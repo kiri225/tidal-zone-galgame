@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第38章 · 潮间带·客房
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter38: DialogueNode[] = [
   {
@@ -72,13 +72,21 @@ export const chapter38: DialogueNode[] = [
     id: 'c38-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「你也可以不当听众。」她靠着窗框，「可你听了——那就记住：退潮才露出能站的地方。」',
     next: 'c38-end',
   },
   {
     id: 'c38-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '海景房的玻璃映出两个人。隐喻说完，房间仍空——空得刚好能放下一个未命名的习惯。',
+    next: 'c38-end-cg',
+  },
+  {
+    id: 'c38-end-cg',
+    cg: 'ql-ch38-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n空房窗边潮间带的隐喻。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch39',
   },
 ]

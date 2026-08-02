@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第27章 · 和解的盐
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter27: DialogueNode[] = [
   {
@@ -86,13 +86,21 @@ export const chapter27: DialogueNode[] = [
     id: 'c27-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '泡沫溢出来。她靠着柱子，浅浅笑了一下：「咸的。跟刚才的气一样。喝完再说。」',
     next: 'c27-end',
   },
   {
     id: 'c27-end',
     mood: 'rain',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '雨变小。她抬手拭掉我额角水珠，动作短促，像一次未申报的温柔——和解的盐。',
+    next: 'c27-end-cg',
+  },
+  {
+    id: 'c27-end-cg',
+    cg: 'ql-ch27-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n雨棚下泡沫溢出的和解。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch28',
   },
 ]

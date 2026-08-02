@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第42章 · 买家皮鞋
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter42: DialogueNode[] = [
   {
@@ -64,13 +64,21 @@ export const chapter42: DialogueNode[] = [
     id: 'c42-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「加价很诱人。」她冷冷说，「诱人的东西通常会把岸变成码头——只停片刻。」',
     next: 'c42-end',
   },
   {
     id: 'c42-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '中介名片与房卡并排放着。一种是卖，一种是住——她等你把哪一张推到前面。',
+    next: 'c42-end-cg',
+  },
+  {
+    id: 'c42-end-cg',
+    cg: 'ql-ch42-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n买家皮鞋与未推上前的房卡。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch43',
   },
 ]

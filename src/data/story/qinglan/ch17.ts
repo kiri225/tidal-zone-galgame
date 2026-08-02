@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第17章 · 酒吧收工
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter17: DialogueNode[] = [
   {
@@ -64,20 +64,28 @@ export const chapter17: DialogueNode[] = [
     id: 'c17-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '苏晴岚把杯底转了一圈：「清醒。所以才敢邀请——醉了的邀请，我不做。」',
     next: 'c17-end',
   },
   {
     id: 'c17-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她没有挽留，只把第二杯推回吧台内侧：「回去睡。门禁到六点。」尾音却软了一寸。',
     next: 'c17-end',
   },
   {
     id: 'c17-end',
     mood: 'intimate',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '清醒的酒比醉更危险——因为它记得每一步。吧台灯灭了一盏，内侧还亮着。',
+    next: 'c17-end-cg',
+  },
+  {
+    id: 'c17-end-cg',
+    cg: 'ql-ch17-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n清醒碰杯时太轻的一声。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch18',
   },
 ]

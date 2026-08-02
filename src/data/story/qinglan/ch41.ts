@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第41章 · 备用房卡
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter41: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter41: DialogueNode[] = [
     id: 'c41-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「不是让你随时进来。」她别过脸，「是让你知道：有一扇门，不为过客开。」',
     next: 'c41-end',
   },
   {
     id: 'c41-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '红绳在指间绕了一圈。房卡比名牌更轻——轻的东西，往往更沉。',
+    next: 'c41-end-cg',
+  },
+  {
+    id: 'c41-end-cg',
+    cg: 'ql-ch41-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n红绳备用房卡的信任重量。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch42',
   },
 ]

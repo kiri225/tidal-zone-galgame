@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第1章 · 雇佣条款（小说级密度）
- * 入口：route-start → ch01…
+ * 入口：route-start → ch01…（含序章迁入的重逢）
  * 出口：→ ch02
  */
 export const chapter01: DialogueNode[] = [
@@ -16,11 +16,122 @@ export const chapter01: DialogueNode[] = [
     expression: 'apron',
     cg: null,
     text: '【第1章】雇佣条款\n潮声书店的风铃，在七月的湿热里响得很慢——像有人故意把时间拨成慢镜头。',
+    next: 'c01-r01',
+  },
+  {
+    id: 'c01-r01',
+    text: '店里很静。书架高到天花板，吧台尽头有人在擦一只高脚杯。\n她抬眼，动作顿了一下。风铃在身后轻轻响。',
+    next: 'c01-r02',
+  },
+  {
+    id: 'c01-r02',
+    speaker: '林晚棠',
+    expression: 'tense',
+    text: '……沈屿。',
+    next: 'c01-r03',
+  },
+  {
+    id: 'c01-r03',
+    speaker: '沈屿',
+    text: '晚棠。你还在这里。',
+    next: 'c01-r04',
+  },
+  {
+    id: 'c01-r04',
+    speaker: '林晚棠',
+    expression: 'avert',
+    text: '我一直在。是你走了十年。',
+    next: 'c01-r05',
+  },
+  {
+    id: 'c01-r05',
+    text: '林晚棠。中学时坐我后排的人。成绩好，话少——雨天会把伞默默放到我桌上，自己淋着走。\n我离开潮屿的那年，她来送行，什么都没说。我也什么都没问。',
+    next: 'c01-r06',
+  },
+  {
+    id: 'c01-r06',
+    text: '如今她把头发扎得随便，围裙上沾着一点墨——像终于允许自己活得不那么整齐。\n可那双眼睛，还是潮汐退尽后的样子：湿，亮，不肯求人。',
+    next: 'c01-r07',
+  },
+  {
+    id: 'c01-r07',
+    speaker: '林晚棠',
+    expression: 'default',
+    text: '听说伯父的事了。节哀。\n……要喝点什么吗？今晚最后一客，我请。',
+    choices: [
+      {
+        text: '「那我就不客气了。」——坐下，接受这份靠近',
+        next: 'c01-r08a',
+        affection: 5,
+        setFlag: 'first_drink',
+      },
+      {
+        text: '「你变了。」——先把话说出口',
+        next: 'c01-r08c',
+        affection: 10,
+        setFlag: 'first_drink',
+      },
+      {
+        text: '「不用，我只是路过。」——保持距离',
+        next: 'c01-r08b',
+        affection: 0,
+      },
+    ],
+  },
+  {
+    id: 'c01-r08a',
+    speaker: '林晚棠',
+    expression: 'soft',
+    text: '威士忌，加一点点海水盐。本地人喝的。\n……别露出那种表情，又不是真的舀了海里的水。',
+    next: 'c01-r09',
+  },
+  {
+    id: 'c01-r08c',
+    speaker: '林晚棠',
+    expression: 'blush',
+    text: '……是吗。\n你也是。以前不会站在门口犹豫那么久。',
+    next: 'c01-r08c2',
+  },
+  {
+    id: 'c01-r08c2',
+    text: '她给我倒了酒。杯壁上凝着水珠，像这十年里没说出口的那些句子。\n第一口下去，咸与热同时撞上舌尖。',
+    next: 'c01-r09',
+  },
+  {
+    id: 'c01-r08b',
+    speaker: '林晚棠',
+    expression: 'hurt',
+    text: '也好。\n门没锁，你随时可以进来。或者——不进来也行。',
+    next: 'c01-r09',
+  },
+  {
+    id: 'c01-r09',
+    speaker: '林晚棠',
+    expression: 'default',
+    text: '你打算待多久？',
+    next: 'c01-r10',
+  },
+  {
+    id: 'c01-r10',
+    speaker: '沈屿',
+    text: '处理完铺子就走。最多一个月。',
+    next: 'c01-r11',
+  },
+  {
+    id: 'c01-r11',
+    speaker: '林晚棠',
+    expression: 'avert',
+    text: '一个月……够了。\n对某些事来说。',
+    next: 'c01-r12',
+  },
+  {
+    id: 'c01-r12',
+    text: '她擦杯子的动作慢了一拍。\n我忽然想起——当年码头上，她也是这样，把没说完的话藏进袖口。',
     next: 'c01-01',
   },
   {
     id: 'c01-01',
-    text: '我站在吧台外，掌心还残留着拾潮店门钥匙的金属凉意。\n晚棠没有立刻抬头。她正用干布擦一只高脚杯，布料摩擦杯壁，发出细而固执的声响。',
+    text: '我站在吧台外，掌心还残留着拾潮店门钥匙的金属凉意。\n晚棠没有立刻再说话。她用干布擦高脚杯，布料摩擦杯壁，发出细而固执的声响。',
     next: 'c01-02',
   },
   {

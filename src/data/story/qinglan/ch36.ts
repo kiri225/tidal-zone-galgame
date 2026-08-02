@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第36章 · 习惯还是岸
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter36: DialogueNode[] = [
   {
@@ -58,20 +58,28 @@ export const chapter36: DialogueNode[] = [
     id: 'c36-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「岸。」这个字在风停后的安静里格外清楚。她耳尖红着，却没有收回。',
     next: 'c36-end',
   },
   {
     id: 'c36-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她把脸埋进毯子边缘：「……你选词的方式，很坏。坏在让我想信。」',
     next: 'c36-end',
   },
   {
     id: 'c36-end',
     mood: 'intimate',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '雨困之后的第一句定义战：习惯还是岸。她没有立刻选——却把选择权，放在了你手心。',
+    next: 'c36-end-cg',
+  },
+  {
+    id: 'c36-end-cg',
+    cg: 'ql-ch36-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n习惯还是岸的定义战。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch37',
   },
 ]

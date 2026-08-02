@@ -60,6 +60,14 @@ export const chapter50: DialogueNode[] = [
   {
     id: 'c50-06',
     text: '晨光越过海平线。三个月的短暂停泊，终于要决定要不要改写成岸名。',
+    next: 'c50-end-cg',
+  },
+  {
+    id: 'c50-end-cg',
+    cg: 'ql-ch50-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n分叉的岸上私人名牌的晨光。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: '__ending__',
   },
 ]

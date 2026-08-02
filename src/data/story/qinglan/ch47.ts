@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第47章 · 最后通牒
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter47: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter47: DialogueNode[] = [
     id: 'c47-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「最后通牒听起来很凶。」她冷笑，「夜班听过更凶的。凶完，还得打扫。」',
     next: 'c47-end',
   },
   {
     id: 'c47-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '两张期限叠在一起。潮汐不等人——可她愿意在期限里，给你留一扇不锁的侧门。',
+    next: 'c47-end-cg',
+  },
+  {
+    id: 'c47-end-cg',
+    cg: 'ql-ch47-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n双线通牒下站在你选过的岸。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch48',
   },
 ]

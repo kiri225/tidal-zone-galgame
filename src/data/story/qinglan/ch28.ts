@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第28章 · 谈到交班
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter28: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter28: DialogueNode[] = [
     id: 'c28-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「好。我起名，你听。」天色一点一点变蓝。白班推门前，她只留一句极轻的：「去睡。」',
     next: 'c28-end',
   },
   {
     id: 'c28-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '交班铃响。职业笑瞬间上线；只有我对上那双还没完全戴上面具的眼睛。',
+    next: 'c28-end-cg',
+  },
+  {
+    id: 'c28-end-cg',
+    cg: 'ql-ch28-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n交班前想给习惯起的名字。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch29',
   },
 ]

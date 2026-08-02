@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第5章 · 后厨烟
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第5章 · 后厨烟（小说级密度）
  */
 export const chapter05: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter05: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第5章】后厨烟\n卸货通道的灯坏了一盏。我找晚班经理签字，却在后巷撞见她。',
+    text: '【第5章】后厨烟\n卸货通道的灯坏了一盏。水泥墙渗着潮，消毒水味混着远处厨房的余温。我找晚班经理签字——送货单上缺一枚名字。',
     next: 'c05-01',
   },
   {
     id: 'c05-01',
     sprite: 'qinglan',
-    text: '她靠着水泥墙，衬衫领口松开一颗扣，名牌翻到背面。没有烟，只有夜风。',
+    text: '后巷风口处，她靠着墙。衬衫领口松开一颗扣，名牌翻到背面——金属冷光朝里，像暂时拒绝被叫「苏晴岚」。\n没有烟。只有夜风，和她呼出的一口白气。',
     next: 'c05-02',
   },
   {
@@ -34,13 +33,13 @@ export const chapter05: DialogueNode[] = [
   {
     id: 'c05-03',
     speaker: '沈屿',
-    text: '我不是来看风景的。',
+    text: '我不是来看风景的。送货单要签字。',
     next: 'c05-04',
   },
   {
     id: 'c05-04',
     sprite: 'qinglan',
-    text: '她把领口重新扣好，职业壳子咔哒一声合上，却合得慢了一拍。',
+    text: '她愣了一拍，才伸手要单。手指有点凉，指节上还留着白天握拳的浅痕。\n通道尽头的潮味涌进来，把大堂那套香水味冲淡得干干净净。',
     next: 'c05-05',
   },
   {
@@ -49,6 +48,26 @@ export const chapter05: DialogueNode[] = [
     expression: 'tense',
     speaker: '苏晴岚',
     text: '签字单给我。\n看完就忘。',
+    next: 'c05-06',
+  },
+  {
+    id: 'c05-06',
+    speaker: '沈屿',
+    text: '忘什么。名牌翻面，还是扣子松开。',
+    next: 'c05-07',
+  },
+  {
+    id: 'c05-07',
+    sprite: 'qinglan',
+    expression: 'hurt',
+    speaker: '苏晴岚',
+    text: '都忘。\n客人只该看见前台——完美的、可替换的前台。',
+    next: 'c05-08',
+  },
+  {
+    id: 'c05-08',
+    sprite: 'qinglan',
+    text: '她把领口重新扣好，职业壳子咔哒一声合上，却合得慢了一拍。\n名牌翻正，「苏晴岚」三个字重新朝外——像把人重新挂回岗位。',
     next: 'c05-choice',
   },
   {
@@ -75,28 +94,84 @@ export const chapter05: DialogueNode[] = [
   {
     id: 'c05-r0',
     sprite: 'qinglan',
+    expression: 'surprised',
+    speaker: '苏晴岚',
+    text: '……忘不了。\n这句话比投诉还难处理。',
+    next: 'c05-r0b',
+  },
+  {
+    id: 'c05-r0b',
+    sprite: 'qinglan',
     expression: 'soft',
-    text: '通道尽头的潮味混着消毒水。破绽一旦被看见，就再也变不成完美的前台。',
+    speaker: '苏晴岚',
+    text: '那就别到处说。\n破绽一旦流通，就会变成八卦——八卦比潮汐更快。',
+    next: 'c05-r0c',
+  },
+  {
+    id: 'c05-r0c',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她在单子上签下名字，笔迹比前台工整，却多了一点抖。\n通道尽头的潮味混着消毒水。破绽一旦被看见，就再也变不成完美的前台。',
     next: 'c05-end',
   },
   {
     id: 'c05-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    speaker: '苏晴岚',
+    text: '……好。\n你会「好」得这么干脆，倒让我意外。',
+    next: 'c05-r1b',
+  },
+  {
+    id: 'c05-r1b',
+    sprite: 'qinglan',
+    expression: 'soft',
+    speaker: '苏晴岚',
+    text: '边界被尊重的时候，人会松一口气。\n哪怕只松半秒。',
+    next: 'c05-r1c',
+  },
+  {
+    id: 'c05-r1c',
+    sprite: 'qinglan',
+    text: '她签完字，把单子折好递还。目光没有躲，也没有多给——像一份签收过的信任，不多不少。\n「回大堂吧。这里风大。」',
     next: 'c05-end',
   },
   {
     id: 'c05-r2',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'cold',
+    speaker: '苏晴岚',
+    text: '不当机器——说得轻巧。\n机器坏了还能报修。人坏了，只能换班。',
+    next: 'c05-r2b',
+  },
+  {
+    id: 'c05-r2b',
+    sprite: 'qinglan',
+    expression: 'tense',
+    speaker: '苏晴岚',
+    text: '签字单在这儿。看完请回。\n夜风不是给你上课的教室。',
+    next: 'c05-r2c',
+  },
+  {
+    id: 'c05-r2c',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她把扣子扣到最上面一颗，名牌摆正，像重新上锁。\n单子上的签名力道很重——重到纸背微微凸起。',
     next: 'c05-end',
   },
   {
     id: 'c05-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '卸货通道的坏灯仍旧闪着。名牌翻正之后，世界假装什么都没发生。\n可夜风记得：有一颗扣子曾松开过，有一块金属曾朝里过。',
+    next: 'c05-end-cg',
+  },
+  {
+    id: 'c05-end-cg',
+    cg: 'ql-ch05-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n卸货通道里合得太慢的领口。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch06',
   },
 ]

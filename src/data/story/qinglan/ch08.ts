@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第8章 · 停泊一夜
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第8章 · 停泊一夜（小说级密度）
  */
 export const chapter08: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter08: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第8章】停泊一夜\n酒吧打烊后，她没有赶我走。吧台灯只留一盏，冷蓝变成琥珀。',
+    text: '【第8章】停泊一夜\n酒吧打烊后，吧台只留一盏灯。冷蓝褪成琥珀，酒瓶在架上投下细长的影子。她没有赶我走——像默认这一班可以例外。',
     next: 'c08-01',
   },
   {
     id: 'c08-01',
     sprite: 'qinglan',
-    text: '她把名牌摘下来，扣在掌心，像卸下一小块铠甲。',
+    text: '她把名牌摘下来，扣在掌心，金属边轻轻一响。像卸下一小块铠甲，又像把「苏晴岚」三个字暂时寄存在手心。\n制服还在。人却松了一寸。',
     next: 'c08-02',
   },
   {
@@ -43,6 +42,33 @@ export const chapter08: DialogueNode[] = [
     expression: 'avert',
     speaker: '苏晴岚',
     text: '算……短暂停泊。\n别问期限。',
+    next: 'c08-05',
+  },
+  {
+    id: 'c08-05',
+    sprite: 'qinglan',
+    text: '「短暂停泊」四个字落在琥珀灯里，像缆绳轻轻搭上桩柱——还没系紧，却已经有了重量。\n她把名牌扣在吧台内侧，金属面朝下，像拒绝被继续呼叫。',
+    next: 'c08-06',
+  },
+  {
+    id: 'c08-06',
+    speaker: '沈屿',
+    text: '不停泊的船，也会累。',
+    next: 'c08-07',
+  },
+  {
+    id: 'c08-07',
+    sprite: 'qinglan',
+    expression: 'think',
+    speaker: '苏晴岚',
+    text: '累是一回事。敢不敢靠岸，是另一回事。\n很多船只在远处鸣笛——鸣完就走。',
+    next: 'c08-08',
+  },
+  {
+    id: 'c08-08',
+    sprite: 'qinglan',
+    expression: 'soft',
+    text: '她给我倒了半杯剩下的红酒，杯壁映着灯火。外侧留给客人，内侧留给——今晚被允许进入的人。\n房卡在我口袋里发烫，像提醒：过客也可以坐得更靠里一点。',
     next: 'c08-abranch',
   },
   {
@@ -55,7 +81,7 @@ export const chapter08: DialogueNode[] = [
     mood: 'intimate',
     sprite: null,
     cg: 'berth',
-    text: '【CG · 停泊一夜】\n制服未解，名牌却已摘下。吧台内侧两个人并肩，像两艘终于靠上同一根缆桩的船——暂时的，却真实的。',
+    text: '【CG · 停泊一夜】\n制服未解，名牌却已摘下。吧台内侧两个人并肩，像两艘终于靠上同一根缆桩的船——暂时的，却真实的。\n琥珀灯光把肩线切得很近。不必告白，停泊本身已经是一句完整的话。',
     next: 'c08-aftercg',
     unlockCg: 'berth',
   },
@@ -64,7 +90,15 @@ export const chapter08: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'soft',
     cg: null,
-    text: '灯还亮着。有些画面已经发生，有些还差一个潮位。',
+    text: '灯还亮着。有些画面已经发生，有些还差一个潮位。\n她转着杯脚，名牌在掌心与台面之间沉默，像一枚暂时卸下的岸名。',
+    next: 'c08-09',
+  },
+  {
+    id: 'c08-09',
+    sprite: 'qinglan',
+    expression: 'lean',
+    speaker: '苏晴岚',
+    text: '短暂停泊……听起来像借口。\n可借口有时候，是人唯一敢伸出的缆绳。',
     next: 'c08-choice',
   },
   {
@@ -86,21 +120,62 @@ export const chapter08: DialogueNode[] = [
   {
     id: 'c08-r0',
     sprite: 'qinglan',
+    expression: 'blush',
+    speaker: '苏晴岚',
+    text: '……系紧。\n你说话越来越像会留下来的那种人。',
+    next: 'c08-r0b',
+  },
+  {
+    id: 'c08-r0b',
+    sprite: 'qinglan',
     expression: 'soft',
-    text: '杯底最后一滴酒反射灯火。停泊不必宣告，只需要今晚不解开绳。',
+    speaker: '苏晴岚',
+    text: '别急着保证明天。\n今晚不解开，就够了。',
+    next: 'c08-r0c',
+  },
+  {
+    id: 'c08-r0c',
+    sprite: 'qinglan',
+    expression: 'smile',
+    text: '杯底最后一滴酒反射灯火。她没有再戴回名牌。\n停泊不必宣告，只需要今晚不解开绳——对班，从此有了另一层意思。',
     next: 'c08-end',
   },
   {
     id: 'c08-r1',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'soft',
+    speaker: '苏晴岚',
+    text: '……不说话也好。\n内侧的位子，本来就适合沉默。',
+    next: 'c08-r1b',
+  },
+  {
+    id: 'c08-r1b',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '酒一点点见底。她偶尔侧过脸，像确认我还在，又像确认自己还允许我在。\n琥珀灯把两个人的影子叠在瓶架上——短的，却挨得很近。',
+    next: 'c08-r1c',
+  },
+  {
+    id: 'c08-r1c',
+    sprite: 'qinglan',
+    expression: 'tired',
+    speaker: '苏晴岚',
+    text: '杯空了。\n你可以回房——或者再坐五分钟。五分钟也算停泊。',
     next: 'c08-end',
   },
   {
     id: 'c08-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '名牌仍扣在吧台内侧，金属面朝下。酒吧的灯最终会熄，可缆绳的触感还留在掌心。\n短暂停泊——从借口变成习惯，往往只需要这样一个琥珀色的夜晚。',
+    next: 'c08-end-cg',
+  },
+  {
+    id: 'c08-end-cg',
+    cg: 'ql-ch08-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n吧台内侧摘下的名牌。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch09',
   },
 ]

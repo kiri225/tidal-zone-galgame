@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第6章 · 登记簿背面
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第6章 · 登记簿背面（小说级密度）
  */
 export const chapter06: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter06: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第6章】登记簿背面\n前台废纸篓边，一张作废的登记单被风翻过来。背面有铅笔字。',
+    text: '【第6章】登记簿背面\n前台废纸篓边，空调把一张作废的登记单吹翻过来。背面有铅笔字——不是系统打印的那种冷，是人手写的那种热。',
     next: 'c06-01',
   },
   {
     id: 'c06-01',
     sprite: 'qinglan',
-    text: '「三点的海比人诚实。」字迹清爽，像她敲键盘的节奏。',
+    text: '「三点的海比人诚实。」\n字迹清爽，像她敲键盘的节奏；又像故意藏在废纸里，好让自己否认。',
     next: 'c06-02',
   },
   {
@@ -48,7 +47,27 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-05',
     sprite: 'qinglan',
-    text: '她把那张纸撕成两半，却把有字的一半塞进围裙口袋，而不是垃圾桶。',
+    text: '她伸手要那张纸。指尖碰到纸边时停了一下，像碰到自己不该外泄的体温。\n大堂灯仍旧冷蓝，可这句话把三点的海潮声一下子拉近了。',
+    next: 'c06-06',
+  },
+  {
+    id: 'c06-06',
+    speaker: '沈屿',
+    text: '白班未必懂三点。',
+    next: 'c06-07',
+  },
+  {
+    id: 'c06-07',
+    sprite: 'qinglan',
+    expression: 'think',
+    speaker: '苏晴岚',
+    text: '白班懂报表。\n三点懂沉默。',
+    next: 'c06-08',
+  },
+  {
+    id: 'c06-08',
+    sprite: 'qinglan',
+    text: '她把那张纸撕成两半——动作干脆，像处理投诉。可有字的一半没有进垃圾桶，而是被她塞进围裙口袋。\n另一半空白，像故意留给世界一个「什么都没有」的证据。',
     next: 'c06-choice',
   },
   {
@@ -76,27 +95,81 @@ export const chapter06: DialogueNode[] = [
     id: 'c06-r0',
     sprite: 'qinglan',
     expression: 'soft',
-    text: '登记簿合上。有些句子只适合写在作废的纸上，才不会被系统归档。',
+    speaker: '苏晴岚',
+    text: '……谢谢。\n有些句子只适合写在作废的纸上，才不会被系统归档。',
+    next: 'c06-r0b',
+  },
+  {
+    id: 'c06-r0b',
+    sprite: 'qinglan',
+    expression: 'blush',
+    speaker: '苏晴岚',
+    text: '你要是当真没看见——也行。\n当真看见却不说，更好。',
+    next: 'c06-r0c',
+  },
+  {
+    id: 'c06-r0c',
+    sprite: 'qinglan',
+    text: '登记簿合上。围裙口袋鼓起一小块棱角，像藏着一枚不肯上交的私心。\n她重新戴上职业笑，可笑意里多了一点真实的缝。',
     next: 'c06-end',
   },
   {
     id: 'c06-r1',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'surprised',
+    speaker: '苏晴岚',
+    text: '再写给你看？\n客人点早餐可以，点句子——菜单里没有。',
+    next: 'c06-r1b',
+  },
+  {
+    id: 'c06-r1b',
+    sprite: 'qinglan',
+    expression: 'avert',
+    speaker: '苏晴岚',
+    text: '……以后如果手痒。\n也许会再写。不保证给你看。',
+    next: 'c06-r1c',
+  },
+  {
+    id: 'c06-r1c',
+    sprite: 'qinglan',
+    expression: 'soft',
+    text: '她把空白那半丢进纸篓，有字那半仍在口袋。\n像一场谈判：公开销毁，私下保留。',
     next: 'c06-end',
   },
   {
     id: 'c06-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '我移开视线，去看落地窗外的港湾灯。她很快把纸处理完——撕、藏、复位，一气呵成。\n前台重新变成只谈房卡与班表的地方。',
+    next: 'c06-r2b',
+  },
+  {
+    id: 'c06-r2b',
+    sprite: 'qinglan',
+    expression: 'cold',
+    speaker: '苏晴岚',
+    text: '废纸处理完毕。\n您今晚还需要续住说明吗？',
+    next: 'c06-r2c',
+  },
+  {
+    id: 'c06-r2c',
+    sprite: 'qinglan',
+    text: '完美的转场。像什么句子都没有出现过。\n可围裙口袋那一小块棱角，仍在制服下轻轻顶着——诚实得像三点的海。',
     next: 'c06-end',
   },
   {
     id: 'c06-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '作废的登记单只剩半张空白进了纸篓。有字的一半跟人走了。\n系统里查不到那句诗——可口袋知道，夜风也知道。',
+    next: 'c06-end-cg',
+  },
+  {
+    id: 'c06-end-cg',
+    cg: 'ql-ch06-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n废单背面那行不肯扔掉的字。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch07',
   },
 ]

@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第32章 · 只剩值班室
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter32: DialogueNode[] = [
   {
@@ -64,13 +64,21 @@ export const chapter32: DialogueNode[] = [
     id: 'c32-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '风声像要掀走屋顶。她背靠门板坐着，名牌放在桌上，像暂时投降：「坐。别站着像守卫。」',
     next: 'c32-end',
   },
   {
     id: 'c32-end',
     mood: 'intimate',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '值班室只剩体温与风声。世界被台风关在门外——门内，短暂停泊忽然变得很长。',
+    next: 'c32-end-cg',
+  },
+  {
+    id: 'c32-end-cg',
+    cg: 'ql-ch32-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n窄沙发上一床毯子的体温。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch33',
   },
 ]

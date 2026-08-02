@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第37章 · 黎明交班
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter37: DialogueNode[] = [
   {
@@ -65,13 +65,21 @@ export const chapter37: DialogueNode[] = [
     id: 'c37-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '同事的目光扫过来。她职业笑完美归位，袖口却偷偷碰了我一下——像暗号。',
     next: 'c37-end',
   },
   {
     id: 'c37-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '交班完成。台风退场，人却还停在潮间带——有些夜班，会改写成白天的心事。',
+    next: 'c37-end-cg',
+  },
+  {
+    id: 'c37-end-cg',
+    cg: 'ql-ch37-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n黎明交班袖口的暗号。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch38',
   },
 ]

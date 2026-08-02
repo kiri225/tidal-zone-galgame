@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第26章 · 争吵的边缘
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter26: DialogueNode[] = [
   {
@@ -76,20 +76,28 @@ export const chapter26: DialogueNode[] = [
     id: 'c26-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「那就证明给我看。」她抱臂，冷，「别用嘴争。用留下来的分钟争。」',
     next: 'c26-end',
   },
   {
     id: 'c26-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她像被戳中旧伤，笑得很薄：「对。我当过。所以更讨厌你把它演得这么像。」',
     next: 'c26-end',
   },
   {
     id: 'c26-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '她放下没开的汽水，转身离开。门楣风铃乱响——像一场未完成的争吵，等雨来收场。',
+    next: 'c26-end-cg',
+  },
+  {
+    id: 'c26-end-cg',
+    cg: 'ql-ch26-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n未开封盐汽水旁的冷意。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch27',
   },
 ]

@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第7章 · 雨声与门铃
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第7章 · 雨声与门铃（小说级密度）
  */
 export const chapter07: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter07: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第7章】雨声与门铃\n雨砸在雨棚上。门铃每隔几分钟响一次——外卖、迷路游客、淋湿的烟民。',
+    text: '【第7章】雨声与门铃\n雨砸在雨棚上，像有人不停敲打一张空桌。门铃每隔几分钟响一次——外卖、迷路游客、淋湿的烟民，把夜切成碎片。',
     next: 'c07-01',
   },
   {
     id: 'c07-01',
     sprite: 'qinglan',
-    text: '每次她刚开口，门铃就打断。我们的对话被切成碎片。',
+    text: '我下楼倒热水，看见她一边擦台面一边应门铃，动作像被雨点校准过的节拍器。\n每次她刚开口，门铃就打断。我们的对话被切成碎片——比潮汐更碎。',
     next: 'c07-02',
   },
   {
@@ -43,6 +42,33 @@ export const chapter07: DialogueNode[] = [
     expression: 'soft',
     speaker: '苏晴岚',
     text: '……站这儿就行。\n至少你知道什么时候该闭嘴。',
+    next: 'c07-05',
+  },
+  {
+    id: 'c07-05',
+    sprite: 'qinglan',
+    text: '门铃又响。她去开门，带回一把湿伞和一句「谢谢」。回来时肩线沾着细雨，名牌上凝着两三点水。\n她没有擦，像默认雨也是班表的一部分。',
+    next: 'c07-06',
+  },
+  {
+    id: 'c07-06',
+    speaker: '沈屿',
+    text: '今晚门铃会响到几点。',
+    next: 'c07-07',
+  },
+  {
+    id: 'c07-07',
+    sprite: 'qinglan',
+    expression: 'think',
+    speaker: '苏晴岚',
+    text: '雨停之前。\n或者——永远不停，只是人学会了在响声里说话。',
+    next: 'c07-08',
+  },
+  {
+    id: 'c07-08',
+    sprite: 'qinglan',
+    expression: 'default',
+    text: '落地窗外，港湾灯被雨丝拉成线。大堂地毯吸满潮气，空气里有潮湿的盐。\n她把热水壶推近我一点：「自己倒。别等我——门铃不等人。」',
     next: 'c07-choice',
   },
   {
@@ -70,27 +96,79 @@ export const chapter07: DialogueNode[] = [
     id: 'c07-r0',
     sprite: 'qinglan',
     expression: 'soft',
-    text: '门铃又响。她去应门前，回头看了我一眼——像把一句没说完的话，暂存在雨声里。',
+    speaker: '苏晴岚',
+    text: '……那就站着。\n对班不一定要干活，有时候只是——有人在。',
+    next: 'c07-r0b',
+  },
+  {
+    id: 'c07-r0b',
+    sprite: 'qinglan',
+    expression: 'smile',
+    text: '门铃又响。她去应门前，回头看了我一眼——像把一句没说完的话，暂存在雨声里。\n「别离开视线。雨夜容易迷路。」',
+    next: 'c07-r0c',
+  },
+  {
+    id: 'c07-r0c',
+    sprite: 'qinglan',
+    text: '我站在热水壶旁，听她应门、道谢、关伞。雨点与门铃交替敲打，像一份不必签字的班表。\n习惯，有时就是这样开始的。',
     next: 'c07-end',
   },
   {
     id: 'c07-r1',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'surprised',
+    speaker: '苏晴岚',
+    text: '你开门？\n客人一般不会抢经理的门铃。',
+    next: 'c07-r1b',
+  },
+  {
+    id: 'c07-r1b',
+    sprite: 'qinglan',
+    expression: 'soft',
+    speaker: '苏晴岚',
+    text: '……行。你开，我递伞套。\n别让雨水跟进来——地毯比人娇气。',
+    next: 'c07-r1c',
+  },
+  {
+    id: 'c07-r1c',
+    sprite: 'qinglan',
+    text: '门铃响时我拉开门。湿气扑面。她在身后迅速递来伞套，动作默契得像排练过。\n关上门后，她轻声说：「谢谢。这一班，短一点。」',
     next: 'c07-end',
   },
   {
     id: 'c07-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    speaker: '苏晴岚',
+    text: '回房也好。\n雨夜电梯容易挤——早点上楼省事。',
+    next: 'c07-r2b',
+  },
+  {
+    id: 'c07-r2b',
+    sprite: 'qinglan',
+    expression: 'tired',
+    text: '她把热水壶收回台内侧，像收回一句多余的邀请。门铃再次响起，她已经转身去应。\n「晚安。房卡别忘带。」',
+    next: 'c07-r2c',
+  },
+  {
+    id: 'c07-r2c',
+    sprite: 'qinglan',
+    text: '电梯门合上时，雨声被隔成闷响。大堂里她仍在开门、关门、擦水渍。\n有人选择干燥；有人选择留下听雨。',
     next: 'c07-end',
   },
   {
     id: 'c07-end',
     mood: 'rain',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '雨没有停。门铃还会再响。可「站这儿就行」四个字，已经比伞更挡风。\n有些陪伴不必写进房卡——写在雨声的缝隙里就够。',
+    next: 'c07-end-cg',
+  },
+  {
+    id: 'c07-end-cg',
+    cg: 'ql-ch07-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n门铃缝里暂存的半句话。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch08',
   },
 ]

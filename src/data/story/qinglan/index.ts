@@ -58,7 +58,7 @@ export const qinglanScript: DialogueNode[] = [
     mood: 'warm',
     sprite: 'qinglan',
     expression: 'default',
-    text: '【苏晴岚线】五十章。亲密度与信任（trust）影响 CG、雨夜与结局。\n先揭面具，再靠近。',
+    text: '拾潮没有能睡的床。雨后的潮屿酒店灯牌在冷蓝里闪着，像一张从不失手的名片。\n你推开自动门——先揭面具，再靠近。',
     next: 'ch01',
   },
   ...chapter01,

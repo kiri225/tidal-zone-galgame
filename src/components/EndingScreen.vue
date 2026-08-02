@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useGameStore } from '../engine/gameStore'
+import { formatAffection } from '../data/affection'
 
 const game = useGameStore()
 </script>
@@ -11,7 +12,7 @@ const game = useGameStore()
       <p class="label">结局</p>
       <h1 :style="{ color: game.endingData.color }">{{ game.endingData.title }}</h1>
       <p class="sub">{{ game.endingData.subtitle }}</p>
-      <p class="aff">本周目亲密度：{{ game.affection }}</p>
+      <p class="aff">本周目亲密度：{{ formatAffection(game.affection) }}</p>
       <div class="btns">
         <button class="primary" @click="game.startGame()">再玩一次</button>
         <button class="ghost" @click="game.backToTitle()">返回标题</button>

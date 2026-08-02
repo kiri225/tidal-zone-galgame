@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第43章 · 监控死角
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter43: DialogueNode[] = [
   {
@@ -65,13 +65,21 @@ export const chapter43: DialogueNode[] = [
     id: 'c43-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「别解释给镜头听。」她摘耳机，「解释给我——如果还有解释。」',
     next: 'c43-end',
   },
   {
     id: 'c43-end',
     mood: 'rain',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '灰白的屏幕里，一笔交易像退潮。死角之外，有人把心放在了会不会被回放的位置。',
+    next: 'c43-end-cg',
+  },
+  {
+    id: 'c43-end-cg',
+    cg: 'ql-ch43-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n监控死角里按下的暂停键。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch44',
   },
 ]

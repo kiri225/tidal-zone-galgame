@@ -32,7 +32,7 @@ export const chapter35: DialogueNode[] = [
   {
     id: 'c35-notrust2',
     text: '她只是把毯子分我一半，背对着我。呼吸很长，像一道未开启的门。',
-    next: 'ch36',
+    next: 'c35-end-cg',
   },
   {
     id: 'c35-01',
@@ -70,7 +70,7 @@ export const chapter35: DialogueNode[] = [
     sprite: null,
     cg: 'dutynight',
     text: '【CG · 雨困值班室】\n应急灯把她的轮廓镶成冷白。风声隔绝世界，只剩呼吸与心跳。她看着我，像看着一场终于被允许靠岸的潮汐——不再服务，不再逃。',
-    next: 'ch36',
+    next: 'c35-end-cg',
     unlockCg: 'dutynight',
   },
   {
@@ -85,6 +85,14 @@ export const chapter35: DialogueNode[] = [
     expression: 'soft',
     speaker: '苏晴岚',
     text: '今晚这样就好。\n等我更相信你明天还在——剩下的，我不会再躲。',
+    next: 'c35-end-cg',
+  },
+  {
+    id: 'c35-end-cg',
+    cg: 'ql-ch35-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n雨困值班室里终于靠岸。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch36',
   },
 ]

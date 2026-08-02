@@ -2,7 +2,7 @@
 import { computed, watch, ref, onMounted, onUnmounted } from 'vue'
 import { useGameStore } from '../engine/gameStore'
 import { bgLabels, speakerColors } from '../data/characters'
-import { AFFECTION_MAX, formatAffection } from '../data/affection'
+import { formatAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
 import BackgroundLayer from './BackgroundLayer.vue'
 import CharacterSprite from './CharacterSprite.vue'
@@ -16,21 +16,28 @@ const hasChoices = computed(() => !!game.currentNode?.choices?.length)
 const place = computed(() => bgLabels[game.bg] ?? '')
 const nameColor = computed(() => speakerColors[game.speaker] ?? '#e8ddd0')
 const affLabel = computed(() => formatAffection(game.affection))
+/** affection 已是 0–100，进度条宽度直接等于点数 */
 const affFill = computed(() =>
-  Math.min(100, Math.round((game.affection / AFFECTION_MAX) * 100)),
+  Math.min(100, Math.max(0, Math.round(game.affection))),
 )
 const nextCgHint = computed(() => {
+  const route = game.routeId
+  const forRoute = (c: (typeof cgCatalog)[number]) => !c.route || c.route === route
+  // 按「尚未达到的好感门槛」提示，不看图鉴是否已静默写入
   const next = cgCatalog.find(
-    (c) => !game.unlockedCgs.has(c.id) && !c.storyUnlock,
+    (c) => forRoute(c) && !c.storyUnlock && game.affection < c.affectionRequired,
   )
-  if (!next) {
-    const pendingStory = cgCatalog.find(
-      (c) => !game.unlockedCgs.has(c.id) && c.storyUnlock,
-    )
-    return pendingStory ? '章末 CG 待解锁' : 'CG 已全部解锁'
-  }
-  return `下一 CG · ${formatAffection(next.affectionRequired)}`
+  if (!next) return '好感 CG 门槛已满'
+  const need = next.affectionRequired - game.affection
+  return `下一 CG · ${formatAffection(next.affectionRequired)}（还差 ${need}%）`
 })
+const affTitle = computed(() =>
+  game.routeId === 'qinglan'
+    ? '晴岚好感'
+    : game.routeId === 'wantang'
+      ? '晚棠好感'
+      : '亲密度',
+)
 /** 章节号已在右上角 HUD，正文里去掉【第N章】标题行 */
 const dialogueText = computed(() =>
   (game.text ?? '').replace(/^【第\d+章】[^\n]*\n?/, ''),
@@ -89,7 +96,7 @@ watch(
       </div>
       <div class="hud-right">
         <span v-if="game.chapter" class="chapter">第 {{ game.chapter }} 章 · {{ game.chapterTitle }}</span>
-        <span class="aff" title="晚棠好感">亲密度 {{ affLabel }}</span>
+        <span class="aff" :title="affTitle">亲密度 {{ affLabel }}</span>
         <div class="aff-bar" aria-hidden="true">
           <div class="aff-fill" :style="{ width: affFill + '%' }" />
         </div>

@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第31章 · 应急灯
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter31: DialogueNode[] = [
   {
@@ -72,13 +72,21 @@ export const chapter31: DialogueNode[] = [
     id: 'c31-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '手电光柱里，她走得很稳。只有呼吸出卖她：「……别掉队。失控最怕落单。」',
     next: 'c31-end',
   },
   {
     id: 'c31-end',
     mood: 'dark',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '应急灯把大堂切成病态的绿白。黑是失控的包装——她拆包装时，允许你看见手抖。',
+    next: 'c31-end-cg',
+  },
+  {
+    id: 'c31-end-cg',
+    cg: 'ql-ch31-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n应急灯里失去滤镜的侧脸。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch32',
   },
 ]

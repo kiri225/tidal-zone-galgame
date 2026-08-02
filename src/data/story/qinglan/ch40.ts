@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第40章 · 同事的眼光
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter40: DialogueNode[] = [
   {
@@ -77,20 +77,28 @@ export const chapter40: DialogueNode[] = [
     id: 'c40-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「别解释。」她打断我，「一解释就像心虚。夜班经理不心虚——人会。」',
     next: 'c40-end',
   },
   {
     id: 'c40-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她把班表拍在柜台上，力道比平时重：「眼光算什么。签到表上，我的名字还在。」',
     next: 'c40-end',
   },
   {
     id: 'c40-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '白班的眼光像探照灯。她没有躲——只是把你挡在职业笑够不到的那一侧。',
+    next: 'c40-end-cg',
+  },
+  {
+    id: 'c40-end-cg',
+    cg: 'ql-ch40-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n同事眼光外被挡住的一侧。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch41',
   },
 ]

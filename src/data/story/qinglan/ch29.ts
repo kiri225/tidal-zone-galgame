@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第29章 · 台风预警
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter29: DialogueNode[] = [
   {
@@ -58,13 +58,21 @@ export const chapter29: DialogueNode[] = [
     id: 'c29-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '对讲机嘶哑。她点头：「回房等广播。门窗关死。」指尖发抖的那一下，只有我看见。',
     next: 'c29-end',
   },
   {
     id: 'c29-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '风开始拍门。名牌在她胸前轻颤，像一颗不肯安静的心脏——流程之外的真实。',
+    next: 'c29-end-cg',
+  },
+  {
+    id: 'c29-end-cg',
+    cg: 'ql-ch29-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n沙袋旁名牌轻颤的心跳。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch30',
   },
 ]

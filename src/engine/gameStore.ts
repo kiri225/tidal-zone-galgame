@@ -79,21 +79,24 @@ export const useGameStore = defineStore('game', () => {
     return flags.value.has(f)
   }
 
-  function unlockCg(id: string) {
+  /** silent：只写入图鉴，不打断剧情弹全屏解锁（好感阈值预解锁用） */
+  function unlockCg(id: string, opts?: { silent?: boolean }) {
     if (unlockedCgs.value.has(id)) return false
     unlockedCgs.value = new Set([...unlockedCgs.value, id])
     saveUnlockedCgs(unlockedCgs.value)
-    pendingCgUnlock.value = id
+    if (!opts?.silent) {
+      pendingCgUnlock.value = id
+    }
     return true
   }
 
-  /** 按好感阈值自动解锁图鉴（跳过仅剧情解锁的章末 CG；按路线过滤） */
+  /** 按好感阈值写入图鉴（静默）；全屏展示仍由剧情节点 `cg` / `unlockCg` 触发 */
   function checkAffectionCgs() {
     for (const def of cgCatalog) {
       if (def.storyUnlock) continue
       if (def.route && def.route !== routeId.value) continue
       if (affection.value >= def.affectionRequired) {
-        unlockCg(def.id)
+        unlockCg(def.id, { silent: true })
       }
     }
   }
@@ -326,7 +329,7 @@ export const useGameStore = defineStore('game', () => {
     const node = currentNode.value
     if (!node?.choices?.[choiceIndex]) return
     const c = node.choices[choiceIndex]
-    if (c.affection) {
+    if (typeof c.affection === 'number' && c.affection !== 0) {
       const next = clampAffection(affection.value + c.affection)
       const applied = next - affection.value
       affection.value = next

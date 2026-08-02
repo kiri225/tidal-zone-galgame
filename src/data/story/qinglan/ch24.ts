@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第24章 · 经理休息日
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter24: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter24: DialogueNode[] = [
     id: 'c24-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '台阶湿滑。她忽然拉住我袖口，随即松开，假装是风太大。「……跟上。别掉进游客照。」',
     next: 'c24-end',
   },
   {
     id: 'c24-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '夕阳把海切成金与墨。非游客路线没有路牌——只有她记得的、肯分给我的几步。',
+    next: 'c24-end-cg',
+  },
+  {
+    id: 'c24-end-cg',
+    cg: 'ql-ch24-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n非游客路线上拉住的袖口。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch25',
   },
 ]

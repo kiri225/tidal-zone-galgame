@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第18章 · 短暂停泊
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter18: DialogueNode[] = [
   {
@@ -77,20 +77,28 @@ export const chapter18: DialogueNode[] = [
     id: 'c18-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「配合得很好。」她干笑一声，「过客剧本我熟。演完就散。」杯壁上的水痕被她抹平。',
     next: 'c18-end',
   },
   {
     id: 'c18-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她看了我很久，终于说：「空着也是一种疼。至少你知道。」拇指停在杯沿，没有再抹。',
     next: 'c18-end',
   },
   {
     id: 'c18-end',
     mood: 'intimate',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '她没再喝。只是用拇指抹掉杯壁水痕，像抹掉一句快说出口的话——又故意留下一点。',
+    next: 'c18-end-cg',
+  },
+  {
+    id: 'c18-end-cg',
+    cg: 'ql-ch18-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n把短暂停泊说成岸的危险。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch19',
   },
 ]

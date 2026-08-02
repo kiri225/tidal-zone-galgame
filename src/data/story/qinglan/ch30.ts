@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第30章 · 来大堂
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter30: DialogueNode[] = [
   {
@@ -73,13 +73,21 @@ export const chapter30: DialogueNode[] = [
     id: 'c30-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '「并肩可以。别逞英雄。」她把对讲机别到我肩带上，「跟紧值班。你是我的责任。」',
     next: 'c30-end',
   },
   {
     id: 'c30-end',
     mood: 'dark',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '短信四个字没有句号。大堂成了临时港湾——而她把你编进了今晚的航行日志。',
+    next: 'c30-end-cg',
+  },
+  {
+    id: 'c30-end-cg',
+    cg: 'ql-ch30-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n短信四个字与塞进掌心的钥匙。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch31',
   },
 ]

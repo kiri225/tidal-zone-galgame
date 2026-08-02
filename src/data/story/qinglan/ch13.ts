@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第13章 · 常住客
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第13章 · 常住客（小说级密度）
  */
 export const chapter13: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter13: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第13章】常住客\n酒吧里有个常住客，油滑地朝她眨眼。',
+    text: '【第13章】常住客\n酒店酒吧的灯光偏黄，像故意把人的脸镀成善意。吧台尽头坐着一个常住客——领带松开，笑声比酒先到位。',
     next: 'c13-01',
   },
   {
     id: 'c13-01',
     sprite: 'qinglan',
-    text: '「经理又钓到短期的啦？」笑声刺耳。',
+    text: '他朝她眨眼的样子很熟：不是第一次，也不会是最后一次。冰块碰壁的声音清脆，衬得那句玩笑更脏。\n「经理又钓到短期的啦？」笑声刺耳，像把整间酒吧当成他的客厅。',
     next: 'c13-02',
   },
   {
@@ -28,13 +27,13 @@ export const chapter13: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'smile',
     speaker: '苏晴岚',
-    text: '先生喝多了。我叫代驾。',
+    text: '先生喝多了。我叫代驾。\n单子我先挂房账——您的常住房，对吧。',
     next: 'c13-03',
   },
   {
     id: 'c13-03',
     sprite: 'qinglan',
-    text: '她脸色不变。那笑完美得让人发疼。',
+    text: '她脸色不变。那笑完美得让人发疼——标准弧度、标准停顿、标准把羞辱翻译成「服务」。\n我坐在内侧卡座，手指扣进沙发缝，像扣住一句不该当众甩出去的骂。',
     next: 'c13-04',
   },
   {
@@ -49,6 +48,34 @@ export const chapter13: DialogueNode[] = [
     expression: 'cold',
     speaker: '苏晴岚',
     text: '习惯。\n习惯就不会疼——理论上。',
+    next: 'c13-06',
+  },
+  {
+    id: 'c13-06',
+    sprite: 'qinglan',
+    expression: 'tense',
+    text: '代驾电话接通的忙音里，她仍保持肩线端正。名牌在领口轻轻晃，像提醒所有人：她是职位，不是猎物。\n可那双眼睛在镜片后闪了一下——疼是真的，理论只是麻醉。',
+    next: 'c13-07',
+  },
+  {
+    id: 'c13-07',
+    sprite: 'qinglan',
+    expression: 'smile',
+    speaker: '苏晴岚',
+    text: '（对常住客）车在门口。慢走。\n明天早餐记得用房卡——别再麻烦前台小姐。',
+    next: 'c13-08',
+  },
+  {
+    id: 'c13-08',
+    text: '男人笑着离开，拍了拍吧台，像拍一条听话的狗。门帘一掀，夜风灌进来，把那股酒气冲淡。\n酒吧忽然安静得过分。',
+    next: 'c13-09',
+  },
+  {
+    id: 'c13-09',
+    sprite: 'qinglan',
+    expression: 'tired',
+    speaker: '苏晴岚',
+    text: '看完了？\n表演结束。票价是你今晚的沉默——或者别的。',
     next: 'c13-choice',
   },
   {
@@ -75,28 +102,96 @@ export const chapter13: DialogueNode[] = [
   {
     id: 'c13-r0',
     sprite: 'qinglan',
+    expression: 'surprised',
+    speaker: '苏晴岚',
+    text: '回？\n你回什么——回「她不是短期」？还是回「闭嘴」？',
+    next: 'c13-r0b',
+  },
+  {
+    id: 'c13-r0b',
+    speaker: '沈屿',
+    text: '回他听得懂的。\n你不必一个人把笑撑到裂开。',
+    next: 'c13-r0c',
+  },
+  {
+    id: 'c13-r0c',
+    sprite: 'qinglan',
     expression: 'soft',
-    text: '代驾来了。她目送客人离开，肩线终于松下来一寸。',
+    text: '她目送客人彻底消失在门帘外，肩线终于松下来一寸。职业笑退去，露出底下那层薄薄的疲惫——和一点不敢承认的感激。\n「下次。」她重复这两个字，像把承诺写进尚未发生的班次。',
+    next: 'c13-r0d',
+  },
+  {
+    id: 'c13-r0d',
+    sprite: 'qinglan',
+    expression: 'avert',
+    speaker: '苏晴岚',
+    text: '……别打架。\n酒店要赔玻璃的。嘴可以硬，手不行。',
     next: 'c13-end',
   },
   {
     id: 'c13-r1',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'hurt',
+    speaker: '苏晴岚',
+    text: '对不起什么。\n又不是你说的。',
+    next: 'c13-r1b',
+  },
+  {
+    id: 'c13-r1b',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她擦拭吧台，动作比平时慢。布巾绕过同一点水渍三遍，像要把那句话从木头纹理里搓掉。\n「听到了就听到了。」她声音很轻，「至少你没有跟着笑。」',
+    next: 'c13-r1c',
+  },
+  {
+    id: 'c13-r1c',
+    speaker: '沈屿',
+    text: '我笑不出来。',
+    next: 'c13-r1d',
+  },
+  {
+    id: 'c13-r1d',
+    sprite: 'qinglan',
+    expression: 'soft',
+    speaker: '苏晴岚',
+    text: '那就够了。\n有时候，「不够勇敢」也比「同流」干净。',
     next: 'c13-end',
   },
   {
     id: 'c13-r2',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'cold',
+    text: '我站起来，走向收银柜台，假装研究账单上的数字。余光里，她独自收拾酒杯，背影像一张被熨平的制服——完美，无人可乘。',
+    next: 'c13-r2b',
+  },
+  {
+    id: 'c13-r2b',
+    sprite: 'qinglan',
+    expression: 'tired',
+    speaker: '苏晴岚',
+    text: '（头也不抬）结完记得拿小票。\n今晚的表演，不需要观众返场。',
+    next: 'c13-r2c',
+  },
+  {
+    id: 'c13-r2c',
+    text: '打印机吐出纸条。我捏着那点热度，忽然觉得自己比常住客更像逃兵——逃的不是冲突，是她眼底那一点求助。',
     next: 'c13-end',
   },
   {
     id: 'c13-end',
     mood: 'normal',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    bg: 'hotel-bar',
+    sprite: 'qinglan',
+    expression: 'default',
+    text: '代驾的车灯在门外闪了一下就消失。酒吧恢复成它该有的样子：冰块、低语、恰到好处的距离。\n她把完美的笑折好收进抽屉；有些疼，要等没有客人的时候才肯浮出水面。',
+    next: 'c13-end-cg',
+  },
+  {
+    id: 'c13-end-cg',
+    cg: 'ql-ch13-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n完美笑容底下发疼的肩线。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch14',
   },
 ]

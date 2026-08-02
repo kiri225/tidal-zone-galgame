@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第25章 · 清仓的钥匙
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter25: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter25: DialogueNode[] = [
     id: 'c25-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '她把汽水放到柜台上，没有坚持。「那我坐着看你搬。白班说休息——我也偶尔听话。」',
     next: 'c25-end',
   },
   {
     id: 'c25-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '灰尘在光柱里跳舞。父亲的店第一次迎来一位穿便装的夜班经理，像迟到的见证人。',
+    next: 'c25-end-cg',
+  },
+  {
+    id: 'c25-end-cg',
+    cg: 'ql-ch25-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n拾潮灰尘里沾灰的额头。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch26',
   },
 ]

@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第21章 · 对班夜话
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter21: DialogueNode[] = [
   {
@@ -80,13 +80,21 @@ export const chapter21: DialogueNode[] = [
     id: 'c21-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '耳尖烧红。她把名牌翻来覆去：「……油嘴。可今晚，我允许你油这一次。」',
     next: 'c21-end',
   },
   {
     id: 'c21-end',
     mood: 'intimate',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '灯灭前，她把名牌重新别好——却别反了。第二天白班替她正过来，假装没看见。',
+    next: 'c21-end-cg',
+  },
+  {
+    id: 'c21-end-cg',
+    cg: 'ql-ch21-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n名牌躺在台面上的夜话。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch22',
   },
 ]

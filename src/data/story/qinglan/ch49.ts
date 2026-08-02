@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第49章 · 过客不再订
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter49: DialogueNode[] = [
   {
@@ -66,13 +66,21 @@ export const chapter49: DialogueNode[] = [
     id: 'c49-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '空房率上升的报表被她折好。「集团会问。我会答：有一位长住——如果他愿意被写进去。」',
     next: 'c49-end',
   },
   {
     id: 'c49-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '订房系统里，短暂停泊的字段闪了闪。有人的名字，正等着从过客改成岸。',
+    next: 'c49-end-cg',
+  },
+  {
+    id: 'c49-end-cg',
+    cg: 'ql-ch49-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n过客不再订——你还订不订。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch50',
   },
 ]

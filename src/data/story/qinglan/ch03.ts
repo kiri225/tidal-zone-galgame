@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第3章 · 三点的咖啡
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第3章 · 三点的咖啡（小说级密度）
  */
 export const chapter03: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter03: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第3章】三点的咖啡\n凌晨三点，酒店像一具安静的肺。我下楼倒水，看见她坐在前台内侧，面前一杯见底的咖啡。',
+    text: '【第3章】三点的咖啡\n凌晨三点，酒店像一具安静的肺——进气是中央空调，出气是远处电梯的沉闷喘息。我口渴下楼，走廊地毯吞掉所有脚步。',
     next: 'c03-01',
   },
   {
     id: 'c03-01',
     sprite: 'qinglan',
-    text: '她没戴职业笑。只是撑着额，眼下有淡淡的青。',
+    text: '前台内侧的灯只留一盏。她坐在那里，面前一杯见底的咖啡，勺柄斜靠杯沿，像停在半途的念头。\n她没戴职业笑。只是撑着额，眼下有淡淡的青——像潮汐在皮肤上留下的水印。',
     next: 'c03-02',
   },
   {
@@ -34,13 +33,13 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-03',
     speaker: '沈屿',
-    text: '店主也不睡。',
+    text: '店主也不睡。清仓清单比咖啡因管用。',
     next: 'c03-04',
   },
   {
     id: 'c03-04',
     sprite: 'qinglan',
-    text: '沉默并不尴尬。两个人都醒着，像两艘在同一潮位停泊的船，不必鸣笛。',
+    text: '沉默并不尴尬。两个人都醒着，像两艘在同一潮位停泊的船，不必鸣笛。\n窗外港湾的灯很远，近处只有她呼吸时肩线微微起伏。',
     next: 'c03-05',
   },
   {
@@ -49,6 +48,33 @@ export const chapter03: DialogueNode[] = [
     expression: 'coffee',
     speaker: '苏晴岚',
     text: '咖啡机坏了半边。这杯是冷的。\n你要是嫌苦，冰箱里有矿泉水。',
+    next: 'c03-06',
+  },
+  {
+    id: 'c03-06',
+    speaker: '沈屿',
+    text: '冷的也是咖啡。',
+    next: 'c03-07',
+  },
+  {
+    id: 'c03-07',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她把杯子往旁挪了半寸，腾出一点台面——不像招待客人，更像给对班腾位置。\n名牌还别在领口，可灯光太暗，字看不清；人却比白天真实。',
+    next: 'c03-08',
+  },
+  {
+    id: 'c03-08',
+    sprite: 'qinglan',
+    expression: 'tired',
+    speaker: '苏晴岚',
+    text: '三点最难熬。白班走了，夜班还没到头。\n像潮间带——既不是岸，也不是海。',
+    next: 'c03-09',
+  },
+  {
+    id: 'c03-09',
+    sprite: 'qinglan',
+    text: '杯壁上凝着水珠，一颗一颗往下滑，留下细痕。\n她的眼镜推到额上，细框压出浅印——职业壳子松了一扣，却还没完全卸下。',
     next: 'c03-choice',
   },
   {
@@ -76,27 +102,79 @@ export const chapter03: DialogueNode[] = [
     id: 'c03-r0',
     sprite: 'qinglan',
     expression: 'soft',
-    text: '杯壁上的水珠滑落。窗外潮声很远，像有人在黑暗里翻一本没有页码的登记簿。',
+    speaker: '苏晴岚',
+    text: '……那就坐。\n别指望我再倒一杯——机子坏了，我也懒得修。',
+    next: 'c03-r0b',
+  },
+  {
+    id: 'c03-r0b',
+    sprite: 'qinglan',
+    expression: 'coffee',
+    text: '她把自己那杯冷咖啡推过来一点，像分享一份不及格的夜宵。\n苦味在舌尖散开时，窗外潮声忽然近了——或者只是夜里耳朵更诚实。',
+    next: 'c03-r0c',
+  },
+  {
+    id: 'c03-r0c',
+    sprite: 'qinglan',
+    text: '我们没有再说话。对班有时不需要台词。\n杯壁上的水珠滑落。像有人在黑暗里翻一本没有页码的登记簿。',
     next: 'c03-end',
   },
   {
     id: 'c03-r1',
     sprite: 'qinglan',
+    expression: 'tired',
+    speaker: '苏晴岚',
+    text: '该休息的是客人。\n经理休息，门铃谁接？',
+    next: 'c03-r1b',
+  },
+  {
+    id: 'c03-r1b',
+    sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    speaker: '苏晴岚',
+    text: '……不过谢谢。\n说「该休息」的人，比说「wifi密码」的人少。',
+    next: 'c03-r1c',
+  },
+  {
+    id: 'c03-r1c',
+    sprite: 'qinglan',
+    text: '她重新撑起额，眼镜滑回鼻梁。职业壳子咔哒合上半寸，又留了一道缝。\n「冰箱在左侧。别吵醒自己。」',
     next: 'c03-end',
   },
   {
     id: 'c03-r2',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '我没开口，只倒了杯水。她余光扫过，没有叫住我，也没有假装没看见。\n冰箱门轻轻合上，像一句被咽回去的「再见」。',
+    next: 'c03-r2b',
+  },
+  {
+    id: 'c03-r2b',
+    sprite: 'qinglan',
+    expression: 'avert',
+    speaker: '苏晴岚',
+    text: '……晚安。\n电梯别按错层。',
+    next: 'c03-r2c',
+  },
+  {
+    id: 'c03-r2c',
+    sprite: 'qinglan',
+    text: '她的声音很轻，像怕惊动三点的潮。\n我上楼时回头——她仍撑着额，冷咖啡见底，名牌在暗处发着一小块冷光。',
     next: 'c03-end',
   },
   {
     id: 'c03-end',
     mood: 'cold',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '三点的大堂重新变成安静的肺。咖啡苦味还留在舌根，像一枚不肯化开的印章。\n有些对班从这一口冷咖啡开始——不必写进班表，却已经发生。',
+    next: 'c03-end-cg',
+  },
+  {
+    id: 'c03-end-cg',
+    cg: 'ql-ch03-end',
+    sprite: null,
+    mood: 'cold',
+    text: '【CG · 章末】\n冷咖啡旁卸下的职业笑。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch04',
   },
 ]

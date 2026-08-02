@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第48章 · 大堂的门
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 模板已清理
  */
 export const chapter48: DialogueNode[] = [
   {
@@ -58,13 +58,21 @@ export const chapter48: DialogueNode[] = [
     id: 'c48-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    text: '风灌进来。她把「不锁」说成流程外的异常：「异常只对一个人有效。懂吗。」',
     next: 'c48-end',
   },
   {
     id: 'c48-end',
     mood: 'warm',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '侧门的缝里漏进潮声。锁孔空着——像一句没写进规章、却写进她班表备注的许可。',
+    next: 'c48-end-cg',
+  },
+  {
+    id: 'c48-end-cg',
+    cg: 'ql-ch48-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n大堂侧门故意不锁的缝。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch49',
   },
 ]

@@ -1,8 +1,7 @@
 import type { DialogueNode } from '../../../engine/types'
 
 /**
- * 第4章 · 客人永远对
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 第4章 · 客人永远对（小说级密度）
  */
 export const chapter04: DialogueNode[] = [
   {
@@ -14,13 +13,13 @@ export const chapter04: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'default',
     cg: null,
-    text: '【第4章】客人永远对\n有人在前台拍桌子。醉意、机票、投诉——全朝她砸过来。',
+    text: '【第4章】客人永远对\n傍晚的大堂本来只该有行李轮子和空调声。忽然有人把巴掌拍在前台大理石上——醉意、延误的机票、投诉话术，全朝她砸过来。',
     next: 'c04-01',
   },
   {
     id: 'c04-01',
     sprite: 'qinglan',
-    text: '她点头、道歉、补房、升级早餐。笑容一寸不乱。',
+    text: '我从电梯口停住。其他客人假装看手机。保安在远处观望，像等一句「需要支援」。\n她没有叫。只是点头、道歉、补房、升级早餐——笑容一寸不乱，像排练过一千次的应急预案。',
     next: 'c04-02',
   },
   {
@@ -28,27 +27,48 @@ export const chapter04: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'smile',
     speaker: '苏晴岚',
-    text: '非常抱歉给您带来不便。我马上为您处理。',
+    text: '非常抱歉给您带来不便。我马上为您处理。\n升级海景房，早餐加一份，今晚的迷你吧免单。',
     next: 'c04-03',
   },
   {
     id: 'c04-03',
     sprite: 'qinglan',
-    text: '客人走后，她在柜台下握紧拳，指节发白，又迅速松开，像什么都没发生。',
+    text: '醉客仍在骂。她的声音不升不降，像潮汐表上的刻度——精确，冰冷，有效。\n名牌在领口微微颤，被那阵酒气吹得发亮。',
     next: 'c04-04',
   },
   {
     id: 'c04-04',
-    speaker: '沈屿',
-    text: '你不生气吗。',
+    sprite: 'qinglan',
+    expression: 'smile',
+    speaker: '苏晴岚',
+    text: '房卡给您。电梯左侧。\n祝您今晚休息愉快。',
     next: 'c04-05',
   },
   {
     id: 'c04-05',
     sprite: 'qinglan',
+    text: '客人走后，大堂像被抽掉空气。她在柜台下握紧拳，指节发白，又迅速松开——妆容、微笑、站姿，全部复位。\n只有指尖的红痕还在，像一枚没来得及藏好的证据。',
+    next: 'c04-06',
+  },
+  {
+    id: 'c04-06',
+    speaker: '沈屿',
+    text: '你不生气吗。',
+    next: 'c04-07',
+  },
+  {
+    id: 'c04-07',
+    sprite: 'qinglan',
     expression: 'cold',
     speaker: '苏晴岚',
     text: '客人永远对。\n生气是白班的奢侈品。',
+    next: 'c04-08',
+  },
+  {
+    id: 'c04-08',
+    sprite: 'qinglan',
+    expression: 'tense',
+    text: '她重新把键盘摆正，像把情绪也摆正。屏幕光映在镜片上，职业笑又挂回嘴角——可嘴角那条线，比刚才硬了一点。\n班表仍贴在内侧。红笔圈着的名字不会替她生气。',
     next: 'c04-choice',
   },
   {
@@ -75,28 +95,82 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-r0',
     sprite: 'qinglan',
+    expression: 'surprised',
+    speaker: '苏晴岚',
+    text: '……不对？\n酒店手册里没有这一条。',
+    next: 'c04-r0b',
+  },
+  {
+    id: 'c04-r0b',
+    sprite: 'qinglan',
     expression: 'soft',
-    text: '她看了我一眼，那一眼很短，却第一次不像对客人。',
+    speaker: '苏晴岚',
+    text: '你不是来投诉的客人。\n所以这句话……我可以暂时收下。',
+    next: 'c04-r0c',
+  },
+  {
+    id: 'c04-r0c',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她看了我一眼，那一眼很短，却第一次不像对客人。\n柜台下的拳头彻底松开，指节上的白慢慢退回血色。',
     next: 'c04-end',
   },
   {
     id: 'c04-r1',
     sprite: 'qinglan',
     expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    speaker: '苏晴岚',
+    text: '辛苦是岗位描述的一部分。\n……不过，谢谢你说出来。',
+    next: 'c04-r1b',
+  },
+  {
+    id: 'c04-r1b',
+    sprite: 'qinglan',
+    expression: 'tired',
+    text: '她点了下头，像签收一份不必回执的快递。职业笑软了半寸，又立刻绷回原位。\n「还有人要办入住。你先回去吧。」',
+    next: 'c04-r1c',
+  },
+  {
+    id: 'c04-r1c',
+    sprite: 'qinglan',
+    text: '键盘声恢复节奏。大堂重新变成礼貌的容器。\n可她敲字的力度，比醉客离开前轻了一些。',
     next: 'c04-end',
   },
   {
     id: 'c04-r2',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'surprised',
+    text: '我把纸巾推过台面。她愣了一下，才意识到自己眼角并没有泪——只是灯光太亮，把疲惫照得像湿。',
+    next: 'c04-r2b',
+  },
+  {
+    id: 'c04-r2b',
+    sprite: 'qinglan',
+    expression: 'soft',
+    speaker: '苏晴岚',
+    text: '……我没哭。\n不过，谢谢。手心刚才确实有点湿。',
+    next: 'c04-r2c',
+  },
+  {
+    id: 'c04-r2c',
+    sprite: 'qinglan',
+    expression: 'avert',
+    text: '她接过纸巾，在柜台下悄悄擦了擦指节，像擦掉一场不存在的崩溃。\n名牌重新摆正。世界继续营业。',
     next: 'c04-end',
   },
   {
     id: 'c04-end',
     mood: 'normal',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    sprite: null,
+    text: '醉客的骂声散进电梯井。前台大理石上还留着浅浅的掌印，像一场未被承认的风暴。\n「客人永远对」仍写在她的规矩里——可今晚，规矩被谁轻轻扳开了一角。',
+    next: 'c04-end-cg',
+  },
+  {
+    id: 'c04-end-cg',
+    cg: 'ql-ch04-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n柜台下握紧又松开的拳。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch05',
   },
 ]

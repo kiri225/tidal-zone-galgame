@@ -2,7 +2,7 @@ import type { DialogueNode } from '../../../engine/types'
 
 /**
  * 第20章 · 几乎越线
- * 苏晴岚线 · 生成稿（可手改加厚）
+ * 苏晴岚线 · 抉择前增厚；分支回复各具口吻
  */
 export const chapter20: DialogueNode[] = [
   {
@@ -56,7 +56,21 @@ export const chapter20: DialogueNode[] = [
     sprite: 'qinglan',
     expression: 'soft',
     cg: null,
-    text: '灯还亮着。有些画面已经发生，有些还差一个潮位。',
+    text: '她退开半步，呼吸仍乱。名牌冰凉，指尖却发烫——信任还没开口，身体已经先一步停在边界上。',
+    next: 'c20-04',
+  },
+  {
+    id: 'c20-04',
+    sprite: 'qinglan',
+    expression: 'tense',
+    speaker: '苏晴岚',
+    text: '过客可以短暂停泊。\n可停泊也要说清楚——停一晚，还是……敢不敢把房卡交回我手里。',
+    next: 'c20-05',
+  },
+  {
+    id: 'c20-05',
+    speaker: '沈屿',
+    text: '……你怕的是越线，还是怕我把越线当成夜班的一部分？',
     next: 'c20-choice',
   },
   {
@@ -86,27 +100,38 @@ export const chapter20: DialogueNode[] = [
     id: 'c20-r0',
     sprite: 'qinglan',
     expression: 'soft',
-    text: '她轻轻推开我，却把我的衣角捏了两秒才松手。「……回去。明天还有班。」',
+    speaker: '苏晴岚',
+    text: '愿意。所以才怕。\n回去。明天班表还写着我的名——别让我带着心跳去交班。',
     next: 'c20-end',
   },
   {
     id: 'c20-r1',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'blush',
+    speaker: '苏晴岚',
+    text: '……谢谢你说「是你」。\n这句话比吻更越线。名牌还在，可我听见它松了一扣。',
     next: 'c20-end',
   },
   {
     id: 'c20-r2',
     sprite: 'qinglan',
-    expression: 'default',
-    text: '她没有立刻接话，只是把那一瞬间收进眼底，像收进夜班日志的附注。',
+    expression: 'soft',
+    speaker: '苏晴岚',
+    text: '守界的人，我反而更敢信。\n走廊灯还亮着——我们把「几乎」留到房卡真正交还的那天。',
     next: 'c20-end',
   },
   {
     id: 'c20-end',
     mood: 'intimate',
-    text: '这一章的潮位退下去时，夜班还没结束——有些答案，要留到下一班。',
+    text: '走廊应急灯嗡嗡作响。几乎发生的事停在消防栓旁——信任开了口，身体学会等待。',
+    next: 'c20-end-cg',
+  },
+  {
+    id: 'c20-end-cg',
+    cg: 'ql-ch20-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n消防栓旁停在几乎的呼吸。这一章的潮位退下去时，夜班的岸还留着她的影子。',
     next: 'ch21',
   },
 ]
