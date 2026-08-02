@@ -13,7 +13,7 @@ export const chapter36: DialogueNode[] = [
     bg: 'bookstore-close',
     mood: 'intimate',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'blouseblush',
     cg: null,
     text: '【第36章】潮汐还是岸\n黑暗里，她的手先找到了我的手，十指相扣，像是在替接下来发生的一切，做一次无声的确认。',
     next: 'c36-01',
@@ -31,7 +31,7 @@ export const chapter36: DialogueNode[] = [
   {
     id: 'c36-03',
     speaker: '林晚棠',
-    expression: 'blush',
+    expression: 'blouseblush',
     text: '……问这么多次，很烦。\n可以。我点头了，你没看见吗。',
     next: 'c36-04',
   },

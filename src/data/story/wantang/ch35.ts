@@ -13,7 +13,7 @@ export const chapter35: DialogueNode[] = [
     bg: 'bookstore-close',
     mood: 'intimate',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'blouse',
     cg: null,
     text: '【第35章】雨困一夜',
     next: 'c35-gate',
@@ -30,7 +30,7 @@ export const chapter35: DialogueNode[] = [
   {
     id: 'c35-02',
     speaker: '林晚棠',
-    expression: 'blush',
+    expression: 'blouseblush',
     text: '……接下来，不是随口的。\n你确定吗？确定了，我就不装矜持了。',
     next: 'c35-03',
   },

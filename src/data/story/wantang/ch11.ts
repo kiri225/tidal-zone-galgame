@@ -13,7 +13,7 @@ export const chapter11: DialogueNode[] = [
     bg: 'street-rain',
     mood: 'rain',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'cardigan',
     cg: null,
     text: '【第11章】雨天的灯\n第二天傍晚，天说变就变。乌云压得很低，还没走到码头，雨已经先落了下来。',
     next: 'c11-01',

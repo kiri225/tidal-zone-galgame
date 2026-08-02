@@ -31,7 +31,7 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-03',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'write',
     text: '诗集放低一点，客人总爱蹲着翻。\n小说按姓氏，别把初版和普及版混了——差价能吵起来。',
     next: 'c04-04',
   },

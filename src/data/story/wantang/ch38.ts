@@ -13,7 +13,7 @@ export const chapter38: DialogueNode[] = [
     bg: 'tide-pools',
     mood: 'cold',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'cardigan',
     cg: null,
     text: '【第38章】潮间带\n她带着我沿海岸线又走了一段，在一片裸露的礁石滩前停下——那是退潮才会显形的地方。',
     next: 'c38-01',

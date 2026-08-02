@@ -36,7 +36,7 @@ export const chapter44: DialogueNode[] = [
   {
     id: 'c44-03',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'wipe',
     text: '买家下周还要再来看「拾潮」。\n沈屿——你到底怎么决定？我需要一个答案，不是含糊的「再想想」。',
     next: 'c44-04',
   },

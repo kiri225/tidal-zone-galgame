@@ -44,7 +44,7 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-05',
     speaker: '林晚棠',
-    expression: 'avert',
+    expression: 'wipe',
     text: '……我没说是谁。你自己对号入座，是你的事。\n她拿起抹布，手上的动作却比平时僵硬。',
     next: 'c03-06',
   },

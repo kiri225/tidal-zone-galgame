@@ -13,7 +13,7 @@ export const chapter50: DialogueNode[] = [
     bg: 'seaside-dawn',
     mood: 'cold',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'cardigansoft',
     cg: null,
     text: '【第50章】分叉的岸\n第二天清晨，我们又一次走到了那片潮间带。潮水正在退去，露出昨夜被淹没的礁石与沙滩。',
     next: 'c50-01',

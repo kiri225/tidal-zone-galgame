@@ -52,8 +52,27 @@ description: >-
 | tired | `-tired` | 打烊疲态 |
 | book | `-book` | 抱书姿态 |
 | crossed | `-crossed` | 抱臂防备姿态 |
+| lean | `-lean` | 托腮 |
+| coffee | `-coffee` | 端杯/茶 |
+| write | `-write` | 写备忘 |
+| offer | `-offer` | 递书 |
+| shush | `-shush` | 嘘 / 安静 |
+| beckon | `-beckon` | 招手 |
+| think | `-think` | 沉思 |
+| wipe | `-wipe` | 擦杯 |
+| confused | `-confused` | 懵 |
+| leandesk | `-leandesk` | 伏案 / 靠柜台 |
+| apron | `-apron` | 店服深 V + 围裙开衩（性感版） |
+| apronlean | `-apronlean` | 同上 · 托腮 |
+| cardigan | `-cardigan` | 开衫外套店服（外出/海边） |
+| cardigansoft | `-cardigansoft` | 开衫 · 柔和 |
+| casual | `-casual` | 私服高领裙（房间） |
+| casualsoft | `-casualsoft` | 私服 · 柔和 |
+| blouse | `-blouse` | 卸围裙衬衫裙（打烊后） |
+| blouseblush | `-blouseblush` | 卸围裙 · 害羞 |
 
-映射写入 `src/data/assets.ts` 的 `{id}Sprites`。姿态差分仍必须用 default 作 reference。
+场景建议：店内日常用 apron/动作差分；外出/市集/海边用 cardigan*；房间用 casual*；打烊亲密用 blouse*。  
+映射写入 `src/data/assets.ts`。绿幕原稿可放 `public/images/char/green/`，扣好后覆盖 `char/`。参考稿：`docs/refs/wantang-design-sheet-b.png`。
 
 ## Prompt recipe（生成时遵守）
 

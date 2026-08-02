@@ -13,6 +13,42 @@ export type Expression =
   | 'tired'
   | 'book'
   | 'crossed'
+  /** 托腮 */
+  | 'lean'
+  /** 端杯/茶 */
+  | 'coffee'
+  /** 写备忘 */
+  | 'write'
+  /** 递书 */
+  | 'offer'
+  /** 嘘 / 安静 */
+  | 'shush'
+  /** 招手 */
+  | 'beckon'
+  /** 沉思 */
+  | 'think'
+  /** 擦杯 */
+  | 'wipe'
+  /** 懵 */
+  | 'confused'
+  /** 伏案 / 靠柜台 */
+  | 'leandesk'
+  /** 店服·深 V 围裙（性感版） */
+  | 'apron'
+  /** 店服·托腮（围裙开衩） */
+  | 'apronlean'
+  /** 开衫外套店服（外出） */
+  | 'cardigan'
+  /** 开衫·柔和 */
+  | 'cardigansoft'
+  /** 私服高领（房间/日常） */
+  | 'casual'
+  /** 私服·柔和 */
+  | 'casualsoft'
+  /** 卸围裙衬衫裙（打烊后） */
+  | 'blouse'
+  /** 卸围裙·害羞 */
+  | 'blouseblush'
 
 export interface Choice {
   text: string

@@ -13,7 +13,7 @@ export const chapter01: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'apron',
     cg: null,
     text: '【第1章】雇佣条款\n潮声书店的风铃，在七月的湿热里响得很慢——像有人故意把时间拨成慢镜头。',
     next: 'c01-01',
@@ -31,7 +31,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-03',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'beckon',
     text: '……你来得正好。\n手边这批书，二楼放不下了。',
     next: 'c01-04',
   },
@@ -56,7 +56,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-07',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'leandesk',
     text: '明天帮我搬一批书。二楼书库潮了，要往下挪。\n不是请求。是雇佣。我按时薪算——按镇上标准，包水，不包饭。',
     next: 'c01-08',
   },
@@ -181,7 +181,7 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-20',
     speaker: '林晚棠',
-    expression: 'book',
+    expression: 'offer',
     text: '你住拾潮？\n夜里潮声大。若睡不着——别来砸我的门。短信就行。',
     next: 'c01-21',
   },

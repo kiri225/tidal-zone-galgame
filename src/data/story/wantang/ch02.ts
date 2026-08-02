@@ -48,7 +48,7 @@ export const chapter02: DialogueNode[] = [
   {
     id: 'c02-06',
     speaker: '林晚棠',
-    expression: 'avert',
+    expression: 'think',
     text: '接吧。别因为我耽误正事。',
     next: 'c02-07',
   },

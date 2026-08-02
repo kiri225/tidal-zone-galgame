@@ -65,6 +65,7 @@ export const chapter16: DialogueNode[] = [
     id: 'c16-08',
     bg: 'bookstore-close',
     mood: 'intimate',
+    expression: 'blouse',
     text: '门内只留一盏吧台灯，其余灯早已灭下。她换掉了围裙，亚麻衬衫领口松开两颗扣，随意束起的发垂下几缕，被灯光镀成浅金。\n地板还没拖，我的鞋印一路湿到吧台边。',
     next: 'c16-09',
   },
@@ -76,7 +77,7 @@ export const chapter16: DialogueNode[] = [
   {
     id: 'c16-10',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'blouseblush',
     text: '像只被丢进海里又捞起来的猫。\n擦擦，别把水滴在我刚整理好的诗集区。',
     next: 'c16-11',
   },

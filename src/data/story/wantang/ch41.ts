@@ -13,7 +13,7 @@ export const chapter41: DialogueNode[] = [
     bg: 'bookstore-close',
     mood: 'intimate',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'blouse',
     cg: null,
     text: '【第41章】备用钥匙\n打烊后，晚棠从收银台最底下的抽屉里翻出一个用红绳系着的小铁圈，动作有点笨拙。',
     next: 'c41-01',
@@ -21,6 +21,7 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-01',
     bg: 'wantang-room',
+    expression: 'casualsoft',
     text: '她把那东西攥在手心里转了两圈，像是在犹豫要不要真的把它递出去——这份犹豫，比她平时任何一次沉默都更明显。',
     next: 'c41-01b',
   },
@@ -32,7 +33,7 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-02',
     speaker: '林晚棠',
-    expression: 'avert',
+    expression: 'casual',
     text: '这个抽屉，我锁了三年。\n钥匙放在里面，不是没想过给谁，是没遇到值得的人。',
     next: 'c41-03',
   },
@@ -84,7 +85,7 @@ export const chapter41: DialogueNode[] = [
   {
     id: 'c41-08',
     speaker: '林晚棠',
-    expression: 'blush',
+    expression: 'casualsoft',
     text: '……用得着这么严肃吗。\n又不是要你娶我。',
     next: 'c41-09',
   },

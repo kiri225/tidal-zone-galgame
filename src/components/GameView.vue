@@ -25,6 +25,10 @@ const nextCgHint = computed(() => {
     ? `下一 CG · ${formatAffection(next.affectionRequired)}`
     : 'CG 已全部解锁'
 })
+/** 章节号已在右上角 HUD，正文里去掉【第N章】标题行 */
+const dialogueText = computed(() =>
+  (game.text ?? '').replace(/^【第\d+章】[^\n]*\n?/, ''),
+)
 
 /** 解锁提示 / 全屏预览优先消费点击，避免一碰就跳过 CG */
 function consumeCgGate(): boolean {
@@ -75,10 +79,10 @@ watch(
 
     <div class="hud">
       <div class="hud-left">
-        <span v-if="game.chapter" class="chapter">第 {{ game.chapter }} 章 · {{ game.chapterTitle }}</span>
         <span class="place">{{ place }}</span>
       </div>
-      <div class="aff-wrap">
+      <div class="hud-right">
+        <span v-if="game.chapter" class="chapter">第 {{ game.chapter }} 章 · {{ game.chapterTitle }}</span>
         <span class="aff" title="晚棠好感">亲密度 {{ affLabel }}</span>
         <div class="aff-bar" aria-hidden="true">
           <div class="aff-fill" :style="{ width: affFill + '%' }" />
@@ -94,7 +98,7 @@ watch(
       <div v-if="game.speaker" class="name" :style="{ color: nameColor }">
         {{ game.speaker }}
       </div>
-      <TypewriterText :text="game.text" class="body" />
+      <TypewriterText :text="dialogueText" class="body" />
 
       <ul v-if="hasChoices" class="choices">
         <li
@@ -141,7 +145,16 @@ watch(
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  max-width: 60%;
+  max-width: 40%;
+}
+
+.hud-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  max-width: 55%;
+  text-align: right;
 }
 
 .chapter {
@@ -152,13 +165,6 @@ watch(
 
 .place {
   color: rgba(232, 221, 208, 0.4);
-}
-
-.aff-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.2rem;
 }
 
 .aff {
@@ -230,22 +236,15 @@ watch(
   bottom: 1.5rem;
   transform: translateX(-50%);
   width: min(920px, calc(100% - 2rem));
-  /* 低于立绘(12)：人物叠在对话框前；正文靠左可读 */
+  /* 高于立绘(2)：对话框盖住人物下半身 */
   z-index: 10;
   padding: 1.4rem 1.75rem 1.2rem;
-  padding-right: clamp(1.75rem, 28vw, 12rem);
   background:
-    linear-gradient(180deg, rgba(12, 20, 30, 0.72), rgba(8, 14, 22, 0.94));
+    linear-gradient(180deg, rgba(12, 20, 30, 0.78), rgba(8, 14, 22, 0.94));
   border: 1px solid rgba(232, 221, 208, 0.14);
   backdrop-filter: blur(14px);
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.35);
   cursor: default;
-}
-
-@media (max-width: 640px) {
-  .panel {
-    padding-right: 1.75rem;
-  }
 }
 
 .name {

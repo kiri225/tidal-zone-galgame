@@ -13,7 +13,7 @@ export const chapter23: DialogueNode[] = [
     bg: 'market-morning',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'apron',
     cg: null,
     text: '【第23章】市集早晨\n周末早市，天刚蒙蒙亮，海面还浮着一层没散尽的雾。整条防波堤已经摆满了摊位，吆喝声比潮声更早醒来。',
     next: 'c23-01',
@@ -28,7 +28,7 @@ export const chapter23: DialogueNode[] = [
   {
     id: 'c23-02',
     speaker: '林晚棠',
-    expression: 'book',
+    expression: 'offer',
     text: '来了正好。别笑，书店也要吃饭——旧书摊比店里赚得实在。\n你负责找钱，我负责不让人把书摸出油光。',
     next: 'c23-03',
   },

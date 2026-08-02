@@ -81,7 +81,7 @@ export const chapter13: DialogueNode[] = [
   {
     id: 'c13-08a',
     speaker: '林晚棠',
-    expression: 'avert',
+    expression: 'wipe',
     text: '潮屿太小，人喜欢给别人的故事加料。\n他这种人，说的话，听听就好，别放心上。',
     next: 'c13-09',
   },

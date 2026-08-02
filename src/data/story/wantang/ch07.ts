@@ -13,7 +13,7 @@ export const chapter07: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'coffee',
     cg: null,
     text: '【第7章】大麦茶\n搬到黄昏，两人都出了一身汗。晚棠从冰箱里取出一壶冰镇大麦茶，倒了两杯。',
     next: 'c07-01',
@@ -44,7 +44,7 @@ export const chapter07: DialogueNode[] = [
   {
     id: 'c07-05',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'lean',
     text: '开店第一年。\n那时候客人少，闲得只能研究怎么把免费的茶水，煮得让人愿意多坐一会儿。',
     next: 'c07-06',
   },

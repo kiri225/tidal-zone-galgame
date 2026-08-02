@@ -13,7 +13,7 @@ export const chapter06: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'book',
+    expression: 'write',
     cg: null,
     text: '【第6章】未寄出的诗\n下楼整理吧台旁的旧书脊时，一本毫不起眼的笔记本从缝隙里滑了出来，摔在我脚边。',
     next: 'c06-01',

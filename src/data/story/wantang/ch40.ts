@@ -41,7 +41,7 @@ export const chapter40: DialogueNode[] = [
   {
     id: 'c40-04',
     speaker: '林晚棠',
-    expression: 'crossed',
+    expression: 'wipe',
     text: '潮声不跟谁的铺子绑定，一直是我自己的。\n……你先把酒喝完，再聊八卦。',
     next: 'c40-05',
   },

@@ -13,7 +13,7 @@ export const chapter24: DialogueNode[] = [
     bg: 'street-day',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'cardigan',
     cg: null,
     text: '【第24章】休息日\n市集散场后，她破例挂出「今日休息」的木牌——这块牌子据说做好之后，用的次数一只手数得过来。',
     next: 'c24-01',
@@ -27,7 +27,7 @@ export const chapter24: DialogueNode[] = [
   {
     id: 'c24-02',
     speaker: '林晚棠',
-    expression: 'soft',
+    expression: 'cardigansoft',
     text: '你发现没，我走路一向很快。\n今天不知道为什么，忽然不想赶时间了。',
     next: 'c24-03',
   },

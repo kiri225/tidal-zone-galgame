@@ -14,7 +14,7 @@ export const chapter08: DialogueNode[] = [
     bg: 'bookstore',
     mood: 'warm',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'apronlean',
     cg: null,
     text: '【第8章】潮声重逢\n夜色彻底落下后，晚棠没有立刻赶我走，只是把「打烊」的木牌轻轻翻了过去。',
     next: 'c08-01',
@@ -32,7 +32,7 @@ export const chapter08: DialogueNode[] = [
   {
     id: 'c08-03',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'lean',
     text: '难得今天没客人。\n潮屿的夜，总是安静得有点过分。',
     next: 'c08-04',
   },
@@ -50,7 +50,7 @@ export const chapter08: DialogueNode[] = [
   {
     id: 'c08-06',
     speaker: '林晚棠',
-    expression: 'tired',
+    expression: 'coffee',
     text: '你听。\n涨潮了。这个点的潮声，跟白天完全不一样——白天是喧闹的，夜里是……讲心事的。',
     next: 'c08-07',
   },

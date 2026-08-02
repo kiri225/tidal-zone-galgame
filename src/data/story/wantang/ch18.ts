@@ -106,7 +106,7 @@ export const chapter18: DialogueNode[] = [
   {
     id: 'c18-12',
     speaker: '林晚棠',
-    expression: 'default',
+    expression: 'shush',
     text: '高二那年冬天，图书馆闭馆前十分钟总会响铃。你每次都装作没听见，多蹭几页书。',
     next: 'c18-13',
   },

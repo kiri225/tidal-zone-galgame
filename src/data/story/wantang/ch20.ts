@@ -13,7 +13,7 @@ export const chapter20: DialogueNode[] = [
     bg: 'bookstore-close',
     mood: 'intimate',
     sprite: 'wantang',
-    expression: 'default',
+    expression: 'blouse',
     cg: null,
     text: '【第20章】几乎吻上\n她说「该回去了」，可我没动，她也没有真的赶人——两句话之间，空出一片谁都不肯先填满的沉默。',
     next: 'c20-01',
@@ -26,7 +26,7 @@ export const chapter20: DialogueNode[] = [
   {
     id: 'c20-02',
     speaker: '林晚棠',
-    expression: 'tired',
+    expression: 'blouseblush',
     text: '放着就好，我明天再洗。\n你手上还有雨的凉气，别碰玻璃杯，容易滑。',
     next: 'c20-03',
   },
