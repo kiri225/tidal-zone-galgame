@@ -251,6 +251,14 @@ export const chapter05: DialogueNode[] = [
   {
     id: 'c05-27',
     text: '她拉过我的手，借着光柱查看有没有被木刺扎到，指腹的薄茧擦过我掌心，比刚才那次触碰更久，也更坦然。',
+    next: 'c05-end-cg',
+  },
+  {
+    id: 'c05-end-cg',
+    cg: 'ch05-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n午后光切过窗棂，落在她后颈的碎发上。我的视线比指尖先一步靠过去，又在下一秒假装移开。',
     next: 'ch06',
   },
 ]

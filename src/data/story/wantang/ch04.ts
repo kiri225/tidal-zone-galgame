@@ -263,6 +263,14 @@ export const chapter04: DialogueNode[] = [
   {
     id: 'c04-27',
     text: '下楼时，木梯的吱呀声送我们一路。走到最后一级，晚棠忽然停下脚步，回头看了眼二楼的暗处，又很快转身。',
+    next: 'c04-end-cg',
+  },
+  {
+    id: 'c04-end-cg',
+    cg: 'ch04-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n二楼窄道只容一人侧身。她经过时衣袖擦过我的手臂，灰尘在光里浮起，呼吸却近得发烫。',
     next: 'ch05',
   },
 ]

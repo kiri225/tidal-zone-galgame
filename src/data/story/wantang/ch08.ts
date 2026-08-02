@@ -231,6 +231,14 @@ export const chapter08: DialogueNode[] = [
   {
     id: 'c08-27',
     text: '她转身离开时，脚步比来时轻快了一点。潮声送她走远，直到那道身影彻底融进夜色，我才转身，朝相反的方向走去。',
+    next: 'c08-end-cg',
+  },
+  {
+    id: 'c08-end-cg',
+    cg: 'ch08-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n送别前那一秒，她站在夜色与店灯交界处，像潮水犹豫要不要再涨上来一点。',
     next: 'ch09',
   },
 ]

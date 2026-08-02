@@ -194,6 +194,14 @@ export const chapter10: DialogueNode[] = [
   {
     id: 'c10-22',
     text: '回复来得很快，只有短短几个字：「他也照顾了我。别多想，早点睡。」——像是怕这份感激被摊开来说，会变得沉重。',
+    next: 'c10-end-cg',
+  },
+  {
+    id: 'c10-end-cg',
+    cg: 'ch10-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n答录机的红灯暗下去。黑暗里，她的声音像还贴在听筒旁，近得足以把一夜的空落填满。',
     next: 'ch11',
   },
 ]

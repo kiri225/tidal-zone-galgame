@@ -115,7 +115,7 @@ export const chapter09: DialogueNode[] = [
   {
     id: 'c09-08c',
     text: '「那就这样。」门关上时，风铃响得很轻，轻得不像是在挽留，倒像是在放行。这一晚，两人之间原本该有的热气，被这句话冻住了大半。',
-    next: 'ch10',
+    next: 'c09-end-cg',
   },
   {
     id: 'c09-09',
@@ -214,6 +214,14 @@ export const chapter09: DialogueNode[] = [
   {
     id: 'c09-21',
     text: '她把话梅糖剥开一颗，含在嘴里，酸得皱了皱眉，随即又被自己这副样子逗笑，笑声很轻，却比这一整晚的潮声都清楚。',
+    next: 'c09-end-cg',
+  },
+  {
+    id: 'c09-end-cg',
+    cg: 'ch09-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n暖光落在她侧脸上。晚饭的三种吃法都吃完了，唯独这份靠近，还像菜谱里没写明的第四种。',
     next: 'ch10',
   },
 ]

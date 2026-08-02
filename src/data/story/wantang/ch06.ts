@@ -80,7 +80,7 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-05b2',
     text: '她把本子接过去，抱在胸前，像抱住一件终于不用急着交出去的东西。',
-    next: 'ch07',
+    next: 'c06-end-cg',
   },
   {
     id: 'c06-05c',
@@ -251,6 +251,14 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-23',
     text: '她把本子重新塞回原来那道书缝，动作和刚才一样轻，仿佛那不是一本笔记本，而是一小块脆弱的、需要藏好的时间。',
+    next: 'c06-end-cg',
+  },
+  {
+    id: 'c06-end-cg',
+    cg: 'ch06-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n纸页边缘还留着她指腹的温热。未寄出的句子在两个人之间折叠，近得几乎能听见彼此的心跳。',
     next: 'ch07',
   },
 ]

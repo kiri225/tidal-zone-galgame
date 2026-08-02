@@ -5,14 +5,30 @@ import { cgCatalog } from '../data/cg'
 
 const game = useGameStore()
 const viewing = ref<string | null>(null)
+const videoFailed = ref<Set<string>>(new Set())
 
 const viewDef = computed(() =>
   viewing.value ? cgCatalog.find((c) => c.id === viewing.value) : null,
 )
 
+const viewVideo = computed(() => {
+  if (!viewDef.value?.video || !viewing.value) return ''
+  if (videoFailed.value.has(viewing.value)) return ''
+  return viewDef.value.video
+})
+
 function open(id: string, unlocked: boolean) {
   if (!unlocked) return
   viewing.value = id
+}
+
+function onVideoError(id: string) {
+  videoFailed.value = new Set([...videoFailed.value, id])
+}
+
+function reqLabel(cg: (typeof cgCatalog)[number]) {
+  if (cg.storyUnlock) return '章末解锁'
+  return `亲密度 ≥ ${cg.affectionRequired}%`
 }
 </script>
 
@@ -50,14 +66,31 @@ function open(id: string, unlocked: boolean) {
           <p class="title">
             {{ game.unlockedCgs.has(cg.id) ? cg.title : '尚未解锁' }}
           </p>
-          <p class="req">亲密度 ≥ {{ cg.affectionRequired }}%</p>
+          <p class="req">{{ reqLabel(cg) }}</p>
         </div>
       </li>
     </ul>
 
     <Teleport to="body">
       <div v-if="viewDef" class="lightbox" @click="viewing = null">
-        <img :src="viewDef.image" :alt="viewDef.title" draggable="false" />
+        <video
+          v-if="viewVideo && viewing"
+          class="media"
+          :src="viewVideo"
+          autoplay
+          loop
+          muted
+          playsinline
+          @error="onVideoError(viewing)"
+          @click.stop
+        />
+        <img
+          v-else
+          class="media kenburns"
+          :src="viewDef.image"
+          :alt="viewDef.title"
+          draggable="false"
+        />
         <div class="cap">
           <p class="t">{{ viewDef.title }}</p>
           <p class="s">{{ viewDef.subtitle }}</p>
@@ -195,11 +228,22 @@ h1 {
   padding: 1.5rem;
   cursor: pointer;
 }
-.lightbox img {
+.lightbox .media {
   max-width: min(1100px, 96vw);
   max-height: 78vh;
   object-fit: contain;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+.lightbox .media.kenburns {
+  animation: gallery-ken 12s ease-in-out infinite alternate;
+}
+@keyframes gallery-ken {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
 .cap {
   margin-top: 1.25rem;

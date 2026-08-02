@@ -256,6 +256,14 @@ export const chapter01: DialogueNode[] = [
   {
     id: 'c01-29',
     text: '口袋里的海玻璃随着步伐轻轻撞着。\n七月的第一场约定，就这样以「工作」的名义，重新涨上了岸。',
+    next: 'c01-end-cg',
+  },
+  {
+    id: 'c01-end-cg',
+    cg: 'ch01-end',
+    sprite: null,
+    mood: 'rain',
+    text: '【CG · 章末】\n雨丝斜织。潮声的暖光在身后缩成一小块矩形，她却像还站在门廊里，目光隔着玻璃追上我。',
     next: 'ch02',
   },
 ]

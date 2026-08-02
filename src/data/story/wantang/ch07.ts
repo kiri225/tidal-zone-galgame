@@ -247,6 +247,14 @@ export const chapter07: DialogueNode[] = [
   {
     id: 'c07-26',
     text: '晚棠把最后一口茶喝完，抬眼看向我，眼神里有种她自己大概都没察觉的、久违的松弛。',
+    next: 'c07-end-cg',
+  },
+  {
+    id: 'c07-end-cg',
+    cg: 'ch07-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n杯沿上的热气还没散尽。她隔着琥珀色的茶水看我，距离短得像一句刚好要说出口的「再坐会儿」。',
     next: 'ch08',
   },
 ]

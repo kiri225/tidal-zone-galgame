@@ -82,9 +82,10 @@ export const useGameStore = defineStore('game', () => {
     return true
   }
 
-  /** 按好感阈值自动解锁图鉴 */
+  /** 按好感阈值自动解锁图鉴（跳过仅剧情解锁的章末 CG） */
   function checkAffectionCgs() {
     for (const def of cgCatalog) {
+      if (def.storyUnlock) continue
       if (affection.value >= def.affectionRequired) {
         unlockCg(def.id)
       }

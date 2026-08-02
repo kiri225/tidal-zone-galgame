@@ -1,25 +1,52 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useGameStore } from '../engine/gameStore'
 import { getCgById, cgImages } from '../data/cg'
 
 const game = useGameStore()
 
+/** 视频加载失败时回落到静图运镜 */
+const videoFailed = ref<Set<string>>(new Set())
+
 const unlockDef = computed(() =>
   game.pendingCgUnlock ? getCgById(game.pendingCgUnlock) : null,
 )
+
+const sceneDef = computed(() => (game.cg ? getCgById(game.cg) : null))
 
 const sceneSrc = computed(() =>
   game.cg ? (cgImages[game.cg] ?? '') : '',
 )
 
-const sceneDef = computed(() => (game.cg ? getCgById(game.cg) : null))
+const sceneVideo = computed(() => {
+  if (!game.cg || !sceneDef.value?.video) return ''
+  if (videoFailed.value.has(game.cg)) return ''
+  return sceneDef.value.video
+})
 
 /** 好感解锁但当前节点未挂 cg 时，用全屏预览展示图 */
 const unlockPreviewSrc = computed(() => {
   if (!game.pendingCgUnlock || game.cg) return ''
   return cgImages[game.pendingCgUnlock] ?? ''
 })
+
+const unlockPreviewVideo = computed(() => {
+  if (!unlockDef.value?.video || !game.pendingCgUnlock || game.cg) return ''
+  if (videoFailed.value.has(game.pendingCgUnlock)) return ''
+  return unlockDef.value.video
+})
+
+watch(
+  () => game.cg,
+  () => {
+    /* 切换 CG 时不清 failed 缓存，避免反复 404 */
+  },
+)
+
+function onVideoError(id: string | null | undefined) {
+  if (!id) return
+  videoFailed.value = new Set([...videoFailed.value, id])
+}
 
 function dismissUnlock() {
   game.dismissCgUnlock()
@@ -29,7 +56,25 @@ function dismissUnlock() {
 <template>
   <!-- 剧情内全屏 CG -->
   <div v-if="game.cg && sceneSrc" class="cg-scene" aria-live="polite">
-    <img :src="sceneSrc" alt="" class="cg-img" draggable="false" />
+    <video
+      v-if="sceneVideo"
+      :key="'v-' + game.cg"
+      class="cg-media"
+      :src="sceneVideo"
+      autoplay
+      loop
+      muted
+      playsinline
+      @error="onVideoError(game.cg)"
+    />
+    <img
+      v-else
+      :key="'i-' + game.cg"
+      :src="sceneSrc"
+      alt=""
+      class="cg-media kenburns"
+      draggable="false"
+    />
     <div class="cg-wash" />
     <div v-if="sceneDef" class="cg-caption">
       <span class="cg-label">CG</span>
@@ -44,12 +89,34 @@ function dismissUnlock() {
     class="cg-preview"
     @click.stop="dismissUnlock"
   >
-    <img :src="unlockPreviewSrc" alt="" class="cg-img" draggable="false" />
+    <video
+      v-if="unlockPreviewVideo"
+      :key="'uv-' + unlockDef.id"
+      class="cg-media"
+      :src="unlockPreviewVideo"
+      autoplay
+      loop
+      muted
+      playsinline
+      @error="onVideoError(unlockDef.id)"
+    />
+    <img
+      v-else
+      :src="unlockPreviewSrc"
+      alt=""
+      class="cg-media kenburns"
+      draggable="false"
+    />
     <div class="cg-wash" />
     <div class="cg-caption">
       <span class="cg-label">CG 解锁</span>
       <span class="cg-title">{{ unlockDef.title }}</span>
-      <span class="cg-sub">{{ unlockDef.subtitle }} · 亲密度 {{ unlockDef.affectionRequired }}%</span>
+      <span class="cg-sub">
+        {{ unlockDef.subtitle }}
+        <template v-if="!unlockDef.storyUnlock">
+          · 亲密度 {{ unlockDef.affectionRequired }}%
+        </template>
+      </span>
       <span class="cg-hint">点击继续</span>
     </div>
   </div>
@@ -63,7 +130,12 @@ function dismissUnlock() {
     >
       <p class="label">CG 解锁</p>
       <p class="title">{{ unlockDef.title }}</p>
-      <p class="sub">{{ unlockDef.subtitle }} · 亲密度 {{ unlockDef.affectionRequired }}%</p>
+      <p class="sub">
+        {{ unlockDef.subtitle }}
+        <template v-if="!unlockDef.storyUnlock">
+          · 亲密度 {{ unlockDef.affectionRequired }}%
+        </template>
+      </p>
       <p class="hint">点击关闭提示 · 可在「CG 鉴赏」回顾</p>
     </div>
   </Transition>
@@ -84,11 +156,16 @@ function dismissUnlock() {
   cursor: pointer;
 }
 
-.cg-img {
+.cg-media {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 28%;
+}
+
+.cg-media.kenburns {
+  animation: kenburns 14s ease-in-out infinite alternate;
+  transform-origin: center 35%;
 }
 
 .cg-wash {
@@ -156,6 +233,15 @@ function dismissUnlock() {
   }
   50% {
     opacity: 0.95;
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
   }
 }
 

@@ -263,6 +263,14 @@ export const chapter03: DialogueNode[] = [
   {
     id: 'c03-27',
     text: '我抱着最后一摞诗集往楼梯口走，脚步比平时慢——像是想把这段安静，尽量走得长一点。楼上的暗处，还有一整座没被光照到的书库在等着我们。',
+    next: 'c03-end-cg',
+  },
+  {
+    id: 'c03-end-cg',
+    cg: 'ch03-end',
+    sprite: null,
+    mood: 'intimate',
+    text: '【CG · 章末】\n打烊灯只剩一盏。未说完的句子落在吧台与她唇间，像潮汐故意留在岸上的那一线湿痕。',
     next: 'ch04',
   },
 ]

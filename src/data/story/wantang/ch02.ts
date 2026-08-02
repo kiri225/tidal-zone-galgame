@@ -241,6 +241,14 @@ export const chapter02: DialogueNode[] = [
   {
     id: 'c02-25',
     text: '风铃在她转身时轻轻响了一声。我忽然想，这声音以后会不会有一天，变成「再见」的信号。',
+    next: 'c02-end-cg',
+  },
+  {
+    id: 'c02-end-cg',
+    cg: 'ch02-end',
+    sprite: null,
+    mood: 'warm',
+    text: '【CG · 章末】\n梯子旁，她的呼吸停了半拍。电话那头的喧嚣退远，只剩我们之间那截不肯说破的沉默。',
     next: 'ch03',
   },
 ]

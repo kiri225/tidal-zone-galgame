@@ -20,10 +20,16 @@ const affFill = computed(() =>
   Math.min(100, Math.round((game.affection / AFFECTION_MAX) * 100)),
 )
 const nextCgHint = computed(() => {
-  const next = cgCatalog.find((c) => !game.unlockedCgs.has(c.id))
-  return next
-    ? `下一 CG · ${formatAffection(next.affectionRequired)}`
-    : 'CG 已全部解锁'
+  const next = cgCatalog.find(
+    (c) => !game.unlockedCgs.has(c.id) && !c.storyUnlock,
+  )
+  if (!next) {
+    const pendingStory = cgCatalog.find(
+      (c) => !game.unlockedCgs.has(c.id) && c.storyUnlock,
+    )
+    return pendingStory ? '章末 CG 待解锁' : 'CG 已全部解锁'
+  }
+  return `下一 CG · ${formatAffection(next.affectionRequired)}`
 })
 /** 章节号已在右上角 HUD，正文里去掉【第N章】标题行 */
 const dialogueText = computed(() =>
@@ -220,10 +226,9 @@ watch(
 
 .has-cg .panel {
   border-color: rgba(196, 164, 132, 0.45);
-  /* CG 播放时不给立绘留右垫，并略透出画面 */
   padding-right: 1.75rem;
   background:
-    linear-gradient(180deg, rgba(12, 20, 30, 0.52), rgba(8, 14, 22, 0.88));
+    linear-gradient(180deg, rgba(10, 16, 24, 0.88), rgba(6, 12, 20, 0.96));
 }
 
 .cg-gated .hud {
@@ -236,15 +241,33 @@ watch(
   bottom: 1.5rem;
   transform: translateX(-50%);
   width: min(920px, calc(100% - 2rem));
-  /* 高于立绘(2)：对话框盖住人物下半身 */
+  /* 高于立绘(2)：不透明盖住下半身，上半身露在对话框上沿 */
   z-index: 10;
   padding: 1.4rem 1.75rem 1.2rem;
   background:
-    linear-gradient(180deg, rgba(12, 20, 30, 0.78), rgba(8, 14, 22, 0.94));
+    linear-gradient(180deg, rgba(10, 16, 24, 0.94), rgba(6, 12, 20, 0.98));
   border: 1px solid rgba(232, 221, 208, 0.14);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.45);
   cursor: default;
+}
+
+/* 顶沿加一层实遮，避免腿从半透明透出来 */
+.panel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2.75rem;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 14, 22, 0.98),
+    rgba(8, 14, 22, 0.55) 70%,
+    transparent
+  );
+  pointer-events: none;
+  border-radius: inherit;
 }
 
 .name {
