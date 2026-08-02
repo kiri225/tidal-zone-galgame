@@ -6,7 +6,7 @@
  *
  * ASSET_VER：换图后递增，强制浏览器绕过旧缓存
  */
-export const ASSET_VER = '20260802qh5'
+export const ASSET_VER = '20260802qh6'
 
 function asset(path: string): string {
   if (!path) return path
@@ -149,6 +149,7 @@ export const qingheSprites: Record<string, string> = {
   blouseblush: asset('/images/char/qinghe-blouseblush.webp'),
   phone: asset('/images/char/qinghe-phone.webp'),
   lingerie: asset('/images/char/qinghe-lingerie.webp'),
+  ringlight: asset('/images/char/qinghe-lean.webp'),
   apron: asset('/images/char/qinghe-default.webp'),
   apronlean: asset('/images/char/qinghe-lean.webp'),
   cardigan: asset('/images/char/qinghe-casual.webp'),
