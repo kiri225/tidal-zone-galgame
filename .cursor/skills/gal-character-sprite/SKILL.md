@@ -81,8 +81,9 @@ description: >-
 | `public/images/char/green/batch-01-expressions/` | 表情 + book/crossed |
 | `public/images/char/green/batch-02-actions/` | 动作姿态 |
 | `public/images/char/green/batch-03-outfits/` | 换装 |
+| `public/images/char/green/batch-04-stylefix/` | 画风对齐重出 |
 
-详见 `public/images/char/green/README.md`。新绿幕请开 `batch-04-…`，不要堆回扁平 `green/`。
+详见 `public/images/char/green/README.md`。新绿幕请开下一 `batch-XX-…`，不要堆回扁平 `green/`。
 
 ## Prompt recipe（生成时遵守）
 

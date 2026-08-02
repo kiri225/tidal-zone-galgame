@@ -8,6 +8,7 @@
 | `batch-01-expressions/` | 表情 + 抱书/抱臂 | 最早一批店服表情差分 |
 | `batch-02-actions/` | 托腮、端杯、写备忘等动作 | 设计稿动作行 |
 | `batch-03-outfits/` | 围裙性感版 / 开衫 / 私服 / 卸围裙 | 设计稿 B 换装 |
+| `batch-04-stylefix/` | avert/smile/soft/tense 画风对齐重出 | 黑底原稿 |
 
 ## 流程
 
