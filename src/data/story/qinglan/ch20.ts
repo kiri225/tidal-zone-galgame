@@ -9,7 +9,7 @@ export const chapter20: DialogueNode[] = [
     id: 'ch20',
     chapter: 20,
     chapterTitle: '几乎越线',
-    bg: 'hotel-lobby',
+    bg: 'hotel-corridor',
     mood: 'intimate',
     sprite: 'qinglan',
     expression: 'default',
@@ -43,7 +43,7 @@ export const chapter20: DialogueNode[] = [
   },
   {
     id: 'c20-cg',
-    bg: 'hotel-lobby',
+    bg: 'hotel-corridor',
     mood: 'intimate',
     sprite: null,
     cg: 'almost_ql',

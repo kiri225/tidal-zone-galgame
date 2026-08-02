@@ -9,7 +9,7 @@ export const chapter35: DialogueNode[] = [
     id: 'ch35',
     chapter: 35,
     chapterTitle: '雨困值班室',
-    bg: 'hotel-lobby',
+    bg: 'hotel-duty',
     mood: 'intimate',
     sprite: 'qinglan',
     expression: 'blush',
@@ -65,7 +65,7 @@ export const chapter35: DialogueNode[] = [
   },
   {
     id: 'c35-cg',
-    bg: 'hotel-lobby',
+    bg: 'hotel-duty',
     mood: 'intimate',
     sprite: null,
     cg: 'dutynight',

@@ -9,7 +9,7 @@ export const chapter05: DialogueNode[] = [
     id: 'ch05',
     chapter: 5,
     chapterTitle: '后厨烟',
-    bg: 'street-night',
+    bg: 'hotel-service',
     mood: 'cold',
     sprite: 'qinglan',
     expression: 'default',

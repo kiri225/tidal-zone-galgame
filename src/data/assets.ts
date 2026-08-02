@@ -6,7 +6,7 @@
  *
  * ASSET_VER：换图后递增，强制浏览器绕过旧缓存
  */
-export const ASSET_VER = '20260802s'
+export const ASSET_VER = '20260802u'
 
 function asset(path: string): string {
   if (!path) return path
@@ -30,7 +30,13 @@ export const bgImages: Record<string, string> = {
   'tide-pools': asset('/images/bg/bg-tide-pools.webp'),
   'market-morning': asset('/images/bg/bg-market-morning.webp'),
   'hotel-lobby': asset('/images/bg/bg-hotel-lobby.webp'),
+  'hotel-lobby-storm': asset('/images/bg/bg-hotel-lobby-storm.webp'),
   'hotel-bar': asset('/images/bg/bg-hotel-bar.webp'),
+  'hotel-duty': asset('/images/bg/bg-hotel-duty.webp'),
+  'hotel-corridor': asset('/images/bg/bg-hotel-corridor.webp'),
+  'hotel-monitor': asset('/images/bg/bg-hotel-monitor.webp'),
+  'hotel-service': asset('/images/bg/bg-hotel-service.webp'),
+  'hotel-room': asset('/images/bg/bg-hotel-room.webp'),
   gallery: asset('/images/bg/bg-gallery.webp'),
   'research-station': asset('/images/bg/bg-research-station.webp'),
   black: '',
@@ -72,12 +78,41 @@ export const wantangSprites: Record<string, string> = {
   blouseblush: asset('/images/char/wantang-blouseblush.webp'),
 }
 
-/**
- * 苏晴岚立绘：暂复用晚棠资源作占位，待 P2 专用立绘生成后替换路径。
- * 表情 key 与 Expression 对齐；缺失时回退 default。
- */
+/** 苏晴岚表情/姿态 → 透明立绘 WebP（含 alpha） */
 export const qinglanSprites: Record<string, string> = {
-  ...wantangSprites,
+  default: asset('/images/char/qinglan-default.webp'),
+  soft: asset('/images/char/qinglan-soft.webp'),
+  tense: asset('/images/char/qinglan-tense.webp'),
+  blush: asset('/images/char/qinglan-blush.webp'),
+  avert: asset('/images/char/qinglan-avert.webp'),
+  smile: asset('/images/char/qinglan-smile.webp'),
+  hurt: asset('/images/char/qinglan-hurt.webp'),
+  laugh: asset('/images/char/qinglan-laugh.webp'),
+  surprised: asset('/images/char/qinglan-surprised.webp'),
+  teary: asset('/images/char/qinglan-teary.webp'),
+  cold: asset('/images/char/qinglan-cold.webp'),
+  tired: asset('/images/char/qinglan-tired.webp'),
+  book: asset('/images/char/qinglan-book.webp'),
+  crossed: asset('/images/char/qinglan-crossed.webp'),
+  lean: asset('/images/char/qinglan-lean.webp'),
+  coffee: asset('/images/char/qinglan-coffee.webp'),
+  write: asset('/images/char/qinglan-write.webp'),
+  offer: asset('/images/char/qinglan-offer.webp'),
+  shush: asset('/images/char/qinglan-shush.webp'),
+  beckon: asset('/images/char/qinglan-beckon.webp'),
+  think: asset('/images/char/qinglan-think.webp'),
+  wipe: asset('/images/char/qinglan-wipe.webp'),
+  confused: asset('/images/char/qinglan-confused.webp'),
+  leandesk: asset('/images/char/qinglan-leandesk.webp'),
+  casual: asset('/images/char/qinglan-casual.webp'),
+  casualsoft: asset('/images/char/qinglan-casualsoft.webp'),
+  blouse: asset('/images/char/qinglan-blouse.webp'),
+  blouseblush: asset('/images/char/qinglan-blouseblush.webp'),
+  // 剧本若落到晚棠专用换装 key，回退制服 default
+  apron: asset('/images/char/qinglan-default.webp'),
+  apronlean: asset('/images/char/qinglan-leandesk.webp'),
+  cardigan: asset('/images/char/qinglan-casual.webp'),
+  cardigansoft: asset('/images/char/qinglan-casualsoft.webp'),
 }
 
 export function getCharSprite(character: string, expression: string): string {

@@ -24,8 +24,14 @@
 | shop-back | 拾潮 · 后仓 | 整理旧物、回忆父亲 |
 | bookstore | 潮声 · 营业中 | 晚棠主场景 |
 | bookstore-close | 潮声 · 打烊 | 夜话、亲密 |
-| hotel-lobby | 潮屿酒店 · 大堂夜 | 晴岚线 |
-| hotel-bar | 酒店酒吧 | 晴岚喝酒戏 |
+| hotel-lobby | 潮屿酒店 · 大堂夜 | 晴岚线主场景 |
+| hotel-lobby-storm | 大堂 · 台风停电 | 应急灯 / 沙袋 |
+| hotel-bar | 酒店酒吧 | 晴岚喝酒 / 对班夜话 |
+| hotel-duty | 酒店值班室 | 雨困、卸妆、亲密 |
+| hotel-corridor | 酒店走廊 · 夜 | 几乎越线 |
+| hotel-monitor | 酒店监控室 | 买家握手 / 审判 |
+| hotel-service | 酒店卸货通道 | 后厨烟破绽 |
+| hotel-room | 酒店客房 · 海景 | 潮间带隐喻窗边 |
 | research-station | 海洋站 · 实验室 | 清禾线 |
 | tide-pools | 潮间带岩滩 · 昼 | 清禾科考 / 隐喻场景 |
 | gallery | 海边画廊 | 知夏线 |

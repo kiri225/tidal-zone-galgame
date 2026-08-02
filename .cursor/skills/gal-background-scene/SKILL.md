@@ -33,7 +33,13 @@ description: >-
 | bookstore | 潮声 · 营业中 | 高书架、吧台琥珀灯 |
 | bookstore-close | 潮声 · 打烊 | 只留一盏灯、红酒暗示 |
 | hotel-lobby | 酒店大堂 · 夜 | 冷空调光、空旷 |
+| hotel-lobby-storm | 大堂 · 台风停电 | 应急灯、沙袋、雨打玻璃 |
 | hotel-bar | 酒店酒吧 | 吧台、冰块、孤独座位 |
+| hotel-duty | 酒店值班室 | 窄沙发、应急手电、雨夜 |
+| hotel-corridor | 酒店走廊 · 夜 | 地毯、消防柜、暧昧距离 |
+| hotel-monitor | 酒店监控室 | 屏幕青光、雨点 |
+| hotel-service | 酒店卸货通道 | 水泥墙、湿沥青、破绽 |
+| hotel-room | 酒店客房 · 海景 | 窗边看潮、空房 |
 | research-station | 海洋站实验室 | 标本柜、屏幕青光 |
 | tide-pools | 潮间带岩滩 · 昼 | 积水坑、螺与藻、刺眼晨光 |
 | gallery | 海边画廊 | 白墙、画框、午后 |
