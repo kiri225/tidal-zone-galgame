@@ -28,13 +28,13 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 <style scoped>
 .sprite-wrap {
   position: absolute;
-  /* 居中贴底，叠在对话框后面（panel z=10） */
+  /* 居中贴底，叠在对话框后面（panel z=10）；高度跟视口走，避免宽屏景大人小 */
   left: 50%;
-  bottom: 0;
+  bottom: -2vh;
   transform: translateX(-50%);
   z-index: 2;
-  width: min(420px, 52vw);
-  height: min(86vh, 800px);
+  width: clamp(340px, 62vh, 820px);
+  height: min(108vh, 1200px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -44,8 +44,8 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 }
 
 .sprite {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: bottom center;
   user-select: none;
@@ -97,15 +97,25 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 
 @media (max-width: 900px) {
   .sprite-wrap {
-    width: min(360px, 58vw);
-    height: min(82vh, 720px);
+    width: clamp(300px, 58vh, 640px);
+    height: min(102vh, 980px);
+    bottom: -1vh;
   }
 }
 
 @media (max-width: 640px) {
   .sprite-wrap {
-    width: min(300px, 72vw);
-    height: min(78vh, 640px);
+    width: clamp(260px, 72vw, 420px);
+    height: min(96vh, 860px);
+    bottom: 0;
+  }
+}
+
+/* 超宽屏再放大一档，压住景大人小 */
+@media (min-aspect-ratio: 16/9) {
+  .sprite-wrap {
+    width: clamp(380px, 68vh, 900px);
+    height: min(112vh, 1280px);
   }
 }
 </style>
