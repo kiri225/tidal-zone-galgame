@@ -62,7 +62,7 @@
 | 项 | 内容 |
 |----|------|
 | 身份 | 潮屿酒店夜班经理 |
-| 气质 | 职业笑完美无缺；制服利落、短发或盘发、冷蓝调；私下极度孤独 |
+| 气质 | 爆乳干练 OL + 黑框眼镜；职业笑完美；紧身酒店制服、利落盘发、冷蓝调；私下极度孤独 |
 | 与屿 | 无中学旧情。他回镇整理拾潮期间暂住酒店，她安排「员工价」——从此每晚大堂擦肩 |
 | 怕什么 | 被当成可替换的服务态度；认真之后对方仍当短暂停泊 |
 | 想要 | 有人在她摘下名牌之后还留下来 |
@@ -70,6 +70,7 @@
 | 好感轴 | 信任揭下面具 > 身体靠近 |
 | 立绘表情 | default / soft / tense / blush / avert / smile / hurt / laugh / surprised / teary / cold / tired；姿态 crossed / lean |
 | 服装 | 干练酒店制服 + 名牌；休班便装；夜戏可解领/便服 |
+| 人物稿 | `docs/refs/qinglan-design-sheet-b.png`（造型定稿）· `qinglan-design-sheet-a.png`（表情姿态）· 说明见 `qinglan-design-notes.md` |
 | 关键 Flag | `unmask`（卸妆/示弱）、`trust`（拒绝把她当夜班消遣）、`habit`（对班成习惯）、`stay` / `confess`、`intimate_night`（仅 trust + 高好感） |
 
 **一句话**：沈屿在卖铺的三个月里，成了苏晴岚「对班」的固定停泊位——直到她发现，习惯比一夜更危险。

@@ -28,7 +28,7 @@ description: >-
 | id | 名 | 年龄 | 视觉关键词 |
 |----|----|------|------------|
 | wantang | 林晚棠 | 27 | 冷感、束发、亚麻衬衫、围裙、琥珀灯色调 |
-| qinglan | 苏晴岚 | 29 | 干练酒店制服、短发或利落盘发、冷蓝 |
+| qinglan | 苏晴岚 | 29 | 爆乳干练OL、黑框眼镜、紧身酒店制服、利落盘发、冷蓝 |
 | qinghe | 顾清禾 | 31 | 实验服或户外科考服、知性、青绿 |
 | zhixia | 叶知夏 | 23 | 明亮夏装、画室感、珊瑚粉点缀 |
 
@@ -72,18 +72,21 @@ description: >-
 | blouseblush | `-blouseblush` | 卸围裙 · 害羞 |
 
 场景建议：店内日常用 apron/动作差分；外出/市集/海边用 cardigan*；房间用 casual*；打烊亲密用 blouse*。  
-映射写入 `src/data/assets.ts`。参考稿：`docs/refs/wantang-design-sheet-b.png`。
+映射写入 `src/data/assets.ts`。参考稿：`docs/refs/wantang-design-sheet-b.png` · `docs/refs/qinglan-design-sheet-b.png`。
 
 绿幕原稿分批目录（勿直接给游戏读；扣好后覆盖 `public/images/char/`）：
 
 | 目录 | 批次 |
 |------|------|
-| `public/images/char/green/batch-01-expressions/` | 表情 + book/crossed |
-| `public/images/char/green/batch-02-actions/` | 动作姿态 |
-| `public/images/char/green/batch-03-outfits/` | 换装 |
-| `public/images/char/green/batch-04-stylefix/` | 画风对齐重出 |
+| `public/images/char/green/batch-01-expressions/` | 晚棠：表情 + book/crossed |
+| `public/images/char/green/batch-02-actions/` | 晚棠：动作姿态 |
+| `public/images/char/green/batch-03-outfits/` | 晚棠：换装 |
+| `public/images/char/green/batch-04-stylefix/` | 晚棠：画风对齐重出 |
+| `public/images/char/green/qinglan/batch-01-expressions/` | 晴岚：表情 + crossed/book |
+| `public/images/char/green/qinglan/batch-02-actions/` | 晴岚：酒店动作 |
+| `public/images/char/green/qinglan/batch-03-outfits/` | 晴岚：休班/私服 |
 
-详见 `public/images/char/green/README.md`。新绿幕请开下一 `batch-XX-…`，不要堆回扁平 `green/`。
+详见 `public/images/char/green/README.md` · `green/qinglan/README.md`。新角色绿幕开独立子目录，不要与晚棠批次混放。
 
 ## Prompt recipe（生成时遵守）
 
