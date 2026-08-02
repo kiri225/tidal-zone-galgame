@@ -94,14 +94,30 @@ def main() -> None:
         f"du -sh dist",
     )
 
+    # 确保前端 nginx 与 API 同网，便于 proxy_pass http://tidal-zone-api:8080
+    run(
+        client,
+        "docker network connect tidal-zone-api_default tidal-zone 2>/dev/null || true",
+        check=False,
+    )
     # restart container (keep same mounts/ports)
     run(client, "docker start tidal-zone", check=False)
     run(client, "docker restart tidal-zone", check=False)
     time.sleep(1.5)
+    run(
+        client,
+        "docker network connect tidal-zone-api_default tidal-zone 2>/dev/null || true",
+        check=False,
+    )
     run(client, "docker ps --filter name=tidal-zone --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'")
     run(
         client,
         "curl -sI -H 'Host: galgame.kiri225.cn' http://127.0.0.1:9091/ | head -15",
+        check=False,
+    )
+    run(
+        client,
+        "curl -sS -H 'Host: galgame.kiri225.cn' http://127.0.0.1:9091/api/health; echo",
         check=False,
     )
     # keep only latest backup

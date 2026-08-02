@@ -137,3 +137,10 @@ seaside wet shirt photoshoot variant, cel-shaded anime galgame,
 mature sensual Warm Snow-like body language, modern apartment cam setup,
 NOT wuxia, Chinese labels on design sheet
 ```
+
+---
+
+## 9. 资源约定
+
+- **立绘**：绿幕原稿 → `public/images/char/green/qinghe/`（自抠后覆盖 `public/images/char/qinghe-*.png`）
+- **CG**：统一 **1536×1024（3:2）**，与晴岚一致；禁止压成 16:9 拉伸。重导出脚本：`scripts/fix-qinghe-cg-ratio.py`

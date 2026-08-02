@@ -14,7 +14,7 @@ const game = useGameStore()
       <p class="sub">{{ game.endingData.subtitle }}</p>
       <p class="aff">本周目亲密度：{{ formatAffection(game.affection) }}</p>
       <div class="btns">
-        <button class="primary" @click="game.startGame()">再玩一次</button>
+        <button class="primary" @click="game.startGame(game.activeSlot ?? undefined)">再玩一次</button>
         <button class="ghost" @click="game.backToTitle()">返回标题</button>
       </div>
     </div>

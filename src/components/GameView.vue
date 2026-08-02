@@ -8,9 +8,12 @@ import BackgroundLayer from './BackgroundLayer.vue'
 import CharacterSprite from './CharacterSprite.vue'
 import TypewriterText from './TypewriterText.vue'
 import CgOverlay from './CgOverlay.vue'
+import SaveSlotModal from './SaveSlotModal.vue'
 
 const game = useGameStore()
 const showUI = ref(true)
+const showMenu = ref(false)
+const slotMode = ref<'save' | 'load' | null>(null)
 
 const hasChoices = computed(() => !!game.currentNode?.choices?.length)
 const place = computed(() => bgLabels[game.bg] ?? '')
@@ -95,6 +98,7 @@ watch(
     <div class="hud">
       <div class="hud-left">
         <span class="place">{{ place }}</span>
+        <button class="menu-btn" type="button" @click.stop="showMenu = !showMenu">菜单</button>
       </div>
       <div class="hud-right">
         <span v-if="game.chapter" class="chapter">第 {{ game.chapter }} 章 · {{ game.chapterTitle }}</span>
@@ -108,6 +112,20 @@ watch(
         <span class="aff-hint">{{ nextCgHint }}</span>
       </div>
     </div>
+
+    <div v-if="showMenu" class="menu" @click.stop>
+      <button type="button" @click="slotMode = 'save'; showMenu = false">保存</button>
+      <button type="button" @click="slotMode = 'load'; showMenu = false">读档</button>
+      <button type="button" @click="game.backToTitle(); showMenu = false">返回标题</button>
+      <button type="button" class="dim" @click="showMenu = false">关闭</button>
+    </div>
+
+    <SaveSlotModal
+      v-if="slotMode"
+      :mode="slotMode"
+      @close="slotMode = null"
+      @done="slotMode = null"
+    />
 
     <div v-show="!(game.pendingCgUnlock && !game.cg)" class="panel" @click.stop>
       <div v-if="game.speaker" class="name" :style="{ color: nameColor }">
@@ -161,6 +179,52 @@ watch(
   flex-direction: column;
   gap: 0.25rem;
   max-width: 40%;
+  pointer-events: auto;
+}
+
+.menu-btn {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: rgba(224, 196, 160, 0.75);
+  border: 1px solid rgba(196, 164, 132, 0.28);
+}
+
+.menu-btn:hover {
+  background: rgba(196, 164, 132, 0.1);
+}
+
+.menu {
+  position: absolute;
+  top: 4rem;
+  left: 1.5rem;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 9rem;
+  padding: 0.75rem;
+  background: rgba(11, 22, 34, 0.92);
+  border: 1px solid rgba(196, 164, 132, 0.35);
+}
+
+.menu button {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: rgba(232, 221, 208, 0.8);
+}
+
+.menu button:hover {
+  color: var(--amber-bright);
+  background: rgba(196, 164, 132, 0.08);
+}
+
+.menu .dim {
+  color: rgba(232, 221, 208, 0.4);
 }
 
 .hud-right {

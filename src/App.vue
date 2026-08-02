@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
 import { useGameStore } from './engine/gameStore'
 import TitleScreen from './components/TitleScreen.vue'
 import StorySelect from './components/StorySelect.vue'
@@ -7,6 +8,24 @@ import EndingScreen from './components/EndingScreen.vue'
 import GalleryScreen from './components/GalleryScreen.vue'
 
 const game = useGameStore()
+
+function flushSave() {
+  void game.persistActiveSlot()
+}
+
+function onVisibility() {
+  if (document.visibilityState === 'hidden') flushSave()
+}
+
+onMounted(() => {
+  window.addEventListener('pagehide', flushSave)
+  document.addEventListener('visibilitychange', onVisibility)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('pagehide', flushSave)
+  document.removeEventListener('visibilitychange', onVisibility)
+})
 </script>
 
 <template>

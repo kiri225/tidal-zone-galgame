@@ -10,6 +10,14 @@ import { AffThreshold, clampAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
 import { bgImages, getCharSprite } from '../data/assets'
 import { preloadImages } from './preload'
+import type { SaveData } from './saveTypes'
+import {
+  findNewestLocal,
+  getLastSlot,
+  readSlot,
+  writeSlot,
+} from './saveService'
+import { useAuthStore } from '../stores/authStore'
 
 const ALL_SCRIPTS: Record<string, DialogueNode[]> = {
   common: commonScript,
@@ -54,6 +62,11 @@ export const useGameStore = defineStore('game', () => {
   const cgHold = ref(false)
   /** 本周目刚涨的好感，供 HUD 飘字 */
   const affectionDelta = ref(0)
+  /** 当前进度写入的存档槽；新开游戏后首次手动存档前可为 null */
+  const activeSlot = ref<number | null>(null)
+  let autosaveTimer: ReturnType<typeof setTimeout> | null = null
+  /** 读档恢复中，避免 goTo 副作用再次改写存档 */
+  let isRestoring = false
 
   const bg = ref('port-night')
   const sprite = ref<string | null>(null)
@@ -95,6 +108,7 @@ export const useGameStore = defineStore('game', () => {
     if (!opts?.silent) {
       pendingCgUnlock.value = id
     }
+    scheduleAutosave()
     return true
   }
 
@@ -230,7 +244,150 @@ export const useGameStore = defineStore('game', () => {
     preloadImages(urls)
   }
 
-  function startGame() {
+  function authToken(): string | null {
+    const auth = useAuthStore()
+    return auth.isLoggedIn ? auth.token : null
+  }
+
+  function serializeSave(): SaveData {
+    return {
+      version: 1,
+      routeId: routeId.value,
+      nodeId: nodeId.value,
+      affection: affection.value,
+      flags: [...flags.value],
+      history: [...history.value],
+      endingId: endingId.value,
+      unlockedCgs: [...unlockedCgs.value],
+      screen:
+        screen.value === 'gallery' || screen.value === 'title'
+          ? 'game'
+          : screen.value,
+      chapter: chapter.value,
+      chapterTitle: chapterTitle.value,
+      updatedAt: Date.now(),
+    }
+  }
+
+  function applySave(data: SaveData) {
+    isRestoring = true
+    try {
+      routeId.value = data.routeId || 'common'
+      affection.value = typeof data.affection === 'number' ? data.affection : 0
+      affectionDelta.value = 0
+      flags.value = new Set(data.flags ?? [])
+      history.value = [...(data.history ?? [])]
+      endingId.value = data.endingId ?? null
+      chapter.value = data.chapter ?? 0
+      chapterTitle.value = data.chapterTitle ?? ''
+      cgHold.value = false
+      pendingCgUnlock.value = null
+
+      const merged = new Set([...unlockedCgs.value, ...(data.unlockedCgs ?? [])])
+      unlockedCgs.value = merged
+      saveUnlockedCgs(merged)
+
+      const resumeScreen =
+        data.screen === 'ending' || data.screen === 'story-select' ? data.screen : 'game'
+      const targetId = data.nodeId || 'start'
+      const script = ALL_SCRIPTS[routeId.value] ?? []
+      const node = script.find((n) => n.id === targetId)
+
+      if (!node) {
+        console.warn('save node missing', routeId.value, targetId)
+        // 节点缺失时退回该线起点，避免整档废掉
+        nodeId.value = routeId.value === 'common' ? 'start' : 'route-start'
+        screen.value = 'game'
+        goTo(nodeId.value)
+        return
+      }
+
+      nodeId.value = targetId
+      screen.value = resumeScreen
+      applyNode(node)
+
+      const pending = node as DialogueNode & { _pendingNext?: string }
+      delete pending._pendingNext
+      if (node.branch) {
+        pending._pendingNext = hasFlag(node.branch.flag)
+          ? node.branch.whenTrue
+          : node.branch.whenFalse
+      }
+      if (node.affectionBranch) {
+        pending._pendingNext =
+          affection.value >= node.affectionBranch.threshold
+            ? node.affectionBranch.whenMet
+            : node.affectionBranch.whenNot
+      }
+
+      if (resumeScreen === 'game') {
+        preloadAround(node)
+      }
+    } finally {
+      isRestoring = false
+    }
+  }
+
+  function scheduleAutosave() {
+    if (isRestoring) return
+    if (activeSlot.value == null) return
+    if (screen.value !== 'game' && screen.value !== 'story-select' && screen.value !== 'ending') {
+      return
+    }
+    if (autosaveTimer) clearTimeout(autosaveTimer)
+    autosaveTimer = setTimeout(() => {
+      void persistActiveSlot()
+    }, 400)
+  }
+
+  async function persistActiveSlot() {
+    if (activeSlot.value == null) return
+    if (autosaveTimer) {
+      clearTimeout(autosaveTimer)
+      autosaveTimer = null
+    }
+    await writeSlot(authToken(), activeSlot.value, serializeSave())
+  }
+
+  async function saveToSlot(slot: number) {
+    activeSlot.value = slot
+    if (autosaveTimer) {
+      clearTimeout(autosaveTimer)
+      autosaveTimer = null
+    }
+    await writeSlot(authToken(), slot, serializeSave())
+  }
+
+  async function loadFromSlot(slot: number) {
+    const data = await readSlot(authToken(), slot)
+    if (!data) return false
+    activeSlot.value = slot
+    applySave(data)
+    // 读档后立刻回写，固定 activeSlot / 合并后的最新进度
+    await persistActiveSlot()
+    return true
+  }
+
+  function hasAnySave(): boolean {
+    return findNewestLocal() != null || getLastSlot() != null
+  }
+
+  async function continueGame() {
+    const last = getLastSlot()
+    if (last != null) {
+      const ok = await loadFromSlot(last)
+      if (ok) return true
+    }
+    const newest = findNewestLocal()
+    if (!newest) return false
+    activeSlot.value = newest.slot
+    applySave(newest.data)
+    return true
+  }
+
+  function startGame(slot?: number) {
+    if (typeof slot === 'number') activeSlot.value = slot
+    else activeSlot.value = null
     routeId.value = 'common'
     nodeId.value = 'start'
     affection.value = 0
@@ -243,6 +400,7 @@ export const useGameStore = defineStore('game', () => {
     pendingCgUnlock.value = null
     screen.value = 'game'
     goTo('start')
+    scheduleAutosave()
   }
 
   function enterRoute(id: string) {
@@ -254,8 +412,11 @@ export const useGameStore = defineStore('game', () => {
     chapter.value = 0
     chapterTitle.value = ''
     pendingCgUnlock.value = null
+    endingId.value = null
     screen.value = 'game'
     goTo('route-start')
+    // 进线是关键进度点：同一槽立刻落盘，避免只靠防抖丢档
+    void persistActiveSlot()
   }
 
   function openGallery() {
@@ -313,6 +474,8 @@ export const useGameStore = defineStore('game', () => {
           ? node.affectionBranch.whenMet
           : node.affectionBranch.whenNot
     }
+
+    scheduleAutosave()
   }
 
   function advance() {
@@ -331,6 +494,7 @@ export const useGameStore = defineStore('game', () => {
 
     if (node.ending) {
       screen.value = 'ending'
+      void persistActiveSlot()
       return
     }
 
@@ -342,6 +506,7 @@ export const useGameStore = defineStore('game', () => {
 
     if (node.next === 'story-select') {
       screen.value = 'story-select'
+      void persistActiveSlot()
       return
     }
 
@@ -370,6 +535,7 @@ export const useGameStore = defineStore('game', () => {
     }
     if (c.setFlag) flags.value.add(c.setFlag)
     goTo(c.next)
+    scheduleAutosave()
   }
 
   function resolveEnding() {
@@ -433,7 +599,8 @@ export const useGameStore = defineStore('game', () => {
     }
   }
 
-  function backToTitle() {
+  async function backToTitle() {
+    await persistActiveSlot()
     screen.value = 'title'
     pendingCgUnlock.value = null
   }
@@ -457,6 +624,7 @@ export const useGameStore = defineStore('game', () => {
     unlockedCgs,
     unlockedCgList,
     pendingCgUnlock,
+    activeSlot,
     bg,
     sprite,
     expression,
@@ -480,5 +648,12 @@ export const useGameStore = defineStore('game', () => {
     unlockCg,
     dismissCgUnlock,
     checkAffectionCgs,
+    serializeSave,
+    applySave,
+    saveToSlot,
+    loadFromSlot,
+    continueGame,
+    hasAnySave,
+    persistActiveSlot,
   }
 })

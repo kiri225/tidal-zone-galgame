@@ -27,6 +27,19 @@
 文件名：`qinglan-{key}.png` → 扣好后放到 `public/images/char/qinglan-{key}.png`。  
 锁定参考：`docs/refs/qinglan-design-sheet-b.png`（爆乳 OL · 黑框眼镜）。
 
+## 顾清禾（单独目录）
+
+见 [`qinghe/README.md`](qinghe/README.md)。
+
+| 批次目录 | 内容 |
+|----------|------|
+| `qinghe/batch-01-expressions/` | 表情 + phone |
+| `qinghe/batch-02-actions/` | 直播动作（待补） |
+| `qinghe/batch-03-outfits/` | 卫衣伪装 / 换装 |
+
+文件名：`qinghe-{key}.png` → 扣好后放到 `public/images/char/qinghe-{key}.png`。  
+锁定参考：`docs/refs/qinghe-design-sheet-b.png`（福利姬 · 不戴眼镜）。
+
 ## 通用流程
 
 1. 在对应批次目录抠图（去绿幕 → RGBA）

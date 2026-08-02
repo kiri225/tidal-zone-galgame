@@ -6,6 +6,9 @@ tmp-*.json
 tmp-*.png
 dist-deploy.tar.gz
 
+# Backend
+backend/target/
+
 # Logs
 logs
 *.log

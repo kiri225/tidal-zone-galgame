@@ -85,6 +85,8 @@ description: >-
 | `public/images/char/green/qinglan/batch-01-expressions/` | 晴岚：表情 + crossed/book |
 | `public/images/char/green/qinglan/batch-02-actions/` | 晴岚：酒店动作 |
 | `public/images/char/green/qinglan/batch-03-outfits/` | 晴岚：休班/私服 |
+| `public/images/char/green/qinghe/batch-01-expressions/` | 清禾：表情 + phone |
+| `public/images/char/green/qinghe/batch-03-outfits/` | 清禾：卫衣伪装等 |
 
 详见 `public/images/char/green/README.md` · `green/qinglan/README.md`。新角色绿幕开独立子目录，不要与晚棠批次混放。
 
