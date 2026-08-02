@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
 import { useGameStore } from './engine/gameStore'
+import { useDeviceProfileRoot } from './composables/useDeviceProfile'
 import TitleScreen from './components/TitleScreen.vue'
 import StorySelect from './components/StorySelect.vue'
 import GameView from './components/GameView.vue'
@@ -8,6 +9,7 @@ import EndingScreen from './components/EndingScreen.vue'
 import GalleryScreen from './components/GalleryScreen.vue'
 
 const game = useGameStore()
+const { profile, cssVars } = useDeviceProfileRoot()
 
 function flushSave() {
   void game.persistActiveSlot()
@@ -29,7 +31,12 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="app-shell">
+  <div
+    class="app-shell"
+    :class="[`device-${profile.kind}`, `orient-${profile.orientation}`, { 'short-land': profile.shortLandscape }]"
+    :style="cssVars"
+    :data-device="profile.kind"
+  >
     <div class="grain" aria-hidden="true" />
     <TitleScreen v-if="game.screen === 'title'" />
     <StorySelect v-else-if="game.screen === 'story-select'" />

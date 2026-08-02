@@ -10,6 +10,8 @@ export type SpriteLayout = {
   bottomVh: number
 }
 
+export type DeviceKind = 'phone' | 'tablet' | 'desktop'
+
 const DEFAULT_LAYOUT: SpriteLayout = {
   scale: 0.74,
   xPercent: 50,
@@ -58,13 +60,40 @@ const expressionTweaks: Record<string, Partial<SpriteLayout>> = {
   crossed: { scale: 0.98 },
 }
 
-export function resolveSpriteLayout(bg: string, expression: string): SpriteLayout {
+export function resolveSpriteLayout(
+  bg: string,
+  expression: string,
+  device: { kind: DeviceKind; shortLandscape?: boolean; spriteScaleMul?: number } = {
+    kind: 'desktop',
+  },
+): SpriteLayout {
   const base = bgSpriteLayout[bg] ?? DEFAULT_LAYOUT
   const tweak = expressionTweaks[expression]
-  if (!tweak) return base
-  return {
-    scale: Math.max(0.5, base.scale * (tweak.scale ?? 1)),
-    xPercent: Math.min(72, Math.max(28, base.xPercent + (tweak.xPercent ?? 0))),
-    bottomVh: base.bottomVh + (tweak.bottomVh ?? 0),
+  let scale = base.scale
+  let xPercent = base.xPercent
+  let bottomVh = base.bottomVh
+
+  if (tweak) {
+    scale = Math.max(0.5, scale * (tweak.scale ?? 1))
+    xPercent = Math.min(72, Math.max(28, xPercent + (tweak.xPercent ?? 0)))
+    bottomVh = bottomVh + (tweak.bottomVh ?? 0)
   }
+
+  const mul = device.spriteScaleMul ?? 1
+  scale = Math.max(0.48, Math.min(0.95, scale * mul))
+
+  // 手机竖屏：室内场景再略收一点，避免挡前景道具
+  if (device.kind === 'phone' && !device.shortLandscape) {
+    if (bg.includes('qinghe-room') || bg.includes('hotel-lobby')) {
+      scale *= 0.96
+      xPercent = Math.min(68, xPercent + 2)
+    }
+  }
+
+  // 横屏矮屏：腿多伸进对话框，脸留上沿
+  if (device.shortLandscape) {
+    bottomVh -= 2
+  }
+
+  return { scale, xPercent, bottomVh }
 }

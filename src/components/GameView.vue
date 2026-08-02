@@ -4,6 +4,7 @@ import { useGameStore } from '../engine/gameStore'
 import { bgLabels, speakerColors } from '../data/characters'
 import { formatAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
+import { useDeviceProfile } from '../composables/useDeviceProfile'
 import BackgroundLayer from './BackgroundLayer.vue'
 import CharacterSprite from './CharacterSprite.vue'
 import TypewriterText from './TypewriterText.vue'
@@ -11,6 +12,7 @@ import CgOverlay from './CgOverlay.vue'
 import SaveSlotModal from './SaveSlotModal.vue'
 
 const game = useGameStore()
+const { profile, cssVars } = useDeviceProfile()
 const showUI = ref(true)
 const showMenu = ref(false)
 const slotMode = ref<'save' | 'load' | null>(null)
@@ -84,7 +86,18 @@ watch(
 <template>
   <section
     class="game"
-    :class="[`mood-${game.mood}`, { 'has-cg': !!game.cg, 'cg-gated': !!game.pendingCgUnlock && !game.cg }]"
+    :class="[
+      `mood-${game.mood}`,
+      `device-${profile.kind}`,
+      `orient-${profile.orientation}`,
+      {
+        'has-cg': !!game.cg,
+        'cg-gated': !!game.pendingCgUnlock && !game.cg,
+        'short-land': profile.shortLandscape,
+        'compact-hud': profile.compactHud,
+      },
+    ]"
+    :style="cssVars"
     @click="onGameClick"
   >
     <BackgroundLayer v-show="!game.cg" :bg="game.bg" :mood="game.mood" />
@@ -110,7 +123,7 @@ watch(
         <span v-if="game.affectionDelta" class="aff-delta" :class="{ down: game.affectionDelta < 0 }">
           {{ game.affectionDelta > 0 ? '+' : '' }}{{ game.affectionDelta }}%
         </span>
-        <span class="aff-hint">{{ nextCgHint }}</span>
+        <span v-if="!profile.compactHud" class="aff-hint">{{ nextCgHint }}</span>
       </div>
     </div>
 
@@ -159,8 +172,11 @@ watch(
   height: 100%;
   cursor: pointer;
   user-select: none;
-  /* 立绘用：预留对话框高度，避免脸被挡 */
+  /* 由 useDeviceProfile 自动写入；此处仅兜底 */
   --dialogue-reserve: 10.5rem;
+  --panel-max-height: min(38vh, 280px);
+  --panel-pad: 1rem 1.35rem;
+  --body-max-height: 9.5em;
 }
 
 .hud {
@@ -314,14 +330,14 @@ watch(
 .panel {
   position: absolute;
   left: 50%;
-  bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+  bottom: max(0.5rem, env(safe-area-inset-bottom, 0px));
   transform: translateX(-50%);
   width: min(920px, calc(100% - 1.25rem));
-  max-height: min(38vh, 280px);
+  max-height: var(--panel-max-height);
   /* 高于立绘(2)：不透明盖住下半身，上半身露在对话框上沿 */
   z-index: 10;
-  padding: 1rem 1.35rem 0.85rem;
-  padding-bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
+  padding: var(--panel-pad);
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
   background:
     linear-gradient(180deg, rgba(10, 16, 24, 0.96), rgba(6, 12, 20, 0.99));
   border: 1px solid rgba(232, 221, 208, 0.14);
@@ -365,8 +381,8 @@ watch(
 }
 
 .body {
-  min-height: 2.8em;
-  max-height: 9.5em;
+  min-height: 2.2em;
+  max-height: var(--body-max-height);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   line-height: 1.7;
@@ -421,89 +437,66 @@ watch(
   z-index: 2;
 }
 
-@media (max-width: 640px) {
-  .game {
-    --dialogue-reserve: 8.25rem;
-  }
-
-  .hud {
-    top: max(0.6rem, env(safe-area-inset-top, 0px));
-    left: 0.75rem;
-    right: 0.75rem;
-    font-size: 0.65rem;
-  }
-
-  .panel {
-    width: calc(100% - 0.75rem);
-    max-height: min(34vh, 220px);
-    padding: 0.75rem 0.9rem 0.65rem;
-    padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
-    bottom: max(0.4rem, env(safe-area-inset-bottom, 0px));
-  }
-
-  .body {
-    min-height: 2.2em;
-    max-height: 7.2em;
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-
-  .name {
-    font-size: 0.88rem;
-    margin-bottom: 0.3rem;
-  }
+/* 由 useDeviceProfile 自动识别 device-* / short-land / compact-hud */
+.device-phone .hud,
+.device-tablet.short-land .hud,
+.compact-hud .hud {
+  top: max(0.5rem, env(safe-area-inset-top, 0px));
+  left: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.65rem;
 }
 
-/* 横屏 / 矮屏手机：对话框再压矮，避免挡脸与前景道具 */
-@media (max-height: 500px), (orientation: landscape) and (max-height: 560px) {
-  .game {
-    --dialogue-reserve: 5.75rem;
-  }
+.device-phone .panel,
+.short-land .panel {
+  width: calc(100% - 0.75rem);
+}
 
-  .hud {
-    top: 0.35rem;
-    font-size: 0.6rem;
-  }
+.device-phone .name {
+  font-size: 0.88rem;
+  margin-bottom: 0.3rem;
+}
 
-  .hud-right .aff-hint,
-  .hud-right .aff-bar {
-    display: none;
-  }
+.device-phone .body {
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
 
-  .panel {
-    max-height: min(42vh, 160px);
-    padding: 0.45rem 0.75rem 0.4rem;
-    bottom: max(0.25rem, env(safe-area-inset-bottom, 0px));
-  }
+.short-land .hud {
+  top: 0.3rem;
+  font-size: 0.6rem;
+}
 
-  .name {
-    font-size: 0.8rem;
-    margin-bottom: 0.2rem;
-    padding-bottom: 0.15rem;
-  }
+.short-land .aff-bar {
+  display: none;
+}
 
-  .body {
-    min-height: 1.6em;
-    max-height: 4.8em;
-    font-size: 0.82rem;
-    line-height: 1.45;
-  }
+.short-land .name {
+  font-size: 0.78rem;
+  margin-bottom: 0.15rem;
+  padding-bottom: 0.1rem;
+}
 
-  .choices {
-    max-height: 28vh;
-    margin-top: 0.35rem;
-    gap: 0.3rem;
-  }
+.short-land .body {
+  min-height: 1.4em;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
 
-  .choices li {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.78rem;
-  }
+.short-land .choices {
+  max-height: 26vh;
+  margin-top: 0.3rem;
+  gap: 0.28rem;
+}
 
-  .continue {
-    margin-top: 0.2rem;
-    font-size: 0.65rem;
-  }
+.short-land .choices li {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.76rem;
+}
+
+.short-land .continue {
+  margin-top: 0.15rem;
+  font-size: 0.62rem;
 }
 
 .tri {
