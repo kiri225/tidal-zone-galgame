@@ -1,8 +1,22 @@
 <script setup lang="ts">
-import { bgImages } from '../data/assets'
+import { onMounted } from 'vue'
+import { bgImages, wantangSprites } from '../data/assets'
 import { useGameStore } from '../engine/gameStore'
+import { preloadImages } from '../engine/preload'
 
 const game = useGameStore()
+
+onMounted(() => {
+  // 标题页空闲时预热序章常用图，减少点「开始」后的等待
+  preloadImages([
+    bgImages['port-night'],
+    bgImages['shop-interior'],
+    bgImages['street-rain'],
+    wantangSprites.default,
+    wantangSprites.soft,
+    wantangSprites.tense,
+  ])
+})
 </script>
 
 <template>

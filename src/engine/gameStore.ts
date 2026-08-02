@@ -6,6 +6,8 @@ import { wantangScript } from '../data/story/wantang'
 import { endings } from '../data/story/endings'
 import { AffThreshold, clampAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
+import { bgImages, getCharSprite } from '../data/assets'
+import { preloadImages } from './preload'
 
 const ALL_SCRIPTS: Record<string, DialogueNode[]> = {
   common: commonScript,
@@ -123,6 +125,82 @@ export const useGameStore = defineStore('game', () => {
     }
   }
 
+  /** 根据节点字段解析将显示的图片 URL（含继承态） */
+  function urlsForVisual(
+    nextBg: string,
+    nextSprite: string | null,
+    nextExpr: Expression,
+    nextCg: string | null,
+  ) {
+    const urls: string[] = []
+    if (nextCg) {
+      const def = cgCatalog.find((c) => c.id === nextCg)
+      if (def?.image) urls.push(def.image)
+      return urls
+    }
+    const bgUrl = bgImages[nextBg]
+    if (bgUrl) urls.push(bgUrl)
+    if (nextSprite) urls.push(getCharSprite(nextSprite, nextExpr))
+    return urls
+  }
+
+  function nextNodeIds(node: DialogueNode): string[] {
+    const ids: string[] = []
+    if (node.next && node.next !== 'story-select' && node.next !== '__ending__') {
+      ids.push(node.next)
+    }
+    if (node.choices) {
+      for (const c of node.choices) ids.push(c.next)
+    }
+    if (node.branch) {
+      ids.push(node.branch.whenTrue, node.branch.whenFalse)
+    }
+    if (node.affectionBranch) {
+      ids.push(node.affectionBranch.whenMet, node.affectionBranch.whenNot)
+    }
+    return ids
+  }
+
+  /** 预加载当前幕 + 后续 1～2 跳可能用到的背景/立绘/CG */
+  function preloadAround(node: DialogueNode) {
+    const scripts = ALL_SCRIPTS[routeId.value] ?? []
+    const byId = Object.fromEntries(scripts.map((n) => [n.id, n]))
+    const urls = urlsForVisual(bg.value, sprite.value, expression.value, cg.value)
+
+    let state = {
+      bg: bg.value,
+      sprite: sprite.value,
+      expression: expression.value,
+      cg: cg.value as string | null,
+    }
+    let frontier = nextNodeIds(node)
+    for (let depth = 0; depth < 2 && frontier.length; depth++) {
+      const nextFrontier: string[] = []
+      for (const id of frontier) {
+        const n = byId[id]
+        if (!n) continue
+        const nextBg = n.bg ?? state.bg
+        const nextSprite =
+          n.cg ? null : n.sprite !== undefined ? n.sprite : state.sprite
+        const nextExpr = n.expression ?? state.expression
+        const nextCg = n.cg !== undefined ? n.cg : null
+        urls.push(...urlsForVisual(nextBg, nextSprite, nextExpr, nextCg))
+        nextFrontier.push(...nextNodeIds(n))
+        // 用线性 next 推进继承态；分支只预取图片不改 state
+        if (n.next && byId[n.next] && frontier.length === 1) {
+          state = {
+            bg: nextBg,
+            sprite: nextSprite,
+            expression: nextExpr,
+            cg: nextCg,
+          }
+        }
+      }
+      frontier = [...new Set(nextFrontier)]
+    }
+    preloadImages(urls)
+  }
+
   function startGame() {
     routeId.value = 'common'
     nodeId.value = 'start'
@@ -188,6 +266,7 @@ export const useGameStore = defineStore('game', () => {
     nodeId.value = id
     history.value.push(id)
     applyNode(node)
+    preloadAround(node)
 
     const pending = node as DialogueNode & { _pendingNext?: string }
 
