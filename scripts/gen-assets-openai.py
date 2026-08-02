@@ -143,7 +143,7 @@ def load_env() -> None:
     env_path = ROOT / ".env"
     if not env_path.exists():
         return
-    for line in env_path.read_text(encoding="utf-8").splitlines():
+    for line in env_path.read_text(encoding="utf-8-sig").splitlines():
         line = line.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue
@@ -153,14 +153,15 @@ def load_env() -> None:
 
 def api_config() -> tuple[str, str, str]:
     key = os.environ.get("OPENAI_API_KEY", "")
-    base = os.environ.get("OPENAI_BASE_URL", "https://api.hangzhale.com").rstrip("/")
-    model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
+    base = os.environ.get("OPENAI_BASE_URL", "https://deepkey.top").rstrip("/")
+    # deepkey exposes resolution-tagged aliases: gpt-image-2-1k / -2k / -4k
+    model = os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2-1k")
     if not key:
         raise SystemExit("Missing OPENAI_API_KEY in .env")
     return key, base, model
 
 
-def _http_call(req: urllib.request.Request, timeout: int = 360, retries: int = 4) -> dict:
+def _http_call(req: urllib.request.Request, timeout: int = 360, retries: int = 8) -> dict:
     last: Exception | None = None
     for attempt in range(1, retries + 1):
         try:
@@ -169,10 +170,11 @@ def _http_call(req: urllib.request.Request, timeout: int = 360, retries: int = 4
         except urllib.error.HTTPError as e:
             err = e.read().decode("utf-8", errors="replace")
             last = RuntimeError(f"HTTP {e.code}: {err[:800]}")
-            # retry gateway timeouts / rate limits
+            # retry gateway timeouts / rate limits / flaky channel routing
             if e.code in (408, 429, 500, 502, 503, 504, 524) and attempt < retries:
-                wait = 8 * attempt
+                wait = min(60, 10 * attempt)
                 print(f"  retry {attempt}/{retries} after HTTP {e.code}, sleep {wait}s")
+                print(f"  detail: {err[:240]}")
                 time.sleep(wait)
                 continue
             raise last from e
@@ -243,13 +245,32 @@ def save_b64_image(payload: dict, out: Path) -> None:
     print(f"  saved {out.relative_to(ROOT)} ({out.stat().st_size} bytes)")
 
 
-def generate(key: str, base: str, model: str, prompt: str, size: str, out: Path) -> None:
+def generate(
+    key: str,
+    base: str,
+    model: str,
+    prompt: str,
+    size: str,
+    out: Path,
+    *,
+    transparent: bool = False,
+) -> None:
     print(f"-> generate {out.name}")
-    payload = request_json(
-        f"{base}/v1/images/generations",
-        key,
-        {"model": model, "prompt": prompt, "size": size, "n": 1},
-    )
+    body: dict = {"model": model, "prompt": prompt, "size": size, "n": 1}
+    if transparent:
+        # OpenAI gpt-image family; ignored/failed by some relays — cutout still runs.
+        body["background"] = "transparent"
+        body["output_format"] = "png"
+    try:
+        payload = request_json(f"{base}/v1/images/generations", key, body)
+    except RuntimeError as e:
+        if transparent and "HTTP" in str(e):
+            print("  transparent param rejected, retry plain generate")
+            body.pop("background", None)
+            body.pop("output_format", None)
+            payload = request_json(f"{base}/v1/images/generations", key, body)
+        else:
+            raise
     save_b64_image(payload, out)
 
 
@@ -403,7 +424,15 @@ def main() -> None:
                         )
                     else:
                         prompt = f"{WANTANG_BASE} Expression/pose: {expr_prompt}."
-                        generate(key, base, model, prompt, "1024x1536", out)
+                        generate(
+                            key,
+                            base,
+                            model,
+                            prompt,
+                            "1024x1536",
+                            out,
+                            transparent=True,
+                        )
                 else:
                     ref = CHAR_DIR / "wantang-default.png"
                     if not ref.exists():
