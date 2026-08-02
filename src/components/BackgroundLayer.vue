@@ -45,16 +45,9 @@ const isBlack = computed(() => props.bg === 'black' || !src.value)
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 略放大裁切，减少超宽屏「整间店铺开」的空旷感 */
-  object-position: center 42%;
-  transform: scale(1.06);
-  transform-origin: center center;
-}
-
-@media (min-aspect-ratio: 16/9) {
-  .bg-img {
-    transform: scale(1.12);
-  }
+  /* 轻微偏上构图，避免放大 scale 造成 WebP 发糊 */
+  object-position: center 40%;
+  image-rendering: auto;
 }
 
 .bg-black {
