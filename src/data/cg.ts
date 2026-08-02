@@ -10,7 +10,7 @@ export interface CgDef {
   id: string
   title: string
   subtitle: string
-  /** 解锁所需晚棠好感（0–100）；storyUnlock 时仅作展示参考 */
+  /** 解锁所需好感（0–100）；storyUnlock 时仅作展示参考 */
   affectionRequired: number
   image: string
   /** 可选视频；文件存在时优先全屏播放 */
@@ -19,6 +19,8 @@ export interface CgDef {
   storyUnlock?: boolean
   /** 剧情节点 id（可选，用于跳转回忆） */
   storyHint?: string
+  /** 所属路线；有值时仅在该路线自动按好感解锁 */
+  route?: 'wantang' | 'qinglan'
 }
 
 /** 章末软暧昧 CG（ch01–ch50） */
@@ -536,6 +538,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.reunion,
     image: cgAsset('/images/cg/cg-reunion.webp'),
     storyHint: '搬书的黄昏',
+    route: 'wantang',
   },
   {
     id: 'poem',
@@ -544,6 +547,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.poem,
     image: cgAsset('/images/cg/cg-poem.webp'),
     storyHint: '未寄出的诗',
+    route: 'wantang',
   },
   {
     id: 'umbrella',
@@ -552,6 +556,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.umbrella,
     image: cgAsset('/images/cg/cg-umbrella.webp'),
     storyHint: '旧伞',
+    route: 'wantang',
   },
   {
     id: 'nighttalk',
@@ -560,6 +565,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.nighttalk,
     image: cgAsset('/images/cg/cg-nighttalk.webp'),
     storyHint: '打烊后的吧台',
+    route: 'wantang',
   },
   {
     id: 'market',
@@ -568,6 +574,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.market,
     image: cgAsset('/images/cg/cg-market.webp'),
     storyHint: '市集早晨',
+    route: 'wantang',
   },
   {
     id: 'almostkiss',
@@ -576,6 +583,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.almostkiss,
     image: cgAsset('/images/cg/cg-almostkiss.webp'),
     storyHint: '几乎吻上',
+    route: 'wantang',
   },
   {
     id: 'reconcile',
@@ -584,6 +592,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.reconcile,
     image: cgAsset('/images/cg/cg-reconcile.webp'),
     storyHint: '和解的盐',
+    route: 'wantang',
   },
   {
     id: 'rainnight',
@@ -592,6 +601,7 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.rainnight,
     image: cgAsset('/images/cg/cg-rainnight.webp'),
     storyHint: '台风夜里',
+    route: 'wantang',
   },
   {
     id: 'intertidal',
@@ -600,6 +610,80 @@ export const cgCatalog: CgDef[] = [
     affectionRequired: AffThreshold.intertidal,
     image: cgAsset('/images/cg/cg-intertidal.webp'),
     storyHint: 'True End',
+    route: 'wantang',
+  },
+  // 晴岚线 CG（图暂复用现有资源，待专用插画）
+  {
+    id: 'berth',
+    title: '停泊一夜',
+    subtitle: '吧台内侧，名牌已摘',
+    affectionRequired: AffThreshold.berth,
+    image: cgAsset('/images/cg/cg-nighttalk.webp'),
+    storyHint: '酒吧打烊后',
+    route: 'qinglan',
+  },
+  {
+    id: 'offduty',
+    title: '制服之外',
+    subtitle: '日光下的普通人',
+    affectionRequired: AffThreshold.offduty,
+    image: cgAsset('/images/cg/cg-market.webp'),
+    storyHint: '休班便装',
+    route: 'qinglan',
+  },
+  {
+    id: 'shifttalk',
+    title: '对班夜话',
+    subtitle: '名牌躺在台面上',
+    affectionRequired: AffThreshold.shifttalk,
+    image: cgAsset('/images/cg/cg-nighttalk.webp'),
+    storyHint: '对班夜话',
+    route: 'qinglan',
+  },
+  {
+    id: 'market_ql',
+    title: '休班早晨',
+    subtitle: '早市里回头确认你还在',
+    affectionRequired: AffThreshold.market_ql,
+    image: cgAsset('/images/cg/cg-market.webp'),
+    storyHint: '休班早晨',
+    route: 'qinglan',
+  },
+  {
+    id: 'almost_ql',
+    title: '几乎越线',
+    subtitle: '消防栓旁的「几乎」',
+    affectionRequired: AffThreshold.almost_ql,
+    image: cgAsset('/images/cg/cg-almostkiss.webp'),
+    storyHint: '几乎越线',
+    route: 'qinglan',
+  },
+  {
+    id: 'salt_ql',
+    title: '和解的盐',
+    subtitle: '雨棚下的盐汽水',
+    affectionRequired: AffThreshold.salt_ql,
+    image: cgAsset('/images/cg/cg-reconcile.webp'),
+    storyHint: '和解的盐',
+    route: 'qinglan',
+  },
+  {
+    id: 'dutynight',
+    title: '雨困值班室',
+    subtitle: '信任之后才靠岸',
+    affectionRequired: AffThreshold.dutynight,
+    image: cgAsset('/images/cg/cg-rainnight.webp'),
+    storyHint: '台风值班室',
+    route: 'qinglan',
+  },
+  {
+    id: 'shore_name',
+    title: '岸名',
+    subtitle: '短暂停泊，也可以办长期',
+    affectionRequired: AffThreshold.shore_name,
+    image: cgAsset('/images/cg/cg-intertidal.webp'),
+    storyHint: 'True End',
+    route: 'qinglan',
   },
 ]
 

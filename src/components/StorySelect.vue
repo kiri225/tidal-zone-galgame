@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { characters } from '../data/characters'
-import { bgImages, wantangSprites } from '../data/assets'
+import { bgImages, wantangSprites, qinglanSprites } from '../data/assets'
 import { useGameStore } from '../engine/gameStore'
 
 const game = useGameStore()
 
 const portraits: Record<string, string> = {
   wantang: wantangSprites.default,
+  qinglan: qinglanSprites.default,
 }
 
 function pick(id: string, unlocked: boolean) {

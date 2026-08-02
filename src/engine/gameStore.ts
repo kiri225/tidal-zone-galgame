@@ -3,7 +3,8 @@ import { ref, computed } from 'vue'
 import type { DialogueNode, Expression, Screen } from './types'
 import { commonScript } from '../data/story/common'
 import { wantangScript } from '../data/story/wantang'
-import { endings } from '../data/story/endings'
+import { qinglanScript } from '../data/story/qinglan'
+import { endings, qinglanEndings } from '../data/story/endings'
 import { AffThreshold, clampAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
 import { bgImages, getCharSprite } from '../data/assets'
@@ -12,6 +13,7 @@ import { preloadImages } from './preload'
 const ALL_SCRIPTS: Record<string, DialogueNode[]> = {
   common: commonScript,
   wantang: wantangScript,
+  qinglan: qinglanScript,
 }
 
 const CG_STORAGE_KEY = 'tidal-unlocked-cgs'
@@ -65,6 +67,7 @@ export const useGameStore = defineStore('game', () => {
 
   const endingData = computed(() => {
     if (!endingId.value) return null
+    if (routeId.value === 'qinglan') return qinglanEndings[endingId.value]
     return endings[endingId.value]
   })
 
@@ -84,10 +87,11 @@ export const useGameStore = defineStore('game', () => {
     return true
   }
 
-  /** 按好感阈值自动解锁图鉴（跳过仅剧情解锁的章末 CG） */
+  /** 按好感阈值自动解锁图鉴（跳过仅剧情解锁的章末 CG；按路线过滤） */
   function checkAffectionCgs() {
     for (const def of cgCatalog) {
       if (def.storyUnlock) continue
+      if (def.route && def.route !== routeId.value) continue
       if (affection.value >= def.affectionRequired) {
         unlockCg(def.id)
       }
@@ -338,7 +342,27 @@ export const useGameStore = defineStore('game', () => {
 
   function resolveEnding() {
     checkAffectionCgs()
-    // True: aff≥60% + 留下 + 坦白
+    if (routeId.value === 'qinglan') {
+      // True: aff≥60% + 留下 + 坦白 + 信任
+      if (
+        affection.value >= AffThreshold.trueEnd &&
+        hasFlag('stay') &&
+        hasFlag('confess') &&
+        hasFlag('trust')
+      ) {
+        unlockCg('shore_name')
+        goTo('ending-true')
+      } else if (
+        affection.value >= AffThreshold.goodEnd &&
+        (hasFlag('stay') || hasFlag('confess'))
+      ) {
+        goTo('ending-good')
+      } else {
+        goTo('ending-bitter')
+      }
+      return
+    }
+    // 晚棠 True: aff≥60% + 留下 + 坦白
     if (
       affection.value >= AffThreshold.trueEnd &&
       hasFlag('stay') &&

@@ -20,6 +20,15 @@ export const AffThreshold = {
   intertidal: 70, // 原 14
   goodEnd: 35, // 原 7
   trueEnd: 60, // 原 12
+  // 晴岚线
+  berth: 15,
+  offduty: 25,
+  shifttalk: 30,
+  market_ql: 35,
+  almost_ql: 40,
+  salt_ql: 45,
+  dutynight: 50,
+  shore_name: 70,
 } as const
 
 export function clampAffection(value: number): number {

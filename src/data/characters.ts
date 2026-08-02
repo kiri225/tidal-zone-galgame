@@ -13,7 +13,7 @@ export const characters: CharacterDef[] = [
     name: '苏晴岚',
     color: '#7a9bb5',
     title: '潮屿酒店 · 夜班',
-    unlocked: false,
+    unlocked: true,
   },
   {
     id: 'qinghe',
@@ -56,5 +56,6 @@ export const bgLabels: Record<string, string> = {
 export const speakerColors: Record<string, string> = {
   沈屿: '#a8c0d0',
   林晚棠: '#c4a484',
+  苏晴岚: '#7a9bb5',
   '': '#e8ddd0',
 }

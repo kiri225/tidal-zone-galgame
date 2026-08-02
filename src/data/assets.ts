@@ -72,7 +72,18 @@ export const wantangSprites: Record<string, string> = {
   blouseblush: asset('/images/char/wantang-blouseblush.webp'),
 }
 
+/**
+ * 苏晴岚立绘：暂复用晚棠资源作占位，待 P2 专用立绘生成后替换路径。
+ * 表情 key 与 Expression 对齐；缺失时回退 default。
+ */
+export const qinglanSprites: Record<string, string> = {
+  ...wantangSprites,
+}
+
 export function getCharSprite(character: string, expression: string): string {
+  if (character === 'qinglan') {
+    return qinglanSprites[expression] ?? qinglanSprites.default
+  }
   if (character === 'wantang') {
     return wantangSprites[expression] ?? wantangSprites.default
   }

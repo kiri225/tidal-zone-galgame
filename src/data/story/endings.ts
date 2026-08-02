@@ -15,3 +15,22 @@ export const endings = {
     color: '#7a8a9a',
   },
 } as const
+
+/** 苏晴岚线路结局文案（EndingScreen） */
+export const qinglanEndings = {
+  true: {
+    title: 'True End · 岸名',
+    subtitle: '短暂停泊，也可以办长期',
+    color: '#7a9bb5',
+  },
+  good: {
+    title: 'Good End · 偶尔续住',
+    subtitle: '距离很远，侧门很近',
+    color: '#a8c0d0',
+  },
+  bittersweet: {
+    title: 'Bittersweet · 完美的笑',
+    subtitle: '退房手续完美，靠岸从未登记',
+    color: '#7a8a9a',
+  },
+} as const
