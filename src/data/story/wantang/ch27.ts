@@ -118,10 +118,25 @@ export const chapter27: DialogueNode[] = [
   {
     id: 'c27-15',
     text: '空气里那层紧绷的冷意，被这杯酒一点点化开，像退潮后被阳光晒暖的沙滩，慢慢恢复了原本的温度。',
+    next: 'c27-15b',
+  },
+  {
+    id: 'c27-15b',
+    affectionBranch: { threshold: 9, whenMet: 'c27-cg', whenNot: 'c27-16' },
+  },
+  {
+    id: 'c27-cg',
+    cg: 'reconcile',
+    mood: 'intimate',
+    bg: 'bookstore-close',
+    sprite: null,
+    text: '【CG · 和解的盐】\n一盏灯，两杯酒，雨声贴在玻璃上。她眼底还残留着疲惫，笑意却已经回来——薄冰裂开时，底下的水一直是热的。',
     next: 'c27-16',
   },
   {
     id: 'c27-16',
+    cg: null,
+    sprite: 'wantang',
     speaker: '林晚棠',
     expression: 'tired',
     text: '其实……昨天关上后仓门之后，我在里面待了很久，翻出你父亲那张明信片又看了一遍。\n「心不坏」这三个字，昨天倒成了我说服自己别太生气的理由。',

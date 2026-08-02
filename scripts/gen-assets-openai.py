@@ -119,10 +119,35 @@ CGS: list[tuple[str, str]] = [
         "cel-shaded, emotional, NOT photorealistic, no UI text",
     ),
     (
+        "cg-poem",
+        "Japanese anime visual novel CG, Lin Wantang reading old poetry notebook by amber lamp "
+        "in bookstore, soft vulnerable expression, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "cg-umbrella",
+        "Japanese anime visual novel CG, Lin Wantang and young man sharing old black umbrella "
+        "on rainy coastal street, amber shop lights, cel-shaded, NOT photorealistic",
+    ),
+    (
         "cg-nighttalk",
         "Japanese anime visual novel CG illustration, after-hours bookstore talk, "
         "Lin Wantang seated near dim amber lamp with wine glass, soft vulnerable expression, "
         "books and rain on window, intimate atmosphere, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "cg-market",
+        "Japanese anime visual novel CG, morning coastal market with Lin Wantang, "
+        "soft smile, pale gold dawn light, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "cg-almostkiss",
+        "Japanese anime visual novel CG, almost-kiss across bookstore counter, "
+        "Lin Wantang close blush, amber lamp, tasteful, cel-shaded, NOT photorealistic",
+    ),
+    (
+        "cg-reconcile",
+        "Japanese anime visual novel CG, reconciliation after closing, wine and one lamp, "
+        "Lin Wantang soft teary smile, cel-shaded, NOT photorealistic",
     ),
     (
         "cg-rainnight",

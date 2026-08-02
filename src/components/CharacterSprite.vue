@@ -28,12 +28,13 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 <style scoped>
 .sprite-wrap {
   position: absolute;
-  left: 50%;
-  bottom: 14%;
+  /* 偏右贴底，叠在对话框之上；正文靠左不受挡 */
+  left: 64%;
+  bottom: 0;
   transform: translateX(-50%);
-  z-index: 2;
-  width: min(420px, 55vw);
-  height: min(72vh, 640px);
+  z-index: 12;
+  width: min(400px, 44vw);
+  height: min(90vh, 840px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -96,9 +97,10 @@ const src = computed(() => getCharSprite(props.character, props.expression))
 
 @media (max-width: 640px) {
   .sprite-wrap {
-    bottom: 26%;
-    width: min(280px, 70vw);
-    height: 55vh;
+    left: 50%;
+    bottom: 0;
+    width: min(300px, 70vw);
+    height: min(80vh, 660px);
   }
 }
 </style>

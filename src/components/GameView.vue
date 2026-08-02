@@ -181,14 +181,22 @@ watch(
   bottom: 1.5rem;
   transform: translateX(-50%);
   width: min(920px, calc(100% - 2rem));
+  /* 低于立绘(12)：人物叠在对话框前；正文靠左可读 */
   z-index: 10;
   padding: 1.4rem 1.75rem 1.2rem;
+  padding-right: clamp(1.75rem, 28vw, 12rem);
   background:
-    linear-gradient(180deg, rgba(12, 20, 30, 0.55), rgba(8, 14, 22, 0.88));
+    linear-gradient(180deg, rgba(12, 20, 30, 0.72), rgba(8, 14, 22, 0.94));
   border: 1px solid rgba(232, 221, 208, 0.14);
   backdrop-filter: blur(14px);
   box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.35);
   cursor: default;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding-right: 1.75rem;
+  }
 }
 
 .name {

@@ -135,10 +135,26 @@ export const chapter12: DialogueNode[] = [
   {
     id: 'c12-14',
     text: '「认得回家的路」，这句话说的是伞，可我总觉得，她说的也是别的什么，只是没有点破。',
+    next: 'c12-14b',
+  },
+  {
+    id: 'c12-14b',
+    affectionBranch: { threshold: 5, whenMet: 'c12-cg', whenNot: 'c12-15' },
+  },
+  {
+    id: 'c12-cg',
+    cg: 'umbrella',
+    mood: 'rain',
+    bg: 'street-rain',
+    sprite: null,
+    text: '【CG · 旧伞】\n雨丝斜斜地落下来。旧伞撑开时有点歪，却刚好够两个人并肩。伞骨那道弯折，像一道不肯愈合、也不肯丢弃的旧年痕迹。',
     next: 'c12-15',
   },
   {
     id: 'c12-15',
+    cg: null,
+    sprite: 'wantang',
+    expression: 'soft',
     choices: [
       {
         text: '「有些东西，认路是因为有人一直等它回来。」',

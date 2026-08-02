@@ -69,10 +69,25 @@ export const chapter20: DialogueNode[] = [
   {
     id: 'c20-08',
     text: '她的名字出口时带着一点不自觉的沙哑。就在两人的呼吸即将重叠的前一秒，她忽然侧过脸，避开了。',
+    next: 'c20-08b',
+  },
+  {
+    id: 'c20-08b',
+    affectionBranch: { threshold: 8, whenMet: 'c20-cg', whenNot: 'c20-09' },
+  },
+  {
+    id: 'c20-cg',
+    cg: 'almostkiss',
+    mood: 'intimate',
+    bg: 'bookstore-close',
+    sprite: null,
+    text: '【CG · 几乎吻上】\n呼吸贴得很近，近到能听见彼此的心跳。她侧过脸的瞬间，暖灯把那一点未完成的距离照得格外清晰——像潮水涨到脚边，又忽然退回去。',
     next: 'c20-09',
   },
   {
     id: 'c20-09',
+    cg: null,
+    sprite: 'wantang',
     speaker: '林晚棠',
     expression: 'blush',
     text: '……别。\n不是不想——真的不是。是今晚，太像分别的前夜。我讨厌这种感觉。',

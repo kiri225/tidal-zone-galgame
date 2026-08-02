@@ -332,7 +332,12 @@ flowchart TD
 | id | 标题 | 门槛 |
 |----|------|------|
 | reunion | 潮声重逢 | 3 |
+| poem | 未寄出的诗 | 4 |
+| umbrella | 旧伞 | 5 |
 | nighttalk | 关店夜话 | 6 |
+| market | 市集早晨 | 7 |
+| almostkiss | 几乎吻上 | 8 |
+| reconcile | 和解的盐 | 9 |
 | rainnight | 雨困一夜 | 10 |
 | intertidal | 潮间带 | 14 / True |
 

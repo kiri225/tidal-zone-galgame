@@ -102,10 +102,26 @@ export const chapter06: DialogueNode[] = [
   {
     id: 'c06-08',
     text: '末句写着：「退潮时，岸会记得谁曾经停留。」\n再往下，墨迹在「沈」字停住，像被人猛地按住了笔尖。',
+    next: 'c06-08b',
+  },
+  {
+    id: 'c06-08b',
+    affectionBranch: { threshold: 4, whenMet: 'c06-cg', whenNot: 'c06-09' },
+  },
+  {
+    id: 'c06-cg',
+    cg: 'poem',
+    mood: 'intimate',
+    bg: 'bookstore',
+    sprite: null,
+    text: '【CG · 未寄出的诗】\n暖灯把她的侧脸勾得很轻。深蓝封皮上的潮痕、发脆的纸页、停在「沈」字的墨迹——十年没寄出的句子，终于在这一刻被读完。',
     next: 'c06-09',
   },
   {
     id: 'c06-09',
+    cg: null,
+    sprite: 'wantang',
+    expression: 'teary',
     speaker: '沈屿',
     text: '后面呢？',
     next: 'c06-10',

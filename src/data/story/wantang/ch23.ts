@@ -152,10 +152,25 @@ export const chapter23: DialogueNode[] = [
   {
     id: 'c23-18',
     text: '生意在正午前渐渐冷清下来。晚棠靠着摊位边缘，从保温壶里倒出两杯温热的姜茶，递给我一杯。',
+    next: 'c23-18b',
+  },
+  {
+    id: 'c23-18b',
+    affectionBranch: { threshold: 7, whenMet: 'c23-cg', whenNot: 'c23-19' },
+  },
+  {
+    id: 'c23-cg',
+    cg: 'market',
+    mood: 'warm',
+    bg: 'seaside-dawn',
+    sprite: null,
+    text: '【CG · 市集早晨】\n晨光把摊位上的水汽照成淡金。她把姜茶递过来时，海风正好掀起几缕碎发——人来人往里，这一刻却像单独退潮的一小片沙滩。',
     next: 'c23-19',
   },
   {
     id: 'c23-19',
+    cg: null,
+    sprite: 'wantang',
     speaker: '林晚棠',
     expression: 'default',
     text: '早市比店里累，但……有点意思。\n人来人往，谁也不用互相记住，交易完就散——干净。',
