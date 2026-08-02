@@ -34,9 +34,11 @@ const nextCgHint = computed(() => {
 const affTitle = computed(() =>
   game.routeId === 'qinglan'
     ? '晴岚好感'
-    : game.routeId === 'wantang'
-      ? '晚棠好感'
-      : '亲密度',
+    : game.routeId === 'qinghe'
+      ? '清禾好感'
+      : game.routeId === 'wantang'
+        ? '晚棠好感'
+        : '亲密度',
 )
 /** 章节号已在右上角 HUD，正文里去掉【第N章】标题行 */
 const dialogueText = computed(() =>

@@ -29,6 +29,15 @@ export const AffThreshold = {
   salt_ql: 45,
   dutynight: 50,
   shore_name: 70,
+  // 清禾线
+  ringlight: 15,
+  tip_refuse: 25,
+  offtalk: 30,
+  market_qh: 35,
+  almost_qh: 40,
+  salt_qh: 45,
+  darkroom: 50,
+  shore_shell: 70,
 } as const
 
 export function clampAffection(value: number): number {

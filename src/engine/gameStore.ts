@@ -4,7 +4,8 @@ import type { DialogueNode, Expression, Screen } from './types'
 import { commonScript } from '../data/story/common'
 import { wantangScript } from '../data/story/wantang'
 import { qinglanScript } from '../data/story/qinglan'
-import { endings, qinglanEndings } from '../data/story/endings'
+import { qingheScript } from '../data/story/qinghe'
+import { endings, qinglanEndings, qingheEndings } from '../data/story/endings'
 import { AffThreshold, clampAffection } from '../data/affection'
 import { cgCatalog } from '../data/cg'
 import { bgImages, getCharSprite } from '../data/assets'
@@ -14,6 +15,7 @@ const ALL_SCRIPTS: Record<string, DialogueNode[]> = {
   common: commonScript,
   wantang: wantangScript,
   qinglan: qinglanScript,
+  qinghe: qingheScript,
 }
 
 const CG_STORAGE_KEY = 'tidal-unlocked-cgs'
@@ -45,6 +47,11 @@ export const useGameStore = defineStore('game', () => {
   const unlockedCgs = ref<Set<string>>(loadUnlockedCgs())
   /** 刚解锁的 CG，用于弹层提示 */
   const pendingCgUnlock = ref<string | null>(null)
+  /**
+   * 全屏 CG 停留锁：打完字后再点一次才离开该句。
+   * 避免连点 / 长按空格时，Typewriter 尚未把 isTyping 置 true，整段章末 CG 被一帧跳过。
+   */
+  const cgHold = ref(false)
   /** 本周目刚涨的好感，供 HUD 飘字 */
   const affectionDelta = ref(0)
 
@@ -68,6 +75,7 @@ export const useGameStore = defineStore('game', () => {
   const endingData = computed(() => {
     if (!endingId.value) return null
     if (routeId.value === 'qinglan') return qinglanEndings[endingId.value]
+    if (routeId.value === 'qinghe') return qingheEndings[endingId.value]
     return endings[endingId.value]
   })
 
@@ -119,12 +127,26 @@ export const useGameStore = defineStore('game', () => {
       if (node.cg) {
         sprite.value = null
         unlockCg(node.cg)
+        cgHold.value = true
+      } else {
+        cgHold.value = false
+        // 本句不再挂 CG：清掉解锁条，避免下一章误弹全屏「解锁预览」
+        pendingCgUnlock.value = null
       }
     } else {
       cg.value = null
+      cgHold.value = false
+      pendingCgUnlock.value = null
     }
     speaker.value = node.speaker ?? ''
     text.value = node.text ?? ''
+    // 同步占用打字锁，避免 goTo 后 Typewriter watch 尚未跑时连点直接 advance
+    if (node.text) {
+      isTyping.value = true
+      skipTyping.value = false
+    } else {
+      isTyping.value = false
+    }
     if (node.setFlag) flags.value.add(node.setFlag)
     if (node.unlockCg) unlockCg(node.unlockCg)
     if (node.ending) {
@@ -217,6 +239,7 @@ export const useGameStore = defineStore('game', () => {
     history.value = []
     endingId.value = null
     cg.value = null
+    cgHold.value = false
     pendingCgUnlock.value = null
     screen.value = 'game'
     goTo('start')
@@ -227,6 +250,7 @@ export const useGameStore = defineStore('game', () => {
     nodeId.value = 'route-start'
     history.value = []
     cg.value = null
+    cgHold.value = false
     chapter.value = 0
     chapterTitle.value = ''
     pendingCgUnlock.value = null
@@ -296,6 +320,11 @@ export const useGameStore = defineStore('game', () => {
       skipTyping.value = true
       return
     }
+    // 全屏 CG：字打完后再吞一次点击，确保章末 CG 至少停一拍
+    if (cgHold.value) {
+      cgHold.value = false
+      return
+    }
     const node = currentNode.value
     if (!node) return
     if (node.choices?.length) return
@@ -354,6 +383,27 @@ export const useGameStore = defineStore('game', () => {
         hasFlag('trust')
       ) {
         unlockCg('shore_name')
+        goTo('ending-true')
+      } else if (
+        affection.value >= AffThreshold.goodEnd &&
+        (hasFlag('stay') || hasFlag('confess'))
+      ) {
+        goTo('ending-good')
+      } else {
+        goTo('ending-bitter')
+      }
+      return
+    }
+    if (routeId.value === 'qinghe') {
+      // True: aff≥60% + 留下 + 坦白 + 关灯 + 拒当客户
+      if (
+        affection.value >= AffThreshold.trueEnd &&
+        hasFlag('stay') &&
+        hasFlag('confess') &&
+        hasFlag('offair') &&
+        hasFlag('not_customer')
+      ) {
+        unlockCg('shore_shell')
         goTo('ending-true')
       } else if (
         affection.value >= AffThreshold.goodEnd &&

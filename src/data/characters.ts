@@ -19,8 +19,8 @@ export const characters: CharacterDef[] = [
     id: 'qinghe',
     name: '顾清禾',
     color: '#6b8f71',
-    title: '海洋站 · 研究员',
-    unlocked: false,
+    title: '潮屿公寓 · 福利姬',
+    unlocked: true,
   },
   {
     id: 'zhixia',
@@ -56,6 +56,8 @@ export const bgLabels: Record<string, string> = {
   'hotel-room': '酒店客房 · 海景',
   gallery: '海边画廊',
   'research-station': '海洋站实验室',
+  'qinghe-room': '清禾公寓 · 直播角',
+  'qinghe-room-off': '清禾公寓 · 关灯',
   black: '黑暗',
 }
 
@@ -63,5 +65,6 @@ export const speakerColors: Record<string, string> = {
   沈屿: '#a8c0d0',
   林晚棠: '#c4a484',
   苏晴岚: '#7a9bb5',
+  顾清禾: '#6b8f71',
   '': '#e8ddd0',
 }

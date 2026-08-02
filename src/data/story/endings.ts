@@ -34,3 +34,22 @@ export const qinglanEndings = {
     color: '#7a8a9a',
   },
 } as const
+
+/** 顾清禾线路结局文案（EndingScreen） */
+export const qingheEndings = {
+  true: {
+    title: 'True End · 壳的岸',
+    subtitle: '短暂停泊，也可以关灯',
+    color: '#6b8f71',
+  },
+  good: {
+    title: 'Good End · 亮处相见',
+    subtitle: '距离很远，备注很近',
+    color: '#a8c0d0',
+  },
+  bittersweet: {
+    title: 'Bittersweet · 潮退以后',
+    subtitle: '环灯重开，像从未关过',
+    color: '#7a8a9a',
+  },
+} as const

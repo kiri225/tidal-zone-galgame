@@ -87,7 +87,7 @@
 
 目录：`src/data/story/qinglan/CHAPTERS.md`。
 
-### 3.4 顾清禾（31）· 三号女主 · P3
+### 3.4 顾清禾（31）· 三号女主 · P3 落地中
 
 | 项 | 内容 |
 |----|------|
@@ -175,7 +175,7 @@ Bittersweet  = else（他走或她重新戴上面具送他离开）
               └─ 角色选择
                    ├─ 林晚棠线 wantang（本期完整实现）
                    ├─ 苏晴岚线 qinglan（大纲已定 · P2 实现）
-                   ├─ 顾清禾线 qinghe（大纲预留）
+                   ├─ 顾清禾线 qinghe（P3 落地中）
                    └─ 叶知夏线 zhixia（大纲预留）
 ```
 
@@ -323,6 +323,59 @@ Bittersweet  = else（他走或她重新戴上面具送他离开）
 
 ---
 
+## 7c. 顾清禾线章节大纲（P3 · 福利姬）
+
+> **状态**：50 章落地中。目录：`src/data/story/qinghe/CHAPTERS.md`。人物：`docs/refs/qinghe-design-notes.md`。
+
+### 定位
+
+| | 苏晴岚 | 顾清禾 |
+|--|--------|--------|
+| 关系起点 | 酒店初遇 | 线下伪装偶遇 → 发现账号 |
+| 主场景 | 酒店大堂 / 酒吧 | 海边公寓直播角 / 关灯后 |
+| 好感轴 | 揭面具 / trust | 关灯 / 拒当客户 |
+| 亲密节奏 | trust 后才靠岸 | `offair` + `not_customer` + aff≥50 |
+
+主题变奏：退潮露出真实 → 「关环灯」；涨潮淹没选择 → 「订阅墙永远开着」。
+
+### 四幕摘要
+
+**第一幕 · 壳（1–15）**  
+卫衣口罩偶遇、发现「潮间带的壳」、环灯漏光、价目表、**拒打赏 → `not_customer`**、关播脸、窗外潮声、**CG 环灯一夜**、汽水耳机、拾潮旧物、直播角空位、线下伪装同行、订阅墙坦白、关灯预告、断更小别。
+
+**第二幕 · 价目外（16–28）**  
+回公寓、常客≠客户、壳的另一面、卖铺拷问、**几乎越线**、**CG 关播夜话**、清醒滤镜、**市集伪装 CG**、外拍湿衫、清仓钥匙、争吵价目、**CG 和解的盐**、谈到关灯。
+
+**第三幕 · 关灯（29–40）**  
+台风、来公寓、环灯还亮、只剩你我、有没有当真、**她先关灯 → `offair`**、**CG 关灯一夜**（完整成人向需 aff≥50 + not_customer + offair）、习惯还是岸、黎明、外拍隐喻、假装开播、评论区眼光。
+
+**第四幕 · 留下（41–50）**  
+备用钥匙、买家、订阅死角、**去留 → `stay`**、**为谁关灯 → `confess`**、联名想象、通牒、公寓门、过客不再订、分叉的壳 → 三结局。
+
+### 结局
+
+```
+True         = aff≥60 AND stay AND confess AND offair AND not_customer
+Good         = aff≥35 AND (stay OR confess)
+Bittersweet  = else
+成人向完整版 = aff≥50 AND not_customer AND offair
+```
+
+### CG 门槛
+
+| id | 标题 | 门槛 |
+|----|------|------|
+| ringlight | 环灯一夜 | 15% |
+| tip_refuse | 拒打赏 | 25% |
+| offtalk | 关播夜话 | 30% |
+| market_qh | 市集伪装 | 35% |
+| almost_qh | 几乎越线 | 40% |
+| salt_qh | 和解的盐 | 45% |
+| darkroom | 关灯一夜 | 50% + offair + not_customer |
+| shore_shell | 分叉的壳 | 70% / True |
+
+---
+
 ## 8. 剧情节点图（审阅用）
 
 ### 8.1 全局
@@ -332,8 +385,8 @@ flowchart TD
   Title[标题] --> Common[序章 common]
   Common --> Select[角色选择]
   Select --> WT[林晚棠线]
-  Select --> QL[苏晴岚·大纲]
-  Select --> QH[顾清禾·预留]
+  Select --> QL[苏晴岚线]
+  Select --> QH[顾清禾线]
   Select --> ZX[叶知夏·预留]
   WT --> E1[True]
   WT --> E2[Good]
@@ -469,7 +522,8 @@ flowchart TD
 | rainnight | 雨困一夜 | 50% |
 | intertidal | 潮间带 | 70% / True |
 
-晴岚线 CG（P2，id 见 §7b）：berth / offduty / shifttalk / market_ql / almost_ql / salt_ql / dutynight / shore_name。
+晴岚线 CG（P2）：berth / offduty / shifttalk / market_ql / almost_ql / salt_ql / dutynight / shore_name。  
+清禾线 CG（P3）：ringlight / tip_refuse / offtalk / market_qh / almost_qh / salt_qh / darkroom / shore_shell。
 
 ---
 
@@ -480,7 +534,7 @@ flowchart TD
 | **P0** | 按本文重写 common + wantang 节点与文案；调好感/CG；补 tense 立绘与缺背景 |
 | P1 | CG 换正式插画（非立绘合成）；Gallery 完善 |
 | P2 | 晴岚线剧本已可玩；待专用立绘/CG 与文案加厚 |
-| P3 | 清禾 / 知夏 |
+| **P3** | 清禾线（福利姬）落地中；知夏预留 |
 
 ---
 

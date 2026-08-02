@@ -6,7 +6,7 @@
  *
  * ASSET_VER：换图后递增，强制浏览器绕过旧缓存
  */
-export const ASSET_VER = '20260802w'
+export const ASSET_VER = '20260802qh'
 
 function asset(path: string): string {
   if (!path) return path
@@ -39,6 +39,8 @@ export const bgImages: Record<string, string> = {
   'hotel-room': asset('/images/bg/bg-hotel-room.webp'),
   gallery: asset('/images/bg/bg-gallery.webp'),
   'research-station': asset('/images/bg/bg-research-station.webp'),
+  'qinghe-room': asset('/images/bg/bg-qinghe-room.webp'),
+  'qinghe-room-off': asset('/images/bg/bg-qinghe-room-off.webp'),
   black: '',
 }
 
@@ -115,7 +117,48 @@ export const qinglanSprites: Record<string, string> = {
   cardigansoft: asset('/images/char/qinglan-casualsoft.webp'),
 }
 
+/** 顾清禾表情/姿态 → 透明立绘 WebP */
+export const qingheSprites: Record<string, string> = {
+  default: asset('/images/char/qinghe-default.webp'),
+  soft: asset('/images/char/qinghe-soft.webp'),
+  tense: asset('/images/char/qinghe-tense.webp'),
+  blush: asset('/images/char/qinghe-blush.webp'),
+  avert: asset('/images/char/qinghe-avert.webp'),
+  smile: asset('/images/char/qinghe-smile.webp'),
+  hurt: asset('/images/char/qinghe-hurt.webp'),
+  laugh: asset('/images/char/qinghe-laugh.webp'),
+  surprised: asset('/images/char/qinghe-surprised.webp'),
+  teary: asset('/images/char/qinghe-teary.webp'),
+  cold: asset('/images/char/qinghe-cold.webp'),
+  tired: asset('/images/char/qinghe-tired.webp'),
+  book: asset('/images/char/qinghe-book.webp'),
+  crossed: asset('/images/char/qinghe-crossed.webp'),
+  lean: asset('/images/char/qinghe-lean.webp'),
+  coffee: asset('/images/char/qinghe-coffee.webp'),
+  write: asset('/images/char/qinghe-write.webp'),
+  offer: asset('/images/char/qinghe-offer.webp'),
+  shush: asset('/images/char/qinghe-shush.webp'),
+  beckon: asset('/images/char/qinghe-beckon.webp'),
+  think: asset('/images/char/qinghe-think.webp'),
+  wipe: asset('/images/char/qinghe-wipe.webp'),
+  confused: asset('/images/char/qinghe-confused.webp'),
+  leandesk: asset('/images/char/qinghe-leandesk.webp'),
+  casual: asset('/images/char/qinghe-casual.webp'),
+  casualsoft: asset('/images/char/qinghe-casualsoft.webp'),
+  blouse: asset('/images/char/qinghe-blouse.webp'),
+  blouseblush: asset('/images/char/qinghe-blouseblush.webp'),
+  phone: asset('/images/char/qinghe-phone.webp'),
+  lingerie: asset('/images/char/qinghe-lingerie.webp'),
+  apron: asset('/images/char/qinghe-default.webp'),
+  apronlean: asset('/images/char/qinghe-lean.webp'),
+  cardigan: asset('/images/char/qinghe-casual.webp'),
+  cardigansoft: asset('/images/char/qinghe-casualsoft.webp'),
+}
+
 export function getCharSprite(character: string, expression: string): string {
+  if (character === 'qinghe') {
+    return qingheSprites[expression] ?? qingheSprites.default
+  }
   if (character === 'qinglan') {
     return qinglanSprites[expression] ?? qinglanSprites.default
   }

@@ -1,0 +1,117 @@
+import type { DialogueNode } from '../../../engine/types'
+import { chapter01 } from './ch01'
+import { chapter02 } from './ch02'
+import { chapter03 } from './ch03'
+import { chapter04 } from './ch04'
+import { chapter05 } from './ch05'
+import { chapter06 } from './ch06'
+import { chapter07 } from './ch07'
+import { chapter08 } from './ch08'
+import { chapter09 } from './ch09'
+import { chapter10 } from './ch10'
+import { chapter11 } from './ch11'
+import { chapter12 } from './ch12'
+import { chapter13 } from './ch13'
+import { chapter14 } from './ch14'
+import { chapter15 } from './ch15'
+import { chapter16 } from './ch16'
+import { chapter17 } from './ch17'
+import { chapter18 } from './ch18'
+import { chapter19 } from './ch19'
+import { chapter20 } from './ch20'
+import { chapter21 } from './ch21'
+import { chapter22 } from './ch22'
+import { chapter23 } from './ch23'
+import { chapter24 } from './ch24'
+import { chapter25 } from './ch25'
+import { chapter26 } from './ch26'
+import { chapter27 } from './ch27'
+import { chapter28 } from './ch28'
+import { chapter29 } from './ch29'
+import { chapter30 } from './ch30'
+import { chapter31 } from './ch31'
+import { chapter32 } from './ch32'
+import { chapter33 } from './ch33'
+import { chapter34 } from './ch34'
+import { chapter35 } from './ch35'
+import { chapter36 } from './ch36'
+import { chapter37 } from './ch37'
+import { chapter38 } from './ch38'
+import { chapter39 } from './ch39'
+import { chapter40 } from './ch40'
+import { chapter41 } from './ch41'
+import { chapter42 } from './ch42'
+import { chapter43 } from './ch43'
+import { chapter44 } from './ch44'
+import { chapter45 } from './ch45'
+import { chapter46 } from './ch46'
+import { chapter47 } from './ch47'
+import { chapter48 } from './ch48'
+import { chapter49 } from './ch49'
+import { chapter50 } from './ch50'
+import { endingNodes } from './endings'
+
+export const qingheScript: DialogueNode[] = [
+  {
+    id: 'route-start',
+    bg: 'street-day',
+    mood: 'warm',
+    sprite: 'qinghe',
+    expression: 'casual',
+    text: '潮屿的旧街有风。有人把「被看」做成生意，也有人在关灯之后，才肯把自己交出来。\n你抬眼——卫衣、口罩、一双海水玻璃绿的眼睛。',
+    next: 'ch01',
+  },
+  ...chapter01,
+  ...chapter02,
+  ...chapter03,
+  ...chapter04,
+  ...chapter05,
+  ...chapter06,
+  ...chapter07,
+  ...chapter08,
+  ...chapter09,
+  ...chapter10,
+  ...chapter11,
+  ...chapter12,
+  ...chapter13,
+  ...chapter14,
+  ...chapter15,
+  ...chapter16,
+  ...chapter17,
+  ...chapter18,
+  ...chapter19,
+  ...chapter20,
+  ...chapter21,
+  ...chapter22,
+  ...chapter23,
+  ...chapter24,
+  ...chapter25,
+  ...chapter26,
+  ...chapter27,
+  ...chapter28,
+  ...chapter29,
+  ...chapter30,
+  ...chapter31,
+  ...chapter32,
+  ...chapter33,
+  ...chapter34,
+  ...chapter35,
+  ...chapter36,
+  ...chapter37,
+  ...chapter38,
+  ...chapter39,
+  ...chapter40,
+  ...chapter41,
+  ...chapter42,
+  ...chapter43,
+  ...chapter44,
+  ...chapter45,
+  ...chapter46,
+  ...chapter47,
+  ...chapter48,
+  ...chapter49,
+  ...chapter50,
+  ...endingNodes,
+]
+
+export const QINGHE_CHAPTER_COUNT = 50
