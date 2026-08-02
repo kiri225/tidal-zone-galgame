@@ -160,12 +160,13 @@ function dismissUnlock() {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 28%;
+  /* landscape CGs: keep true center; 28% top-bias was cutting lower body */
+  object-position: center center;
 }
 
 .cg-media.kenburns {
   animation: kenburns 14s ease-in-out infinite alternate;
-  transform-origin: center 35%;
+  transform-origin: center center;
 }
 
 .cg-wash {

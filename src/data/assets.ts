@@ -6,7 +6,7 @@
  *
  * ASSET_VER：换图后递增，强制浏览器绕过旧缓存
  */
-export const ASSET_VER = '20260802qh3'
+export const ASSET_VER = '20260802qh5'
 
 function asset(path: string): string {
   if (!path) return path

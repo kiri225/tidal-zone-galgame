@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from PIL import Image, ImageEnhance
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = Path(r"C:\Users\看i如、\.cursor\projects\c-Users-i-tidal-zone-galgame\assets")
@@ -54,25 +54,11 @@ def main() -> None:
     for src, dest in AFF:
         export_cg(src, dest)
 
-    bases = [
-        CG_OUT / "cg-qh-ringlight.webp",
-        CG_OUT / "cg-qh-market.webp",
-        CG_OUT / "cg-qh-darkroom.webp",
-        CG_OUT / "cg-qh-offtalk.webp",
-        CG_OUT / "cg-qh-salt.webp",
-        CG_OUT / "cg-qh-almost.webp",
-        CG_OUT / "cg-qh-tip-refuse.webp",
-        CG_OUT / "cg-qh-shore.webp",
-    ]
-    bases = [b for b in bases if b.exists()]
-    for i in range(1, 51):
-        base = Image.open(bases[(i - 1) % len(bases)]).convert("RGB")
-        # mild brightness only — no resize stretch
-        factor = 0.94 + (i % 7) * 0.015
-        out = ImageEnhance.Brightness(base).enhance(factor)
-        dest = CG_OUT / f"cg-qh-ch{i:02d}-end.webp"
-        out.save(dest, "WEBP", quality=88, method=4)
-    print("chapter-end CGs refreshed at 1536x1024")
+    # Do NOT overwrite chapter-end CGs from affection bases — that recycled
+    # 8 scenes across 50 chapters. Re-export from PNG via:
+    #   python scripts/reexport-qh-chapter-cgs-pad.py
+    # or regenerate: python scripts/gen-qinghe-chapter-end-cgs.py
+    print("affection CGs exported; chapter-end left untouched")
 
     # stage green sprites
     batch1 = GREEN / "batch-01-expressions"

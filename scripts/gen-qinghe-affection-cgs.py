@@ -72,15 +72,19 @@ def load_env() -> None:
         os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
-def cover_to(im: Image.Image, size: tuple[int, int]) -> Image.Image:
+def cover_to_landscape(
+    im: Image.Image, size: tuple[int, int], top_bias: float = 0.22
+) -> Image.Image:
+    """Cover-crop to landscape with slight top bias (keep faces; no stretch)."""
     tw, th = size
-    w, h = im.size
+    src = im.convert("RGB")
+    w, h = src.size
     scale = max(tw / w, th / h)
     nw, nh = int(w * scale + 0.5), int(h * scale + 0.5)
-    im = im.resize((nw, nh), Image.Resampling.LANCZOS)
+    src = src.resize((nw, nh), Image.Resampling.LANCZOS)
     left = (nw - tw) // 2
-    top = (nh - th) // 2
-    return im.crop((left, top, left + tw, top + th))
+    top = int((nh - th) * max(0.0, min(1.0, top_bias)))
+    return src.crop((left, top, left + tw, top + th))
 
 
 def gen(name: str, stem: str, scene: str, key: str, base: str, model: str, force: bool) -> None:
@@ -107,7 +111,7 @@ def gen(name: str, stem: str, scene: str, key: str, base: str, model: str, force
     else:
         with urllib.request.urlopen(data["data"][0]["url"], timeout=120) as r:
             png.write_bytes(r.read())
-    im = cover_to(Image.open(png).convert("RGB"), (1536, 1024))
+    im = cover_to_landscape(Image.open(png).convert("RGB"), (1536, 1024))
     im.save(webp, "WEBP", quality=90, method=4)
     print("ok", webp.name, im.size, flush=True)
 

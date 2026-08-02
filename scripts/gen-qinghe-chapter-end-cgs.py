@@ -251,15 +251,19 @@ def load_env() -> None:
         os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
 
-def cover_to(im: Image.Image, size: tuple[int, int]) -> Image.Image:
+def cover_to_landscape(
+    im: Image.Image, size: tuple[int, int], top_bias: float = 0.22
+) -> Image.Image:
+    """Cover-crop square → landscape with slight top bias (keep faces)."""
     tw, th = size
-    w, h = im.size
+    src = im.convert("RGB")
+    w, h = src.size
     scale = max(tw / w, th / h)
     nw, nh = int(w * scale + 0.5), int(h * scale + 0.5)
-    im = im.resize((nw, nh), Image.Resampling.LANCZOS)
+    src = src.resize((nw, nh), Image.Resampling.LANCZOS)
     left = (nw - tw) // 2
-    top = (nh - th) // 2
-    return im.crop((left, top, left + tw, top + th))
+    top = int((nh - th) * max(0.0, min(1.0, top_bias)))
+    return src.crop((left, top, left + tw, top + th))
 
 
 def gen_one(ch: int, key: str, base: str, model: str, force: bool) -> Path:
@@ -306,7 +310,7 @@ def gen_one(ch: int, key: str, base: str, model: str, force: bool) -> Path:
             png.write_bytes(r.read())
 
     im = Image.open(png).convert("RGB")
-    im = cover_to(im, (1536, 1024))
+    im = cover_to_landscape(im, (1536, 1024))
     im.save(webp, "WEBP", quality=90, method=4)
     print(f"ok {webp.name} {im.size}", flush=True)
     return webp
