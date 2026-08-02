@@ -1,4 +1,9 @@
 /** CG 图鉴：好感达到阈值解锁，剧情中可全屏展示 */
+import { ASSET_VER } from './assets'
+
+function cgAsset(path: string): string {
+  return `${path}?v=${ASSET_VER}`
+}
 
 export interface CgDef {
   id: string
@@ -17,7 +22,7 @@ export const cgCatalog: CgDef[] = [
     title: '潮声重逢',
     subtitle: '十年后的第一盏灯',
     affectionRequired: 3,
-    image: '/images/cg/cg-reunion.png',
+    image: cgAsset('/images/cg/cg-reunion.png'),
     storyHint: '搬书的黄昏',
   },
   {
@@ -25,7 +30,7 @@ export const cgCatalog: CgDef[] = [
     title: '关店夜话',
     subtitle: '红酒与未说完的话',
     affectionRequired: 6,
-    image: '/images/cg/cg-nighttalk.png',
+    image: cgAsset('/images/cg/cg-nighttalk.png'),
     storyHint: '打烊后的吧台',
   },
   {
@@ -33,7 +38,7 @@ export const cgCatalog: CgDef[] = [
     title: '雨困一夜',
     subtitle: '潮汐终于靠岸',
     affectionRequired: 10,
-    image: '/images/cg/cg-rainnight.png',
+    image: cgAsset('/images/cg/cg-rainnight.png'),
     storyHint: '台风夜里',
   },
   {
@@ -41,7 +46,7 @@ export const cgCatalog: CgDef[] = [
     title: '潮间带',
     subtitle: '涨潮时相爱，退潮时也不走开',
     affectionRequired: 14,
-    image: '/images/cg/cg-intertidal.png',
+    image: cgAsset('/images/cg/cg-intertidal.png'),
     storyHint: 'True End',
   },
 ]
