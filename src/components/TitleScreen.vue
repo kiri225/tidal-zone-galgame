@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { bgImages } from '../data/assets'
 import { useGameStore } from '../engine/gameStore'
 
 const game = useGameStore()
@@ -6,7 +7,7 @@ const game = useGameStore()
 
 <template>
   <section class="title">
-    <img class="tide-img" src="/images/bg/bg-port-night.png" alt="" draggable="false" />
+    <img class="tide-img" :src="bgImages['port-night']" alt="" draggable="false" />
     <div class="tide-dim" aria-hidden="true" />
     <div class="veil" />
 

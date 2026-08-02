@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { characters } from '../data/characters'
-import { wantangSprites } from '../data/assets'
+import { bgImages, wantangSprites } from '../data/assets'
 import { useGameStore } from '../engine/gameStore'
 
 const game = useGameStore()
@@ -17,7 +17,7 @@ function pick(id: string, unlocked: boolean) {
 
 <template>
   <section class="select">
-    <img class="bg-img" src="/images/bg/bg-bookstore.png" alt="" draggable="false" />
+    <img class="bg-img" :src="bgImages.bookstore" alt="" draggable="false" />
     <div class="bg-dim" />
     <header>
       <p class="label">选择故事线</p>
